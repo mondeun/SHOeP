@@ -4,5 +4,6 @@
     <asp:TextBox ID="LoginUserTxtBox" runat="server"></asp:TextBox> <br/>
     <asp:Label ID="LoginPassLbl" runat="server">Password</asp:Label>
     <asp:TextBox ID="LoginPassTxtBox" runat="server" TextMode="Password"></asp:TextBox> <br/>
-    <asp:Button ID="LoginBtn" runat="server" Text="Login" Width="116px" OnClick="LoginUser" />   
+    <asp:Button ID="LoginBtn" runat="server" Text="Login" Width="116px" OnClick="LoginUser" />  
+    <a href="Forgot.aspx">Forgot password</a> 
 </asp:Content>
