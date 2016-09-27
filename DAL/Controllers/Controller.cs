@@ -8,11 +8,11 @@ namespace DAL.Controllers
 {
     public class Controller
     {
-        protected readonly DbConnection _connection;
+        protected readonly DbConnection Connection;
 
         protected Controller()
         {
-            _connection = new DbConnection();
+            Connection = new DbConnection();
         }
     }
 }

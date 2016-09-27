@@ -15,12 +15,12 @@ namespace DAL.Controllers
             var result = 0;
             try
             {
-                _connection.OpenConnection();
+                Connection.OpenConnection();
 
                 var sql = $"insert into customers (FirstName, LastName, Email, Phone, Address, Zip, City, Password) " +
                           $"values ('{user.FirstName}', '{user.LastName}', '{user.Email}', '{user.Phone}', '{user.Address}', '{user.Zip}', '{user.City}', '{user.Password}')";
 
-                var cmd = new SqlCommand(sql, _connection.GetConnection());
+                var cmd = new SqlCommand(sql, Connection.GetConnection());
                 result = cmd.ExecuteNonQuery();
             }
             catch (Exception e)
@@ -29,7 +29,7 @@ namespace DAL.Controllers
             }
             finally
             {
-                _connection.CloseConnection();
+                Connection.CloseConnection();
             }
             return result;
         }
