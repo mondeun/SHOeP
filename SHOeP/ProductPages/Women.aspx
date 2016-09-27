@@ -80,14 +80,14 @@
                         <table>
                             <tr>
                                 <td>
-                                    <a href="ProductDetails.aspx?modelID=<%#:Item.Brand%>">
+                                    <a href="ProductDetails.aspx?modelID=<%#:Item.ModelId%>">
                                         <img src="/image/<%# Item.Picture%>"
                                             width="100" height="100" style="border: solid" /></a>                                  </a>
                                 </td>
                             </tr>
                             <tr>
                                 <td>
-                                    <a href="ProductDetails.aspx?modelID=<%#:Item.ModelName%>">
+                                    <a href="ProductDetails.aspx?modelID=<%#:Item.ModelId%>">
                                         <span>
                                             <%#:Item.Brand%>, <%#:Item.ModelName%>
                                         </span>

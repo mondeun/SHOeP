@@ -6,20 +6,25 @@ using System.Web.UI;
 using System.Web.UI.WebControls;
 using DAL.Models;
 using DAL.Controllers;
+using System.Web.ModelBinding;
 
 namespace SHOeP.ProductPages
 {
-    public partial class Women : System.Web.UI.Page
+    public partial class Product : System.Web.UI.Page
     {
         protected void Page_Load(object sender, EventArgs e)
         {
 
         }
 
-        //The method that is called by samename.aspx
-        public IQueryable<Model> GetModels()
+        public IQueryable<Model> GetModel([QueryString("modelID")] int? modelId)
         {
-            List<Model> models = ModelController.GetModels(); // return List<Model>
+            if (!modelId.HasValue)
+            {
+                return null;
+            }
+
+            List<Model> models = ModelController.GetModel(modelId.Value);
             return models.AsQueryable<Model>();
         }
     }

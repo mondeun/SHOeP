@@ -50,6 +50,7 @@
     <Compile Include="Models\Shipping.cs" />
     <Compile Include="Models\Shoe.cs" />
     <Compile Include="Models\Stock.cs" />
+    <Compile Include="Models\SuperModel.cs" />
     <Compile Include="Models\User.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>

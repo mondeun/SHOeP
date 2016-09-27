@@ -14,23 +14,24 @@ namespace DAL.Controllers
         //Kriszta's local db
         private const string ConnectionString = "server=DESKTOP-QC3MALE\\SQLEXPRESS;Trusted_Connection=yes;database=SHOeP;connection timeout=10";
 
-        public static List<Model> GetModels()
+        private static List<T> GetListFromQuery<T>(string query) where T : SuperModel, new()
         {
-            List<Model> list = new List<Model>();
-            SqlConnection conn = new SqlConnection(ConnectionString); ;
-            SqlDataReader myDataReader = null; ;
+            List<T> list = new List<T>();
+            SqlConnection conn = new SqlConnection(ConnectionString);
+            SqlDataReader myDataReader = null;
 
             try
             {
                 conn.Open();
 
-                string sql = "SELECT * FROM dbo.Models";
-                SqlCommand myCommand = new SqlCommand(sql, conn);
+                SqlCommand myCommand = new SqlCommand(query, conn);
 
                 myDataReader = myCommand.ExecuteReader();
                 while (myDataReader.Read())
                 {
-                    list.Add(new Model(myDataReader));
+                    T item = new T();
+                    item.FromSqlReader(myDataReader);
+                    list.Add(item);
                 }
 
             }
@@ -45,12 +46,20 @@ namespace DAL.Controllers
                     myDataReader.Close();
                 }
 
-                if (conn != null)
-                {
-                    conn.Close();
-                }
+                conn.Close();
             }
             return list;
+        }
+
+
+        public static List<Model> GetModels()
+        {
+            return GetListFromQuery<Model>("SELECT * FROM dbo.Models");
+        }
+
+        public static List<Model> GetModel(int modelId)
+        {
+            return GetListFromQuery<Model>("SELECT * FROM dbo.Models WHERE ModelId = " + modelId);
         }
     }
 }

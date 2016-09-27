@@ -8,7 +8,7 @@ using System.Data.SqlClient;
 
 namespace DAL.Models
 {
-    public class Model
+    public class Model : SuperModel
     {
         public int ModelId { get; set; }
         public string Brand { get; set; }
@@ -20,9 +20,7 @@ namespace DAL.Models
         public string Description { get; set; }
         public decimal Price { get; set; }
 
-        public Model() { }
-
-        public Model(SqlDataReader reader)
+        public override void FromSqlReader(SqlDataReader reader)
         {
             ModelId = int.Parse(reader["ModelId"].ToString());
             Brand = reader["Brand"].ToString();

@@ -168,7 +168,7 @@
     <Content Include="image\pool-water.jpg" />
     <Content Include="ProductPages\Childrens.aspx" />
     <Content Include="ProductPages\Men.aspx" />
-    <Content Include="ProductPages\Product.aspx" />
+    <Content Include="ProductPages\ProductDetails.aspx" />
     <Content Include="ProductPages\Women.aspx" />
     <Content Include="Scripts\bootstrap.js" />
     <Content Include="Scripts\bootstrap.min.js" />
@@ -293,12 +293,12 @@
     <Compile Include="ProductPages\Men.aspx.designer.cs">
       <DependentUpon>Men.aspx</DependentUpon>
     </Compile>
-    <Compile Include="ProductPages\Product.aspx.cs">
-      <DependentUpon>Product.aspx</DependentUpon>
+    <Compile Include="ProductPages\ProductDetails.aspx.cs">
+      <DependentUpon>ProductDetails.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
     </Compile>
-    <Compile Include="ProductPages\Product.aspx.designer.cs">
-      <DependentUpon>Product.aspx</DependentUpon>
+    <Compile Include="ProductPages\ProductDetails.aspx.designer.cs">
+      <DependentUpon>ProductDetails.aspx</DependentUpon>
     </Compile>
     <Compile Include="ProductPages\Women.aspx.cs">
       <DependentUpon>Women.aspx</DependentUpon>
