@@ -119,6 +119,7 @@
     <Content Include="Content\font-awesome.css" />
     <Content Include="Content\font-awesome.min.css" />
     <Content Include="Content\hover.css" />
+    <Content Include="Content\productpages.css" />
     <Content Include="Content\Site.css" />
     <Content Include="Content\StyleBoot.css" />
     <Content Include="ErrorPages\404.aspx" />
@@ -154,11 +155,16 @@
     <Content Include="images_avatar\large_3194.png" />
     <Content Include="images_avatar\large_3206.png" />
     <Content Include="images_avatar\Opi51.png" />
+    <Content Include="image\adidas00.png" />
     <Content Include="image\barn.PNG" />
     <Content Include="image\dam.PNG" />
+    <Content Include="image\ecco00.png" />
     <Content Include="image\logo_black.png" />
+    <Content Include="image\logo_black_300.png" />
     <Content Include="image\logo_white.png" />
+    <Content Include="image\logo_white_300.png" />
     <Content Include="image\men.PNG" />
+    <Content Include="image\nike00.png" />
     <Content Include="image\pool-water.jpg" />
     <Content Include="ProductPages\Childrens.aspx" />
     <Content Include="ProductPages\Men.aspx" />
