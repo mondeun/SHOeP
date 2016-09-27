@@ -20,16 +20,26 @@ body
     margin-top:5px;
 }
 /*Style Icons i Header*/
+.iconenav
+{
+    margin-top:30px;
+    margin-right:20px;
+}
 .iconenav > a {
-    margin: 0 15px 10px 0;
-    margin-bottom: 20px;
-    padding: 5px;
+    
+    margin-top: 20px;
+    padding: 10px;
+}
+.glyphicon-user, .fa-user-plus
+{
+    color:#fff;
 }
 /*Main Navbar*/
 .navbar {
     min-height: 60px;
-    background-color: none;
-    border: none;
+    background-color:#fff;
+    border-bottom-color:#000000;
+    margin-top:5px;
 }
     /*Navbar Center*/
     .navbar .navbar-nav {
@@ -54,7 +64,16 @@ body
             font-size: 25px;
             border-radius: 10px;
         }
+        /*Navbar Toggle*/
+.navbar-toggle {
+    margin-top: 18px;
+}
 
+/*Serch */
+.form-control
+{
+    cursor: pointer;
+}
 /*photo Style*/
 .row .img-thumbnail {
     width: 200px;
@@ -133,9 +152,10 @@ body
 /*----------------------footer ----------------------*/
 /*Start Section Our Clients*/
 .footer {
-    background: #FFF;
+    background: #111;
     color: #AAA;
     padding-top: 10px;
+    margin-top:60px;
 }
 
     .footer a {
@@ -185,7 +205,7 @@ body
 }
 
 .footer .copyright {
-    background: #FFF;
+    background: #333;
     color: #AAA;
     padding: 15px;
     margin-top: 30px;
