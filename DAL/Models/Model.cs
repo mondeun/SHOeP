@@ -4,6 +4,7 @@ using System.Linq;
 using System.Net.Mime;
 using System.Text;
 using System.Threading.Tasks;
+using System.Data.SqlClient;
 
 namespace DAL.Models
 {
@@ -18,5 +19,20 @@ namespace DAL.Models
         public string Picture { get; set; }
         public string Description { get; set; }
         public decimal Price { get; set; }
+
+        public Model() { }
+
+        public Model(SqlDataReader reader)
+        {
+            ModelId = int.Parse(reader["ModelId"].ToString());
+            Brand = reader["Brand"].ToString();
+            ModelName = reader["ModelName"].ToString();
+            Material = reader["Material"].ToString();
+            Category = reader["Category"].ToString();
+            ShoeType = reader["ShoeType"].ToString();
+            Picture = reader["Picture"].ToString();
+            Description = reader["Description"].ToString();
+            Price = decimal.Parse(reader["Price"].ToString());
+        }
     }
 }
