@@ -325,8 +325,8 @@
     </Compile>
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="..\..\..\..\..\Source\Repos\Goup7_SHOeP\DAL\DAL.csproj">
-      <Project>{40f8772d-e0af-4df7-a7b5-5edead6285fe}</Project>
+    <ProjectReference Include="..\DAL\DAL.csproj">
+      <Project>{20a898d8-fc1a-44fb-97fa-de7ed87f0758}</Project>
       <Name>DAL</Name>
     </ProjectReference>
   </ItemGroup>
