@@ -8,6 +8,7 @@ namespace DAL.Models
 {
     public class Shipping
     {
+        public int ShiipingId { get; set; }
         public string CompanyName { get; set; }
         public decimal Charge { get; set; }
     }

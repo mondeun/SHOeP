@@ -13,5 +13,10 @@ namespace SHOeP.Account
         {
 
         }
+
+        protected void LoginUser(object sender, EventArgs e)
+        {
+            throw new NotImplementedException();
+        }
     }
 }
