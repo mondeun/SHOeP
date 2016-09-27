@@ -5,6 +5,8 @@ VisualStudioVersion = 14.0.25420.1
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SHOeP", "SHOeP\SHOeP.csproj", "{6856E61F-4410-42AD-9653-DEF5648C0FED}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DAL", "..\..\..\..\Source\Repos\Goup7_SHOeP\DAL\DAL.csproj", "{40F8772D-E0AF-4DF7-A7B5-5EDEAD6285FE}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -15,6 +17,10 @@ Global
 		{6856E61F-4410-42AD-9653-DEF5648C0FED}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{6856E61F-4410-42AD-9653-DEF5648C0FED}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{6856E61F-4410-42AD-9653-DEF5648C0FED}.Release|Any CPU.Build.0 = Release|Any CPU
+		{40F8772D-E0AF-4DF7-A7B5-5EDEAD6285FE}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{40F8772D-E0AF-4DF7-A7B5-5EDEAD6285FE}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{40F8772D-E0AF-4DF7-A7B5-5EDEAD6285FE}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{40F8772D-E0AF-4DF7-A7B5-5EDEAD6285FE}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

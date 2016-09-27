@@ -1,0 +1,199 @@
+﻿/*******Start Overriding Bootstrap*******/
+body
+{
+    padding-top:1px;
+}
+/*header*/
+.mainheader .img-responsive.img-center {
+    width: 25%;
+    margin: 0 auto;
+    height: 89px;
+    border-radius: 5px;
+    text-align: center;
+    margin-top:25px;
+    margin-bottom:20px;
+}
+
+.mainheader {
+    background-color: #000000;
+    height:150px;
+    margin-top:5px;
+}
+/*Style Icons i Header*/
+.iconenav > a {
+    margin: 0 15px 10px 0;
+    margin-bottom: 20px;
+    padding: 5px;
+}
+/*Main Navbar*/
+.navbar {
+    min-height: 60px;
+    background-color: none;
+    border: none;
+}
+    /*Navbar Center*/
+    .navbar .navbar-nav {
+        display: inline-block;
+        float: none;
+    }
+
+    .navbar .navbar-collapse {
+        text-align: center;
+    }
+
+    .navbar .navbar-nav > li {
+        padding-left: 35px;
+        padding-right: 35px;
+    }
+
+        /*Navbar Link*/
+        .navbar .navbar-nav > li > a {
+            color: #000000;
+            padding-top: 20px;
+            padding-bottom: 20px;
+            font-size: 25px;
+            border-radius: 10px;
+        }
+
+/*photo Style*/
+.row .img-thumbnail {
+    width: 200px;
+    height: 300px;
+    position: relative;
+    text-align: center;
+    font-size: 7rem;
+}
+/*-----------About------------------*/
+/*Start Section About*/
+.about {
+    padding-top: 70px;
+    padding-bottom: 20px;
+}
+
+    .about .lead {
+        color: #888;
+        font-size: 25px;
+        margin-top: 15px;
+    }
+
+    .about h1, .about h3 {
+        font-weight: bold;
+    }
+
+/*Start Section Our Team*/
+.our_team {
+    background: url('../image/pool-water.jpg')no-repeat center center fixed;
+    min-height: 650px;
+}
+
+    .our_team .team {
+        background: rgba(2,2,2,0.6);
+        color: #fff;
+        min-height: 650px;
+        padding-top: 40px;
+        padding-bottom: 40px;
+    }
+
+    .our_team h1 {
+        margin-bottom: 60px;
+    }
+
+    .our_team .person {
+        margin-bottom: 40px;
+    }
+/*End Section Our Team*/
+/*Start Scetion Features*/
+.features {
+    background: #eee;
+    padding-top: 50px;
+    padding-bottom: 50px;
+}
+
+    .features .featu {
+        margin-bottom: 30px;
+    }
+
+        .features .featu p {
+            line-height: 2em;
+        }
+
+    .features h1 {
+        margin-bottom: 20px;
+    }
+
+    .features .featu span.glyphicon {
+        font-size: 24px;
+        margin-bottom: 10px;
+        color: #666;
+    }
+/*End Scetion Features*/
+
+/*End Section About*/
+
+/*----------------------footer ----------------------*/
+/*Start Section Our Clients*/
+.footer {
+    background: #FFF;
+    color: #AAA;
+    padding-top: 10px;
+}
+
+    .footer a {
+        color: #AAA;
+    }
+
+.foorer a:hover {
+    color: #FFF;
+}
+
+.footer h3 {
+    letter-spacing: 1px;
+    margin: 30px 0 20px;
+}
+
+.footer .three-colu {
+    overflow: hidden;
+}
+
+    .footer .three-colu li {
+        width: 33.3333%;
+        float: left;
+        padding: 5px 0;
+    }
+
+.footer .social-list {
+    overflow: hidden;
+    margin: 20px 0 10px;
+}
+
+    .footer .social-list li {
+        float: left;
+        margin-right: 3px;
+        opacity: 0.7;
+        filter: alpha(opacity=70);
+        transition: all 0.7s ease-in-out;
+    }
+
+        .footer .social-list li:hover {
+            opacity: 1;
+        }
+
+.footer .img-thumbnail {
+    background: rgba(0,0,0,0.4);
+    border: 1px solid #444;
+    border-bottom: 5px;
+}
+
+.footer .copyright {
+    background: #FFF;
+    color: #AAA;
+    padding: 15px;
+    margin-top: 30px;
+    font-size: 18px;
+}
+
+/*End Section Our Clients*/
+
+
+
+

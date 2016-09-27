@@ -12,9 +12,11 @@
         <%: Scripts.Render("~/bundles/modernizr") %>
     </asp:PlaceHolder>
 
-    <webopt:bundlereference runat="server" path="~/Content/css" />
+    <webopt:BundleReference runat="server" Path="~/Content/css" />
     <link href="~/favicon.ico" rel="shortcut icon" type="image/x-icon" />
-
+    <link href="Content/font-awesome.css" rel="stylesheet" />
+    <link href="Content/StyleBoot.css" rel="stylesheet" />
+    <link href="Content/hover.css" rel="stylesheet" />
 </head>
 <body>
     <form runat="server">
@@ -38,33 +40,151 @@
                 <%--Site Scripts--%>
             </Scripts>
         </asp:ScriptManager>
-
-        <div class="navbar navbar-inverse navbar-fixed-top">
-            <div class="container">
+        <!--Start header-->
+        <header class="mainheader">
+            <div class="container-fluid  text-align:center">
+                <div class="row">
+                    <div class="col-sm-3">
+                    </div>
+                    <div class="col-sm-6">
+                        <img class="img-responsive img-center " src="image/logo_white.png" runat="server" />
+                    </div>
+                    <div class="col-sm-3 text-right">
+                        <div class="iconenav">
+                            <a runat="server" href="~/Account/Register"><i class="fa fa-user-plus fa-2x "></i></a>
+                            <a runat="server" href="~/Account/Login"><i class="glyphicon glyphicon-user fa-2x"></i></a>
+                            <%--<div class="form-search" id="s" runat="server">
+                                <div class="input-append">
+                                    <input type="text" class="input-medium search-query" name="s" placeholder="Search" value="">
+                                    <button type="submit" class="add-on"><i class="fa fa-search"></i></button>
+                                </div>
+                            </div>--%>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </header>
+        <!--Start our Navbar-->
+        <div class="navbar <%--navbar-fixed-top--%>">
+            <div class="container-fluid">
                 <div class="navbar-header">
-                    <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+                    <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse" aria-expanded="false">
+                        <span class="sr-only">Toggle navigation</span>
                         <span class="icon-bar"></span>
                         <span class="icon-bar"></span>
                         <span class="icon-bar"></span>
                     </button>
-                    <a class="navbar-brand" runat="server" href="~/">Application name</a>
+                    <%-- <a class="navbar-brand" runat="server" href="~/">Application name</a>--%>
                 </div>
-                <div class="navbar-collapse collapse">
+                <div class="navbar-collapse collapse" id="navbar">
                     <ul class="nav navbar-nav">
-                        <li><a runat="server" href="~/">Home</a></li>
-                        <li><a runat="server" href="~/About">About</a></li>
-                        <li><a runat="server" href="~/Contact">Contact</a></li>
+                        <%--navbar-right--%>
+                        <li class="active hvr-buzz-out"><a runat="server" href="~/Default.aspx">Home</a></li>
+                        <li class="hvr-hang"><a runat="server" href="~/ProductPages/Men.aspx">Herr</a></li>
+                        <li class="hvr-hang"><a runat="server" href="~/ProductPages/Women.aspx">Dam</a></li>
+                        <li class="hvr-hang"><a runat="server" href="~/ProductPages/Childrens.aspx">Barn</a></li>
+                        <li class="hvr-hang"><a runat="server" href="~/About.aspx">Om oss</a></li>
+                        <%-- <li><a runat="server" href="~/Contact">Contact</a></li>  --%>
                     </ul>
+                    <div class="col-sm-3 col-md-3 pull-right">
+                        <div class="navbar-form" role="search">
+                            <div class="input-group">
+                                <input type="text" class="form-control" placeholder="Search" name="q">
+                                <div class="input-group-btn">
+                                    <button class="btn btn-default" type="submit"><i class="glyphicon glyphicon-search"></i></button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <%-- <ul class="nav navbar-nav navbar-right">
+                    <li><a runat="server" href="~/Account/Register">Register</a></li>
+                    <li><a runat="server" href="~/Account/Login">Log in</a></li>
+                </ul>    --%>
                 </div>
             </div>
         </div>
+        <!--End our Navbar-->
+
         <div class="container body-content">
             <asp:ContentPlaceHolder ID="MainContent" runat="server">
             </asp:ContentPlaceHolder>
             <hr />
-            <footer>
+            <!--Start Section Our Clients-->
+            <section class="footer">
+                <div class="container">
+                    <div class="row">
+                        <div class="col-lg-4 col-md-6">
+                            <h3>Sitemap</h3>
+                            <ul class="list-unstyled three-colu">
+                                <li><a runat="server" href="~/Default.aspx">Home</a></li>
+                                <li><a runat="server" href="~/ProductPages/Men.aspx">Herr</a></li>
+                                <li><a runat="server" href="~/ProductPages/Women.aspx">Dam</a></li>
+                                <li><a runat="server" href="~/ProductPages/Childrens.aspx">Barn</a></li>
+                                <li><a runat="server" href="~/About.aspx">Om oss</a></li>
+                                <li>Home06</li>
+                            </ul>
+                            <ul class="list-unstyled social-list">
+                                <li>
+                                    <img src="../icons/1465102743_facebook.png" alt="facebook" /></li>
+                                <li>
+                                    <img src="../icons/1465102756_google-plus.png" alt="google-plus" /></li>
+                                <li>
+                                    <img src="../icons/1465102880_twitter.png" alt="twitter" /></li>
+                                <li>
+                                    <img src="../icons/1465102781_pinterest.png" alt="pinterest" /></li>
+                                <li>
+                                    <img src="../icons/1465102899_rss-feeds.png" alt="rss-feeds" /></li>
+                                <li>
+                                    <img src="../icons/1465102713_email.png" alt="email" /></li>
+                            </ul>
+                        </div>
+                        <%-- <div class="col-lg-4 col-md-6">
+                    <h3>Latest Articles</h3>
+                    <div class="media">
+                        <a class="pull-left" href="#">
+                            <img src="../icons/untitled.png" alt="image01" />
+                        </a>
+                        <div class="media-body">
+                            <h4 class="media-heading">Testssss</h4>
+                            This Is Some Text About Test
+                        </div>
+                    </div>
+                    <div class="media">
+                        <a class="pull-left" href="#">
+                            <img src="../icons/content_256.png" alt="image01" />
+                        </a>
+                        <div class="media-body">
+                            <h4 class="media-heading">Testssss</h4>
+                            This Is Some Text About Test
+                        </div>
+                    </div>
+                    <div class="media">
+                        <a class="pull-left" href="#">
+                            <img src="../icons/untitled02.png" alt="image01" />
+                        </a>
+                        <div class="media-body">
+                            <h4 class="media-heading">Testssss</h4>
+                            This Is Some Text About Test
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-4">
+                    <h3>Our Awesoms Work</h3>
+                    <img class="img-thumbnail" src="../icons/article_icon_5661783b32e40.jpg" alt="Image01" />
+                    <img class="img-thumbnail" src="../icons/article_icon_5661783b32e40.jpg" alt="Image01" />
+                    <img class="img-thumbnail" src="../icons/article_icon_5661783b32e40.jpg" alt="Image01" />
+                    <img class="img-thumbnail" src="../icons/article_icon_5661783b32e40.jpg" alt="Image01" />
+                </div>--%>
+                    </div>
+                </div>
+                <div class="copyright text-center">
+                    <p>&copy; <%: DateTime.Now.Year %> - SHOeP</p>
+                </div>
+            </section>
+            <!--End Section Our Clients-->
+            <%--<footer>
                 <p>&copy; <%: DateTime.Now.Year %> - My ASP.NET Application</p>
-            </footer>
+            </footer>--%>
         </div>
 
     </form>
