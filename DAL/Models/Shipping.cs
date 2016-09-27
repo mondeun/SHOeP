@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace DAL.Models
 {
-    public class Shippings
+    public class Shipping
     {
         public string CompanyName { get; set; }
         public decimal Charge { get; set; }

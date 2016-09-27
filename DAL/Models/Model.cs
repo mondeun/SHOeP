@@ -7,7 +7,7 @@ using System.Threading.Tasks;
 
 namespace DAL.Models
 {
-    public class Models
+    public class Model
     {
         public string Brand { get; set; }
         public string Material { get; set; }

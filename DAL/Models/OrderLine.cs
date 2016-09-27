@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace DAL.Models
 {
-    public class OrderLines
+    public class OrderLine
     {
         public int OrderId { get; set; }
         public int ShoeId { get; set; }

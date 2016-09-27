@@ -8,9 +8,9 @@ using DAL.Models;
 
 namespace DAL.Controllers
 {
-    public class User : Controller
+    public class UserController : Controller
     {
-        public int AddUser(Users user)
+        public int AddUser(User user)
         {
             var result = 0;
             try

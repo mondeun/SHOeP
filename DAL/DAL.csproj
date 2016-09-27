@@ -41,15 +41,15 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Controllers\Controller.cs" />
-    <Compile Include="Controllers\User.cs" />
+    <Compile Include="Controllers\UserController.cs" />
     <Compile Include="DbConnection.cs" />
-    <Compile Include="Models\Models.cs" />
-    <Compile Include="Models\OrderLines.cs" />
-    <Compile Include="Models\Orders.cs" />
-    <Compile Include="Models\Shippings.cs" />
-    <Compile Include="Models\Shoes.cs" />
+    <Compile Include="Models\Model.cs" />
+    <Compile Include="Models\OrderLine.cs" />
+    <Compile Include="Models\Order.cs" />
+    <Compile Include="Models\Shipping.cs" />
+    <Compile Include="Models\Shoe.cs" />
     <Compile Include="Models\Stock.cs" />
-    <Compile Include="Models\Users.cs" />
+    <Compile Include="Models\User.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

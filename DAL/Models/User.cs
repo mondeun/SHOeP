@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace DAL.Models
 {
-    public class Users
+    public class User
     {
         public string FirstName { get; set; }
         public string LastName { get; set; }
