@@ -9,11 +9,14 @@ namespace DAL.Models
 {
     public class Model
     {
+        public int ModelId { get; set; }
         public string Brand { get; set; }
+        public string ModelName { get; set; }
         public string Material { get; set; }
         public string Category { get; set; }
         public string ShoeType { get; set; }
         public string Picture { get; set; }
+        public string Description { get; set; }
         public decimal Price { get; set; }
     }
 }
