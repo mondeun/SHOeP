@@ -50,9 +50,11 @@
                     <div class="col-sm-3">
                     </div>
                     <div class="col-sm-6">
-                        <img class="img-responsive img-center " src="image/logo_white.png" runat="server" />
+                        <a runat="server" href="~/Default.aspx">
+                        <img class="img-responsive img-center " src="image/logo_white.png" runat="server" /></a>
                     </div>
-                    <div class="col-sm-3 text-right">
+                     <%---------login o Register Icons ska gömma i xs skärm--------%>
+                    <div class="col-sm-3 text-right hidden-xs">
                         <div class="iconenav">
                             <a runat="server" href="~/Account/Register"><i class="fa fa-user-plus fa-2x "></i></a>
                             <a runat="server" href="~/Account/Login"><i class="glyphicon glyphicon-user fa-2x"></i></a>
@@ -68,7 +70,7 @@
             </div>
         </header>
         <!--Start our Navbar-->
-        <div class="navbar <%--navbar-fixed-top--%>">
+        <div class="navbar navbar-default navbar-fixed" role="navigation">
             <div class="container-fluid">
                 <div class="navbar-header">
                     <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse" aria-expanded="false">
@@ -87,9 +89,14 @@
                         <li class="hvr-hang"><a runat="server" href="~/ProductPages/Women.aspx">Dam</a></li>
                         <li class="hvr-hang"><a runat="server" href="~/ProductPages/Childrens.aspx">Barn</a></li>
                         <li class="hvr-hang"><a runat="server" href="~/About.aspx">Om oss</a></li>
-                        <%-- <li><a runat="server" href="~/Contact">Contact</a></li>  --%>
+                       <li class="hvr-hang"><a runat="server" href="~/Contact.aspx">Kontakta oss</a></li>
                     </ul>
-                    <div class="col-sm-3 col-md-3 pull-right">
+                    <%---------login o Register ska visas i xs skärm--------%>
+                     <ul class="nav navbar-nav navbar-right visible-xs">
+                    <li><a runat="server" href="~/Account/Register">Register</a></li>
+                    <li><a runat="server" href="~/Account/Login">Log in</a></li>
+                </ul>  
+                    <div class="pull-right">
                         <div class="navbar-form" role="search">
                             <div class="input-group">
                                 <input type="text" class="form-control" placeholder="Search" name="q">
@@ -99,10 +106,7 @@
                             </div>
                         </div>
                     </div>
-                    <%-- <ul class="nav navbar-nav navbar-right">
-                    <li><a runat="server" href="~/Account/Register">Register</a></li>
-                    <li><a runat="server" href="~/Account/Login">Log in</a></li>
-                </ul>    --%>
+                      
                 </div>
             </div>
         </div>
@@ -110,8 +114,10 @@
 
         <div class="container body-content">
             <asp:ContentPlaceHolder ID="MainContent" runat="server">
-            </asp:ContentPlaceHolder>
-            <hr />
+            </asp:ContentPlaceHolder> 
+           
+        </div>
+
             <!--Start Section Our Clients-->
             <section class="footer">
                 <div class="container">
@@ -124,7 +130,7 @@
                                 <li><a runat="server" href="~/ProductPages/Women.aspx">Dam</a></li>
                                 <li><a runat="server" href="~/ProductPages/Childrens.aspx">Barn</a></li>
                                 <li><a runat="server" href="~/About.aspx">Om oss</a></li>
-                                <li>Home06</li>
+                                <li>Home06</li>                                
                             </ul>
                             <ul class="list-unstyled social-list">
                                 <li>
@@ -141,8 +147,8 @@
                                     <img src="../icons/1465102713_email.png" alt="email" /></li>
                             </ul>
                         </div>
-                        <%-- <div class="col-lg-4 col-md-6">
-                    <h3>Latest Articles</h3>
+                         <div class="col-lg-4 col-md-6">
+                   <%-- <h3>Latest Articles</h3>
                     <div class="media">
                         <a class="pull-left" href="#">
                             <img src="../icons/untitled.png" alt="image01" />
@@ -169,18 +175,18 @@
                             <h4 class="media-heading">Testssss</h4>
                             This Is Some Text About Test
                         </div>
-                    </div>
+                    </div>--%>
                 </div>
                 <div class="col-lg-4">
-                    <h3>Our Awesoms Work</h3>
+                    <%--<h3>Our Awesoms Work</h3>
                     <img class="img-thumbnail" src="../icons/article_icon_5661783b32e40.jpg" alt="Image01" />
                     <img class="img-thumbnail" src="../icons/article_icon_5661783b32e40.jpg" alt="Image01" />
                     <img class="img-thumbnail" src="../icons/article_icon_5661783b32e40.jpg" alt="Image01" />
-                    <img class="img-thumbnail" src="../icons/article_icon_5661783b32e40.jpg" alt="Image01" />
-                </div>--%>
+                    <img class="img-thumbnail" src="../icons/article_icon_5661783b32e40.jpg" alt="Image01" />--%>
+                </div>
                     </div>
                 </div>
-                <div class="copyright text-center">
+                <div class="copyright  text-center">
                     <p>&copy; <%: DateTime.Now.Year %> - SHOeP</p>
                 </div>
             </section>
@@ -188,7 +194,7 @@
             <%--<footer>
                 <p>&copy; <%: DateTime.Now.Year %> - My ASP.NET Application</p>
             </footer>--%>
-        </div>
+       
 
     </form>
 </body>
