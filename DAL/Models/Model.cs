@@ -22,14 +22,14 @@ namespace DAL.Models
 
         public Model(SqlDataReader reader)
         {
-            //ModelId = int.Parse(reader["ModelId"].ToString());
+            ModelId = int.Parse(reader["ModelId"].ToString());
             Brand = reader["Brand"].ToString();
-            //ModelName = reader["ModelName"].ToString();
+            ModelName = reader["ModelName"].ToString();
             Material = reader["Material"].ToString();
             Category = reader["Category"].ToString();
             ShoeType = reader["ShoeType"].ToString();
             Picture = reader["Picture"].ToString();
-            //Description = reader["Description"].ToString();
+            Description = reader["Description"].ToString();
             Price = decimal.Parse(reader["Price"].ToString());
         }
     }

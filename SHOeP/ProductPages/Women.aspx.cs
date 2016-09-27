@@ -5,7 +5,7 @@ using System.Web;
 using System.Web.UI;
 using System.Web.UI.WebControls;
 using DAL.Models;
-using DAL;
+using DAL.Controllers;
 
 namespace SHOeP.ProductPages
 {
@@ -19,7 +19,7 @@ namespace SHOeP.ProductPages
         //The method that is called by samename.aspx
         public IQueryable<Model> GetModels()
         {
-            List<Model> models = DbConnection.GetModels(); // return List<Model>
+            List<Model> models = ModelController.GetModels(); // return List<Model>
             return models.AsQueryable<Model>();
 
         }

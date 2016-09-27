@@ -89,7 +89,7 @@
                                 <td>
                                     <a href="ProductDetails.aspx?modelID=<%#:Item.ModelName%>">
                                         <span>
-                                            <%#:Item.Brand%>, <%#:Item.Brand%>
+                                            <%#:Item.Brand%>, <%#:Item.ModelName%>
                                         </span>
                                     </a>
                                     <br />
