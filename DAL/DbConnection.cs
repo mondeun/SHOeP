@@ -10,12 +10,11 @@ namespace DAL
     public class DbConnection
     {
         private readonly SqlConnection _connection;
-        private string _connectionString;
+        private const string ConnectionString = "Data Source=.;Initial Catalog=SHOeP;Integrated Security=True";
 
         public DbConnection()
         {
-            _connectionString = "Data Source=.;Initial Catalog=SHOeP;Integrated Security=True";
-            _connection = new SqlConnection(_connectionString);
+            _connection = new SqlConnection(ConnectionString);
         }
 
         public SqlConnection GetConnection() => _connection;
