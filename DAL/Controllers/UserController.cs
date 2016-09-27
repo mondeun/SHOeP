@@ -39,6 +39,11 @@ namespace DAL.Controllers
             throw new NotImplementedException();
         }
 
+        public User GetUserByLoginCredentials(string email, string password)
+        {
+            throw new NotImplementedException();
+        }
+
         public int UpdateUser(int id)
         {
             throw new NotImplementedException();

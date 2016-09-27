@@ -8,6 +8,7 @@ namespace DAL.Models
 {
     public class Shoe
     {
+        public int ShoeId { get; set; }
         public int StockId { get; set; }
         public int ModelId { get; set; }
         public string Color { get; set; }
