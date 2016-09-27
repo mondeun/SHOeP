@@ -33,5 +33,20 @@ namespace DAL.Controllers
             }
             return result;
         }
+
+        public User GetUserById(int id)
+        {
+            throw new NotImplementedException();
+        }
+
+        public int UpdateUser(int id)
+        {
+            throw new NotImplementedException();
+        }
+
+        public int DeleteUser(int id)
+        {
+            throw new NotImplementedException();
+        }
     }
 }
