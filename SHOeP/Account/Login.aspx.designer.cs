@@ -13,15 +13,6 @@ namespace SHOeP.Account {
     public partial class Login {
         
         /// <summary>
-        /// LoginUserLbl control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.Label LoginUserLbl;
-        
-        /// <summary>
         /// LoginUserTxtBox control.
         /// </summary>
         /// <remarks>
@@ -29,15 +20,6 @@ namespace SHOeP.Account {
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.TextBox LoginUserTxtBox;
-        
-        /// <summary>
-        /// LoginPassLbl control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.Label LoginPassLbl;
         
         /// <summary>
         /// LoginPassTxtBox control.

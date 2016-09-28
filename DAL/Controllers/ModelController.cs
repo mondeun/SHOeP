@@ -8,29 +8,25 @@ using DAL.Models;
 
 namespace DAL.Controllers
 {
-    public class ModelController
+    public class ModelController : Controller
     {
-        //private const string ConnectionString = "Data Source=.;Initial Catalog=SHOeP;Integrated Security=True";
-        //Kriszta's local db
-        private const string ConnectionString = "server=DESKTOP-QC3MALE\\SQLEXPRESS;Trusted_Connection=yes;database=SHOeP;connection timeout=10";
-
-        public static List<Model> GetModels()
+        private List<T> GetListFromQuery<T>(string query) where T : IModel, new()
         {
-            List<Model> list = new List<Model>();
-            SqlConnection conn = new SqlConnection(ConnectionString); ;
-            SqlDataReader myDataReader = null; ;
+            List<T> list = new List<T>();
+            SqlDataReader myDataReader = null;
 
             try
             {
-                conn.Open();
+                Connection.OpenConnection();
 
-                string sql = "SELECT * FROM dbo.Models";
-                SqlCommand myCommand = new SqlCommand(sql, conn);
+                SqlCommand myCommand = new SqlCommand(query, Connection.GetConnection());
 
                 myDataReader = myCommand.ExecuteReader();
                 while (myDataReader.Read())
                 {
-                    list.Add(new Model(myDataReader));
+                    T item = new T();
+                    item.FromSqlReader(myDataReader);
+                    list.Add(item);
                 }
 
             }
@@ -40,17 +36,60 @@ namespace DAL.Controllers
             }
             finally
             {
-                if (myDataReader != null)
-                {
-                    myDataReader.Close();
-                }
-
-                if (conn != null)
-                {
-                    conn.Close();
-                }
+                myDataReader?.Close();
+                Connection.CloseConnection();
             }
             return list;
+        }
+
+
+        public IEnumerable<Model> GetModels(string shoeType, string size, string color, string priceSpan)
+        {
+            StringBuilder sb = new StringBuilder();
+            sb.Append("SELECT DISTINCT dbo.Models.ModelId, ModelName, Brand, Picture, Price, ShoeType, Material, Category, Description FROM dbo.Models");
+            sb.Append(" JOIN dbo.Shoes ON dbo.Shoes.ModelID = dbo.Models.ModelID");
+
+            bool firstWhere = true;
+
+            /*
+             *  SELECT * FROM dbo.Models
+             *  JOIN dbo.Shoes ON dbo.Shoes.ModelID = dbo.Models.ModelID
+             *  WHERE ShoeType = shoeType
+             */
+
+            if (!string.IsNullOrEmpty(size) && size != "Alla")
+            {
+                sb.Append(" WHERE Size = " + size);
+                firstWhere = false;
+            }
+            if (!string.IsNullOrEmpty(shoeType) && shoeType != "Alla")
+            {
+                sb.Append(firstWhere ? " WHERE" : " AND");
+                sb.Append(" ShoeType = \'" + shoeType + "\'");
+                firstWhere = false;
+            }
+            if (!string.IsNullOrEmpty(color) && color != "Alla")
+            {
+                sb.Append(firstWhere ? " WHERE" : " AND");
+                sb.Append(" Color = \'" + color + "\'");
+                firstWhere = false;
+            }
+            if (!string.IsNullOrEmpty(priceSpan) && priceSpan != "Alla")
+            {
+                string low = priceSpan.Split('-')[0];
+                string high = priceSpan.Split('-')[1];
+                sb.Append(firstWhere ? " WHERE" : " AND");
+                sb.Append(" Price BETWEEN " + low + " AND " + high);
+                //sb.Append(" Price >= " + low + " AND Price <= " + high);
+                firstWhere = false;
+            }
+
+            return GetListFromQuery<Model>(sb.ToString());
+        }
+
+        public IEnumerable<Model> GetModel(int modelId)
+        {
+            return GetListFromQuery<Model>("SELECT * FROM dbo.Models WHERE ModelId = " + modelId);
         }
     }
 }
