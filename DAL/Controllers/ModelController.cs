@@ -52,12 +52,46 @@ namespace DAL.Controllers
         }
 
 
-        public static List<Model> GetModels(string shoeType)
+        public static List<Model> GetModels(string shoeType, string size, string color, string priceSpan)
         {
             StringBuilder sb = new StringBuilder();
-            sb.Append("SELECT * FROM dbo.Models");
-            if (shoeType != null && shoeType.Length > 0)
-                sb.Append(" WHERE ShoeType = \'" + shoeType + "\'");
+            sb.Append("SELECT DISTINCT dbo.Models.ModelId, ModelName, Brand, Picture, Price, ShoeType, Material, Category, Description FROM dbo.Models");
+            sb.Append(" JOIN dbo.Shoes ON dbo.Shoes.ModelID = dbo.Models.ModelID");
+
+            bool firstWhere = true;
+
+            /*
+             *  SELECT * FROM dbo.Models
+             *  JOIN dbo.Shoes ON dbo.Shoes.ModelID = dbo.Models.ModelID
+             *  WHERE ShoeType = shoeType
+             */
+
+            if (size != null && size.Length > 0 && size != "Alla")
+            {
+                sb.Append(" WHERE Size = " + size);
+                firstWhere = false;
+            }
+            if (shoeType != null && shoeType.Length > 0 && shoeType != "Alla")
+            {
+                sb.Append(firstWhere ? " WHERE" : " AND");
+                sb.Append(" ShoeType = \'" + shoeType + "\'");
+                firstWhere = false;
+            }
+            if (color != null && color.Length > 0 && color != "Alla")
+            {
+                sb.Append(firstWhere ? " WHERE" : " AND");
+                sb.Append(" Color = \'" + color + "\'");
+                firstWhere = false;
+            }
+            if (priceSpan != null && priceSpan.Length > 0 && priceSpan != "Alla")
+            {
+                string low = priceSpan.Split('-')[0];
+                string high = priceSpan.Split('-')[1];
+                sb.Append(firstWhere ? " WHERE" : " AND");
+                sb.Append(" Price >= " + low + " AND Price <= " + high);
+                firstWhere = false;
+            }
+
             return GetListFromQuery<Model>(sb.ToString());
         }
 

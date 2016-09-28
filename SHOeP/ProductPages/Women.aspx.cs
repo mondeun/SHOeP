@@ -29,18 +29,45 @@ namespace SHOeP.ProductPages
                     item.Selected = true;
                 }
             }
+            string size = qscoll.Get("Size");
+            foreach (ListItem item in DropDownList2.Items)
+            {
+                if (item.Text == size)
+                {
+                    item.Selected = true;
+                }
+            }
+            string color = qscoll.Get("Color");
+            foreach (ListItem item in DropDownList3.Items)
+            {
+                if (item.Text == color)
+                {
+                    item.Selected = true;
+                }
+            }
+            string priceSpan = qscoll.Get("PriceSpan");
+            foreach (ListItem item in DropDownList4.Items)
+            {
+                if (item.Text == priceSpan)
+                {
+                    item.Selected = true;
+                }
+            }
         }
 
-        public IQueryable<Model> GetModels([QueryString("ShoeType")] string shoeType)
+        public IQueryable<Model> GetModels([QueryString("ShoeType")] string shoeType, [QueryString("Size")] string size, [QueryString("Color")] string color, [QueryString("PriceSpan")] string priceSpan)
         {
-            List<Model> models = ModelController.GetModels(shoeType); // return List<Model>
+            List<Model> models = ModelController.GetModels(shoeType, size, color, priceSpan);
             return models.AsQueryable<Model>();
         }
 
         public void Clicked(object sender, EventArgs e)
         {
-            string ShoeType = DropDownList1.SelectedItem.Text;
-            this.Response.Redirect(this.Request.Url.AbsoluteUri.Split('?')[0] + "?ShoeType=" + ShoeType, false);
+            string shoeType = DropDownList1.SelectedItem.Text;
+            string size = DropDownList2.SelectedItem.Text;
+            string color = DropDownList3.SelectedItem.Text;
+            string priceSpan = DropDownList4.SelectedItem.Text;
+            this.Response.Redirect(this.Request.Url.AbsoluteUri.Split('?')[0] + "?ShoeType=" + shoeType + "&Size=" + size + "&Color=" + color + "&PriceSpan=" + priceSpan, false);
         }
     }
 }

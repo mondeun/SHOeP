@@ -9,55 +9,44 @@
 
     <div>
         <ul>
-            <asp:DropDownList id="DropDownList1" runat="server" AutoPostBack="True" OnSelectedIndexChanged="Clicked" AppendDataBoundItems="true">
-                <asp:ListItem>Sandaler</asp:ListItem>
-                <asp:ListItem>Stövletter</asp:ListItem>
-                <asp:ListItem>Boots</asp:ListItem>
-                <asp:ListItem>Sneakers</asp:ListItem>
-            </asp:DropDownList>
-
             <li class="dropdown">
-                <a href="#" class="dropbtn">Storlek</a>
-                <div class="dropdown-content">
-                    <a href="#">36<br>
-                    </a>
-                    <a href="#">37<br>
-                    </a>
-                    <a href="#">38<br>
-                    </a>
-                    <a href="#">39<br>
-                    </a>
-                    <a href="#">40<br>
-                    </a>
-                    <a href="#">41<br>
-                    </a>
-                </div>
+                <asp:Label ID="Label1" runat="server" Text="Skotyp" CssClass="dropbtn"></asp:Label>
+                <asp:DropDownList ID="DropDownList1" runat="server" AutoPostBack="True" OnSelectedIndexChanged="Clicked" AppendDataBoundItems="true" CssClass="dropdown-content">
+                    <asp:ListItem>Alla</asp:ListItem>
+                    <asp:ListItem>Sandaler</asp:ListItem>
+                    <asp:ListItem>Stövletter</asp:ListItem>
+                    <asp:ListItem>Boots</asp:ListItem>
+                    <asp:ListItem>Sneakers</asp:ListItem>
+                </asp:DropDownList>
             </li>
             <li class="dropdown">
-                <a href="#" class="dropbtn">Färg</a>
-                <div class="dropdown-content">
-                    <a href="#">Röd<br>
-                    </a>
-                    <a href="#">Grön<br>
-                    </a>
-                    <a href="#">Blå<br>
-                    </a>
-                </div>
+                <asp:Label ID="Label2" runat="server" Text="Storlek" CssClass="dropbtn"></asp:Label>
+                <asp:DropDownList ID="DropDownList2" runat="server" AutoPostBack="True" OnSelectedIndexChanged="Clicked" AppendDataBoundItems="true" CssClass="dropdown-content">
+                    <asp:ListItem>Alla</asp:ListItem>
+                    <asp:ListItem>40</asp:ListItem>
+                    <asp:ListItem>42</asp:ListItem>
+                    <asp:ListItem>45</asp:ListItem>
+                </asp:DropDownList>
             </li>
             <li class="dropdown">
-                <a href="#" class="dropbtn">Pris</a>
-                <div class="dropdown-content">
-                    <a href="#">0-500<br>
-                    </a>
-                    <a href="#">500-1000<br>
-                    </a>
-                    <a href="#">1000+<br>
-                    </a>
-                </div>
+                <asp:Label ID="Label3" runat="server" Text="Färg" CssClass="dropbtn"></asp:Label>
+                <asp:DropDownList ID="DropDownList3" runat="server" AutoPostBack="True" OnSelectedIndexChanged="Clicked" AppendDataBoundItems="true" CssClass="dropdown-content">
+                    <asp:ListItem>Alla</asp:ListItem>
+                    <asp:ListItem>Green</asp:ListItem>
+                    <asp:ListItem>Black</asp:ListItem>
+                    <asp:ListItem>Red</asp:ListItem>
+                </asp:DropDownList>
+            </li>
+            <li class="dropdown">
+                <asp:Label ID="Label4" runat="server" Text="Pris" CssClass="dropbtn"></asp:Label>
+                <asp:DropDownList ID="DropDownList4" runat="server" AutoPostBack="True" OnSelectedIndexChanged="Clicked" AppendDataBoundItems="true" CssClass="dropdown-content">
+                    <asp:ListItem>Alla</asp:ListItem>
+                    <asp:ListItem>0-500</asp:ListItem>
+                    <asp:ListItem>500-1000</asp:ListItem>
+                    <asp:ListItem>1000-10000</asp:ListItem>
+                </asp:DropDownList>
             </li>
         </ul>
-
-
 
         <!-- new Products -->
 
@@ -104,7 +93,7 @@
                                     </a>
                                     <br />
                                     <span>
-                                        <b>Price: </b><%#:String.Format("{0:c}", Item.Price)%>
+                                        <b>Pris: </b><%#:String.Format("{0:c}", Item.Price)%>
                                     </span>
                                     <br />
                                 </td>

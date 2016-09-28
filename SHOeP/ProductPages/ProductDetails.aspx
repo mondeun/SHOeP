@@ -13,11 +13,11 @@
                     </td>
                     <td>&nbsp;</td>  
                     <td style="vertical-align: top; text-align:left;">
-                        <b>Description:</b><br /><%#:Item.Description %>
+                        <b>Beskrivning:</b><br /><%#:Item.Description %>
                         <br />
-                        <span><b>Price:</b>&nbsp;<%#: String.Format("{0:c}", Item.Price) %></span>
+                        <span><b>Pris:</b>&nbsp;<%#: String.Format("{0:c}", Item.Price) %></span>
                         <br />
-                        <span><b>Product Number:</b>&nbsp;<%#:Item.ModelId %></span>
+                        <span><b>Produkt nummer:</b>&nbsp;<%#:Item.ModelId %></span>
                         <br />
                     </td>
                 </tr>
