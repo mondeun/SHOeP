@@ -12,7 +12,10 @@ namespace DAL
     public class DbConnection
     {
         private readonly SqlConnection _connection;
-        private const string ConnectionString = "Data Source=.;Initial Catalog=SHOeP;Integrated Security=True";
+
+        private const string ConnectionString =
+            @"Data Source=(LocalDB)\MSSQLLocalDB;AttachDbFilename=|DataDirectory|\SHOeP.mdf;Initial Catalog=DatabaseName;Integrated Security=True";
+
         //Kriszta's local db
         //private const string ConnectionString = "server=DESKTOP-QC3MALE\\SQLEXPRESS;Trusted_Connection=yes;database=SHOeP;connection timeout=10";
 
