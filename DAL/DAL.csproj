@@ -42,6 +42,7 @@
   <ItemGroup>
     <Compile Include="Controllers\Controller.cs" />
     <Compile Include="Controllers\ModelController.cs" />
+    <Compile Include="Controllers\OrderController.cs" />
     <Compile Include="Controllers\UserController.cs" />
     <Compile Include="DbConnection.cs" />
     <Compile Include="Models\Model.cs" />
@@ -50,7 +51,7 @@
     <Compile Include="Models\Shipping.cs" />
     <Compile Include="Models\Shoe.cs" />
     <Compile Include="Models\Stock.cs" />
-    <Compile Include="Models\SuperModel.cs" />
+    <Compile Include="Models\IModel.cs" />
     <Compile Include="Models\User.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>

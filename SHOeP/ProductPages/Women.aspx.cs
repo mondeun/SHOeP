@@ -60,7 +60,7 @@ namespace SHOeP.ProductPages
                                                         [QueryString("Color")] string color, 
                                                         [QueryString("PriceSpan")] string priceSpan)
         {
-            List<Model> models = ModelController.GetModels(shoeType, size, color, priceSpan);
+            IEnumerable<Model> models = new ModelController().GetModels(shoeType, size, color, priceSpan);
             return models.AsQueryable<Model>();
         }
 
