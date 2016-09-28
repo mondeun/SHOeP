@@ -13,7 +13,9 @@ namespace DAL
     {
         private readonly SqlConnection _connection;
         private const string ConnectionString = "Data Source=.;Initial Catalog=SHOeP;Integrated Security=True";
-        
+        //Kriszta's local db
+        //private const string ConnectionString = "server=DESKTOP-QC3MALE\\SQLEXPRESS;Trusted_Connection=yes;database=SHOeP;connection timeout=10";
+
         internal DbConnection()
         {
             _connection = new SqlConnection(ConnectionString);

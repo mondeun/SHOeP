@@ -10,9 +10,6 @@ namespace DAL.Controllers
 {
     public class ModelController : Controller
     {
-        //Kriszta's local db
-        //private const string ConnectionString = "server=DESKTOP-QC3MALE\\SQLEXPRESS;Trusted_Connection=yes;database=SHOeP;connection timeout=10";
-
         private List<T> GetListFromQuery<T>(string query) where T : IModel, new()
         {
             List<T> list = new List<T>();
@@ -39,11 +36,7 @@ namespace DAL.Controllers
             }
             finally
             {
-                if (myDataReader != null)
-                {
-                    myDataReader.Close();
-                }
-
+                myDataReader?.Close();
                 Connection.CloseConnection();
             }
             return list;
@@ -86,7 +79,8 @@ namespace DAL.Controllers
                 string low = priceSpan.Split('-')[0];
                 string high = priceSpan.Split('-')[1];
                 sb.Append(firstWhere ? " WHERE" : " AND");
-                sb.Append(" Price >= " + low + " AND Price <= " + high);
+                sb.Append(" Price BETWEEN " + low + " AND " + high);
+                //sb.Append(" Price >= " + low + " AND Price <= " + high);
                 firstWhere = false;
             }
 
