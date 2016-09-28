@@ -85,9 +85,9 @@
                     <ul class="nav navbar-nav">
                         <%--navbar-right--%>
                         <li class="active hvr-buzz-out"><a runat="server" href="~/Default.aspx">Hem</a></li>
-                        <li class="hvr-hang"><a runat="server" href="~/ProductPages/Women.aspx?Category=Male">Herr</a></li>
-                        <li class="hvr-hang"><a runat="server" href="~/ProductPages/Women.aspx?Category=Female">Dam</a></li>
-                        <li class="hvr-hang"><a runat="server" href="~/ProductPages/Women.aspx?Category=Children">Barn</a></li>
+                        <li class="hvr-hang"><a runat="server" href="~/ProductPages/Product.aspx?Category=Male">Herr</a></li>
+                        <li class="hvr-hang"><a runat="server" href="~/ProductPages/Product.aspx?Category=Female">Dam</a></li>
+                        <li class="hvr-hang"><a runat="server" href="~/ProductPages/Product.aspx?Category=Children">Barn</a></li>
                         <li class="hvr-hang"><a runat="server" href="~/About.aspx">Om oss</a></li>
                        <li class="hvr-hang"><a runat="server" href="~/Contact.aspx">Kontakta oss</a></li>
                     </ul>
@@ -126,9 +126,9 @@
                             <h3></h3>
                             <ul class="list-unstyled three-colu">
                                 <li><a runat="server" href="~/Default.aspx">Home</a></li>
-                                <li><a runat="server" href="~/ProductPages/Men.aspx">Herr</a></li>
-                                <li><a runat="server" href="~/ProductPages/Women.aspx">Dam</a></li>
-                                <li><a runat="server" href="~/ProductPages/Childrens.aspx">Barn</a></li>
+                                <li><a runat="server" href="~/ProductPages/Product.aspx?Category=Male">Herr</a></li>
+                                <li><a runat="server" href="~/ProductPages/Product.aspx?Category=Female">Dam</a></li>
+                                <li><a runat="server" href="~/ProductPages/Product.aspx?Category=Children">Barn</a></li>
                                 <li><a runat="server" href="~/About.aspx">Om oss</a></li>
                                  <li><a runat="server" href="~/Contact.aspx">Kontakt</a></li>
                                 <li>Home06</li>                                

@@ -11,7 +11,7 @@ using System.Collections.Specialized;
 
 namespace SHOeP.ProductPages
 {
-    public partial class Women : System.Web.UI.Page
+    public partial class Product : System.Web.UI.Page
     {
         protected void Page_Load(object sender, EventArgs e)
         {
