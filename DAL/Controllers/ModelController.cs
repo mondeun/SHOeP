@@ -43,7 +43,7 @@ namespace DAL.Controllers
         }
 
 
-        public IEnumerable<Model> GetModels(string shoeType, string size, string color, string priceSpan)
+        public IEnumerable<Model> GetModels(string shoeType, string size, string color, string priceSpan, string category)
         {
             StringBuilder sb = new StringBuilder();
             sb.Append("SELECT DISTINCT dbo.Models.ModelId, ModelName, Brand, Picture, Price, ShoeType, Material, Category, Description FROM dbo.Models");
@@ -56,10 +56,15 @@ namespace DAL.Controllers
              *  JOIN dbo.Shoes ON dbo.Shoes.ModelID = dbo.Models.ModelID
              *  WHERE ShoeType = shoeType
              */
-
+            if (!string.IsNullOrEmpty(category))
+            {
+                sb.Append(" WHERE Category = \'" + category + "\'");
+                firstWhere = false;
+            }
             if (!string.IsNullOrEmpty(size) && size != "Alla")
             {
-                sb.Append(" WHERE Size = " + size);
+                sb.Append(firstWhere ? " WHERE" : " AND");
+                sb.Append(" Size = " + size);
                 firstWhere = false;
             }
             if (!string.IsNullOrEmpty(shoeType) && shoeType != "Alla")
@@ -80,7 +85,6 @@ namespace DAL.Controllers
                 string high = priceSpan.Split('-')[1];
                 sb.Append(firstWhere ? " WHERE" : " AND");
                 sb.Append(" Price BETWEEN " + low + " AND " + high);
-                //sb.Append(" Price >= " + low + " AND Price <= " + high);
                 firstWhere = false;
             }
 
