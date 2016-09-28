@@ -62,7 +62,7 @@
                 <EmptyDataTemplate>
                     <table>
                         <tr>
-                            <td>No data was returned.</td>
+                            <td>Ingen vara kunde hämtas.</td>
                         </tr>
                     </table>
                 </EmptyDataTemplate>
