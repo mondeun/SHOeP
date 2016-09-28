@@ -14,7 +14,7 @@ namespace DAL.Controllers
         //Kriszta's local db
         private const string ConnectionString = "server=DESKTOP-QC3MALE\\SQLEXPRESS;Trusted_Connection=yes;database=SHOeP;connection timeout=10";
 
-        private static List<T> GetListFromQuery<T>(string query) where T : SuperModel, new()
+        private static List<T> GetListFromQuery<T>(string query) where T : IModel, new()
         {
             List<T> list = new List<T>();
             SqlConnection conn = new SqlConnection(ConnectionString);
@@ -41,10 +41,7 @@ namespace DAL.Controllers
             }
             finally
             {
-                if (myDataReader != null)
-                {
-                    myDataReader.Close();
-                }
+                myDataReader?.Close();
 
                 conn.Close();
             }
@@ -66,24 +63,24 @@ namespace DAL.Controllers
              *  WHERE ShoeType = shoeType
              */
 
-            if (size != null && size.Length > 0 && size != "Alla")
+            if (!string.IsNullOrEmpty(size) && size != "Alla")
             {
                 sb.Append(" WHERE Size = " + size);
                 firstWhere = false;
             }
-            if (shoeType != null && shoeType.Length > 0 && shoeType != "Alla")
+            if (!string.IsNullOrEmpty(shoeType) && shoeType != "Alla")
             {
                 sb.Append(firstWhere ? " WHERE" : " AND");
                 sb.Append(" ShoeType = \'" + shoeType + "\'");
                 firstWhere = false;
             }
-            if (color != null && color.Length > 0 && color != "Alla")
+            if (!string.IsNullOrEmpty(color) && color != "Alla")
             {
                 sb.Append(firstWhere ? " WHERE" : " AND");
                 sb.Append(" Color = \'" + color + "\'");
                 firstWhere = false;
             }
-            if (priceSpan != null && priceSpan.Length > 0 && priceSpan != "Alla")
+            if (!string.IsNullOrEmpty(priceSpan) && priceSpan != "Alla")
             {
                 string low = priceSpan.Split('-')[0];
                 string high = priceSpan.Split('-')[1];

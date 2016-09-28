@@ -7,8 +7,8 @@ using System.Threading.Tasks;
 
 namespace DAL.Models
 {
-    public abstract class SuperModel
+    public interface IModel
     {
-        abstract public void FromSqlReader(SqlDataReader reader);
+        void FromSqlReader(SqlDataReader reader);
     }
 }
