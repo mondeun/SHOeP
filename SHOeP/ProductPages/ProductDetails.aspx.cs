@@ -24,7 +24,7 @@ namespace SHOeP.ProductPages
                 return null;
             }
 
-            List<Model> models = ModelController.GetModel(modelId.Value);
+            IEnumerable<Model> models = ModelController.GetModel(modelId.Value);
             return models.AsQueryable<Model>();
         }
     }

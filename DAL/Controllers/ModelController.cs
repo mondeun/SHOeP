@@ -49,7 +49,7 @@ namespace DAL.Controllers
         }
 
 
-        public static List<Model> GetModels(string shoeType, string size, string color, string priceSpan)
+        public static IEnumerable<Model> GetModels(string shoeType, string size, string color, string priceSpan)
         {
             StringBuilder sb = new StringBuilder();
             sb.Append("SELECT DISTINCT dbo.Models.ModelId, ModelName, Brand, Picture, Price, ShoeType, Material, Category, Description FROM dbo.Models");
@@ -92,7 +92,7 @@ namespace DAL.Controllers
             return GetListFromQuery<Model>(sb.ToString());
         }
 
-        public static List<Model> GetModel(int modelId)
+        public static IEnumerable<Model> GetModel(int modelId)
         {
             return GetListFromQuery<Model>("SELECT * FROM dbo.Models WHERE ModelId = " + modelId);
         }
