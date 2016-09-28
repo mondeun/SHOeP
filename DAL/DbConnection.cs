@@ -12,8 +12,11 @@ namespace DAL
     public class DbConnection
     {
         private readonly SqlConnection _connection;
-        private const string ConnectionString = "Data Source=.;Initial Catalog=SHOeP;Integrated Security=True";
-        
+
+        private const string ConnectionString =
+            @"Data Source=(LocalDB)\MSSQLLocalDB;AttachDbFilename=|DataDirectory|\SHOeP.mdf;Initial Catalog=DatabaseName;Integrated Security=True";
+
+
         internal DbConnection()
         {
             _connection = new SqlConnection(ConnectionString);
