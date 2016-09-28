@@ -21,6 +21,8 @@ namespace DAL.Models
 
         public void FromSqlReader(SqlDataReader reader)
         {
+            if (!reader.HasRows) return;
+
             UserId = int.Parse(reader["CustomerId"].ToString());
             FirstName = reader["FirstName"].ToString();
             LastName = reader["LastName"].ToString();

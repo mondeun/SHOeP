@@ -25,6 +25,10 @@ namespace SHOeP.Account
                 Session[user.Email] = user.Email;
                 Response.RedirectPermanent("~/Default.aspx");
             }
+            else
+            {
+                Response.Redirect("~/Account/Login.aspx");
+            }
         }
     }
 }
