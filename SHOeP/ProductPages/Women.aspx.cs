@@ -55,7 +55,10 @@ namespace SHOeP.ProductPages
             }
         }
 
-        public IQueryable<Model> GetModels([QueryString("ShoeType")] string shoeType, [QueryString("Size")] string size, [QueryString("Color")] string color, [QueryString("PriceSpan")] string priceSpan)
+        public IQueryable<Model> GetModels([QueryString("ShoeType")] string shoeType, 
+                                                        [QueryString("Size")] string size, 
+                                                        [QueryString("Color")] string color, 
+                                                        [QueryString("PriceSpan")] string priceSpan)
         {
             List<Model> models = ModelController.GetModels(shoeType, size, color, priceSpan);
             return models.AsQueryable<Model>();
@@ -67,7 +70,8 @@ namespace SHOeP.ProductPages
             string size = DropDownList2.SelectedItem.Text;
             string color = DropDownList3.SelectedItem.Text;
             string priceSpan = DropDownList4.SelectedItem.Text;
-            this.Response.Redirect(this.Request.Url.AbsoluteUri.Split('?')[0] + "?ShoeType=" + shoeType + "&Size=" + size + "&Color=" + color + "&PriceSpan=" + priceSpan, false);
+            this.Response.Redirect(this.Request.Url.AbsoluteUri.Split('?')[0] + "?ShoeType=" + 
+                shoeType + "&Size=" + size + "&Color=" + color + "&PriceSpan=" + priceSpan, false);
         }
     }
 }

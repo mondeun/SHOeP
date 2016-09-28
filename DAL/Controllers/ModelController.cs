@@ -41,11 +41,7 @@ namespace DAL.Controllers
             }
             finally
             {
-                if (myDataReader != null)
-                {
-                    myDataReader.Close();
-                }
-
+                myDataReader?.Close();
                 conn.Close();
             }
             return list;
