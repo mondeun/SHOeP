@@ -103,16 +103,25 @@
       <HintPath>..\packages\Microsoft.AspNet.FriendlyUrls.Core.1.0.2\lib\net45\Microsoft.AspNet.FriendlyUrls.dll</HintPath>
     </Reference>
   </ItemGroup>
-  <ItemGroup />
+  <ItemGroup>
+    <Folder Include="App_Data\" />
+  </ItemGroup>
   <ItemGroup>
     <Content Include="About.aspx" />
     <Content Include="Account\Forgot.aspx" />
     <Content Include="Account\Login.aspx" />
     <Content Include="Account\Register.aspx" />
-    <Content Include="App_Data\SHOeP.mdf" />
-    <Content Include="App_Data\SHOeP_log.ldf">
-      <DependentUpon>SHOeP.mdf</DependentUpon>
-    </Content>
+    <Content Include="backgroundImage\resize-img.jpg" />
+    <Content Include="backgroundImage\rutig-bakgrund.PNG" />
+    <Content Include="backgroundImage\shoes-wallpaper1.jpg" />
+    <Content Include="backgroundImage\shoes-wallpaper10.jpg" />
+    <Content Include="backgroundImage\shoes-wallpaper2.jpg" />
+    <Content Include="backgroundImage\shoes-wallpaper3.jpg" />
+    <Content Include="backgroundImage\shoes-wallpaper4.jpg" />
+    <Content Include="backgroundImage\shoes-wallpaper6.jpg" />
+    <Content Include="backgroundImage\shoes-wallpaper7.jpg" />
+    <Content Include="backgroundImage\shoes-wallpaper8.jpg" />
+    <Content Include="backgroundImage\shoes-wallpaper9.jpg" />
     <Content Include="Contact.aspx" />
     <Content Include="Content\bootstrap-theme.css" />
     <Content Include="Content\bootstrap-theme.min.css" />
@@ -167,10 +176,10 @@
     <Content Include="image\logo_white_300.png" />
     <Content Include="image\men.PNG" />
     <Content Include="image\nike00.png" />
-    <Content Include="image\pool-water.jpg" />
+    <Content Include="backgroundImage\pool-water.jpg" />
     <Content Include="ProductPages\Childrens.aspx" />
     <Content Include="ProductPages\Men.aspx" />
-    <Content Include="ProductPages\ProductDetails.aspx" />
+    <Content Include="ProductPages\Product.aspx" />
     <Content Include="ProductPages\Women.aspx" />
     <Content Include="Scripts\bootstrap.js" />
     <Content Include="Scripts\bootstrap.min.js" />
@@ -295,12 +304,12 @@
     <Compile Include="ProductPages\Men.aspx.designer.cs">
       <DependentUpon>Men.aspx</DependentUpon>
     </Compile>
-    <Compile Include="ProductPages\ProductDetails.aspx.cs">
-      <DependentUpon>ProductDetails.aspx</DependentUpon>
+    <Compile Include="ProductPages\Product.aspx.cs">
+      <DependentUpon>Product.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
     </Compile>
-    <Compile Include="ProductPages\ProductDetails.aspx.designer.cs">
-      <DependentUpon>ProductDetails.aspx</DependentUpon>
+    <Compile Include="ProductPages\Product.aspx.designer.cs">
+      <DependentUpon>Product.aspx</DependentUpon>
     </Compile>
     <Compile Include="ProductPages\Women.aspx.cs">
       <DependentUpon>Women.aspx</DependentUpon>

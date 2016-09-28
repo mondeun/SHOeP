@@ -84,7 +84,7 @@
                 <div class="navbar-collapse collapse" id="navbar">
                     <ul class="nav navbar-nav">
                         <%--navbar-right--%>
-                        <li class="active hvr-buzz-out"><a runat="server" href="~/Default.aspx">Home</a></li>
+                        <li class="active hvr-buzz-out"><a runat="server" href="~/Default.aspx">Hem</a></li>
                         <li class="hvr-hang"><a runat="server" href="~/ProductPages/Women.aspx?Category=Male">Herr</a></li>
                         <li class="hvr-hang"><a runat="server" href="~/ProductPages/Women.aspx?Category=Female">Dam</a></li>
                         <li class="hvr-hang"><a runat="server" href="~/ProductPages/Women.aspx?Category=Children">Barn</a></li>
@@ -112,24 +112,25 @@
         </div>
         <!--End our Navbar-->
 
-        <div class="container body-content">
+        <%--<div class="container body-content">--%>
             <asp:ContentPlaceHolder ID="MainContent" runat="server">
             </asp:ContentPlaceHolder> 
            
-        </div>
+        <%--</div>--%>
 
             <!--Start Section Our Clients-->
             <section class="footer">
                 <div class="container">
                     <div class="row">
                         <div class="col-lg-4 col-md-6">
-                            <h3>Sitemap</h3>
+                            <h3></h3>
                             <ul class="list-unstyled three-colu">
                                 <li><a runat="server" href="~/Default.aspx">Home</a></li>
-                                <li><a runat="server" href="~/ProductPages/Women.aspx?Category=Male">Herr</a></li>
-                                <li><a runat="server" href="~/ProductPages/Women.aspx?Category=Female">Dam</a></li>
-                                <li><a runat="server" href="~/ProductPages/Women.aspx?Category=Children">Barn</a></li>
+                                <li><a runat="server" href="~/ProductPages/Men.aspx">Herr</a></li>
+                                <li><a runat="server" href="~/ProductPages/Women.aspx">Dam</a></li>
+                                <li><a runat="server" href="~/ProductPages/Childrens.aspx">Barn</a></li>
                                 <li><a runat="server" href="~/About.aspx">Om oss</a></li>
+                                 <li><a runat="server" href="~/Contact.aspx">Kontakt</a></li>
                                 <li>Home06</li>                                
                             </ul>
                             <ul class="list-unstyled social-list">
@@ -147,42 +148,10 @@
                                     <img src="../icons/1465102713_email.png" alt="email" /></li>
                             </ul>
                         </div>
-                         <div class="col-lg-4 col-md-6">
-                   <%-- <h3>Latest Articles</h3>
-                    <div class="media">
-                        <a class="pull-left" href="#">
-                            <img src="../icons/untitled.png" alt="image01" />
-                        </a>
-                        <div class="media-body">
-                            <h4 class="media-heading">Testssss</h4>
-                            This Is Some Text About Test
-                        </div>
-                    </div>
-                    <div class="media">
-                        <a class="pull-left" href="#">
-                            <img src="../icons/content_256.png" alt="image01" />
-                        </a>
-                        <div class="media-body">
-                            <h4 class="media-heading">Testssss</h4>
-                            This Is Some Text About Test
-                        </div>
-                    </div>
-                    <div class="media">
-                        <a class="pull-left" href="#">
-                            <img src="../icons/untitled02.png" alt="image01" />
-                        </a>
-                        <div class="media-body">
-                            <h4 class="media-heading">Testssss</h4>
-                            This Is Some Text About Test
-                        </div>
-                    </div>--%>
+                         <div class="col-lg-4 col-md-6">                 
                 </div>
                 <div class="col-lg-4">
-                    <%--<h3>Our Awesoms Work</h3>
-                    <img class="img-thumbnail" src="../icons/article_icon_5661783b32e40.jpg" alt="Image01" />
-                    <img class="img-thumbnail" src="../icons/article_icon_5661783b32e40.jpg" alt="Image01" />
-                    <img class="img-thumbnail" src="../icons/article_icon_5661783b32e40.jpg" alt="Image01" />
-                    <img class="img-thumbnail" src="../icons/article_icon_5661783b32e40.jpg" alt="Image01" />--%>
+                   
                 </div>
                     </div>
                 </div>
