@@ -52,9 +52,13 @@ namespace DAL.Controllers
         }
 
 
-        public static List<Model> GetModels()
+        public static List<Model> GetModels(string shoeType)
         {
-            return GetListFromQuery<Model>("SELECT * FROM dbo.Models");
+            StringBuilder sb = new StringBuilder();
+            sb.Append("SELECT * FROM dbo.Models");
+            if (shoeType != null && shoeType.Length > 0)
+                sb.Append(" WHERE ShoeType = \'" + shoeType + "\'");
+            return GetListFromQuery<Model>(sb.ToString());
         }
 
         public static List<Model> GetModel(int modelId)

@@ -1,56 +1,66 @@
 ﻿<%@ Page Title="Women" Language="C#" MasterPageFile="~/Site.Master" AutoEventWireup="true"
     CodeBehind="Women.aspx.cs" Inherits="SHOeP.ProductPages.Women" %>
 
- <asp:Content ID="Content2" ContentPlaceHolderID="head" runat="server">
+<asp:Content ID="Content2" ContentPlaceHolderID="head" runat="server">
     <link href="../Content/productpages.css" rel="stylesheet" type="text/css" />
 </asp:Content>
 
 <asp:Content ID="Content1" ContentPlaceHolderID="MainContent" runat="server">
-   
-    <!-- Dropdown meny --> 
+
     <div>
         <ul>
-            <li class="dropdown">
-                <a href="#" class="dropbtn">Skotyp</a>
-                <div class="dropdown-content">
-                    <a href="#">Sandaler<br></a>
-                    <a href="#">Stövletter<br></a>
-                    <a href="#">Balerinas<br></a>
-                    <a href="#">Träningskor<br></a>
-                </div>
-            </li>
+            <asp:DropDownList id="DropDownList1" runat="server" AutoPostBack="True" OnSelectedIndexChanged="Clicked" AppendDataBoundItems="true">
+                <asp:ListItem>Sandaler</asp:ListItem>
+                <asp:ListItem>Stövletter</asp:ListItem>
+                <asp:ListItem>Boots</asp:ListItem>
+                <asp:ListItem>Sneakers</asp:ListItem>
+            </asp:DropDownList>
+
             <li class="dropdown">
                 <a href="#" class="dropbtn">Storlek</a>
                 <div class="dropdown-content">
-                    <a href="#">36<br></a>
-                    <a href="#">37<br></a>
-                    <a href="#">38<br></a>
-                    <a href="#">39<br></a>
-                    <a href="#">40<br></a>
-                    <a href="#">41<br></a>
+                    <a href="#">36<br>
+                    </a>
+                    <a href="#">37<br>
+                    </a>
+                    <a href="#">38<br>
+                    </a>
+                    <a href="#">39<br>
+                    </a>
+                    <a href="#">40<br>
+                    </a>
+                    <a href="#">41<br>
+                    </a>
                 </div>
             </li>
             <li class="dropdown">
                 <a href="#" class="dropbtn">Färg</a>
                 <div class="dropdown-content">
-                    <a href="#">Röd<br></a>
-                    <a href="#">Grön<br></a>
-                    <a href="#">Blå<br></a>
+                    <a href="#">Röd<br>
+                    </a>
+                    <a href="#">Grön<br>
+                    </a>
+                    <a href="#">Blå<br>
+                    </a>
                 </div>
             </li>
             <li class="dropdown">
                 <a href="#" class="dropbtn">Pris</a>
                 <div class="dropdown-content">
-                    <a href="#">0-500<br></a>
-                    <a href="#">500-1000<br></a>
-                    <a href="#">1000+<br></a>
+                    <a href="#">0-500<br>
+                    </a>
+                    <a href="#">500-1000<br>
+                    </a>
+                    <a href="#">1000+<br>
+                    </a>
                 </div>
             </li>
         </ul>
-        
+
+
 
         <!-- new Products -->
-        
+
         <br />
         <br />
         <br />
@@ -126,4 +136,10 @@
             </asp:ListView>
         </div>
     </div>
+
+    <script type="text/javascript">
+        function reloadPage(id) {
+            document.location.href = location.href + '?id=' + id.value;
+        }
+    </script>
 </asp:Content>
