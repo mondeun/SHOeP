@@ -8,23 +8,21 @@ using DAL.Models;
 
 namespace DAL.Controllers
 {
-    public class ModelController
+    public class ModelController : Controller
     {
-        //private const string ConnectionString = "Data Source=.;Initial Catalog=SHOeP;Integrated Security=True";
         //Kriszta's local db
-        private const string ConnectionString = "server=DESKTOP-QC3MALE\\SQLEXPRESS;Trusted_Connection=yes;database=SHOeP;connection timeout=10";
+        //private const string ConnectionString = "server=DESKTOP-QC3MALE\\SQLEXPRESS;Trusted_Connection=yes;database=SHOeP;connection timeout=10";
 
-        private static List<T> GetListFromQuery<T>(string query) where T : IModel, new()
+        private List<T> GetListFromQuery<T>(string query) where T : IModel, new()
         {
             List<T> list = new List<T>();
-            SqlConnection conn = new SqlConnection(ConnectionString);
             SqlDataReader myDataReader = null;
 
             try
             {
-                conn.Open();
+                Connection.OpenConnection();
 
-                SqlCommand myCommand = new SqlCommand(query, conn);
+                SqlCommand myCommand = new SqlCommand(query, Connection.GetConnection());
 
                 myDataReader = myCommand.ExecuteReader();
                 while (myDataReader.Read())
@@ -42,14 +40,13 @@ namespace DAL.Controllers
             finally
             {
                 myDataReader?.Close();
-
-                conn.Close();
+                Connection.CloseConnection();
             }
             return list;
         }
 
 
-        public static IEnumerable<Model> GetModels(string shoeType, string size, string color, string priceSpan)
+        public IEnumerable<Model> GetModels(string shoeType, string size, string color, string priceSpan)
         {
             StringBuilder sb = new StringBuilder();
             sb.Append("SELECT DISTINCT dbo.Models.ModelId, ModelName, Brand, Picture, Price, ShoeType, Material, Category, Description FROM dbo.Models");
@@ -92,7 +89,7 @@ namespace DAL.Controllers
             return GetListFromQuery<Model>(sb.ToString());
         }
 
-        public static IEnumerable<Model> GetModel(int modelId)
+        public IEnumerable<Model> GetModel(int modelId)
         {
             return GetListFromQuery<Model>("SELECT * FROM dbo.Models WHERE ModelId = " + modelId);
         }
