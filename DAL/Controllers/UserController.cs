@@ -41,7 +41,29 @@ namespace DAL.Controllers
 
         public User GetUserByLoginCredentials(string email, string password)
         {
-            throw new NotImplementedException();
+            var user = new User();
+            try
+            {
+                Connection.OpenConnection();
+
+                var query = $"select * from Customers where Email = '{email}' and Password = '{password}'";
+                var cmd = new SqlCommand(query, Connection.GetConnection());
+
+                using (var reader = cmd.ExecuteReader())
+                {
+                    reader.Read();
+                    user.FromSqlReader(reader);
+                }
+            }
+            catch (SqlException e)
+            {
+                Console.WriteLine(e.Message);
+            }
+            finally
+            {
+                Connection.CloseConnection();
+            }
+            return user;
         }
 
         public int UpdateUser(int id)

@@ -4,6 +4,7 @@ using System.Linq;
 using System.Web;
 using System.Web.UI;
 using System.Web.UI.WebControls;
+using DAL.Controllers;
 
 namespace SHOeP.Account
 {
@@ -16,7 +17,14 @@ namespace SHOeP.Account
 
         protected void LoginUser(object sender, EventArgs e)
         {
-            throw new NotImplementedException();
+            var userController = new UserController();
+            var user = userController.GetUserByLoginCredentials(LoginUserTxtBox.Text, LoginPassTxtBox.Text);
+
+            if (!string.IsNullOrEmpty(user?.Email) && !string.IsNullOrEmpty(user.Password))
+            {
+                Session[user.Email] = user.Email;
+                Response.RedirectPermanent("~/Default.aspx");
+            }
         }
     }
 }
