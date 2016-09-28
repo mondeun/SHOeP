@@ -1,9 +1,10 @@
 ﻿<%@ Page Title="" Language="C#" MasterPageFile="~/Site.Master" AutoEventWireup="true" CodeBehind="Login.aspx.cs" Inherits="SHOeP.Account.Login" %>
 <asp:Content ID="LoginForm" ContentPlaceHolderID="MainContent" runat="server">
-    <asp:Label ID="LoginUserLbl" runat="server">Username</asp:Label>
-    <asp:TextBox ID="LoginUserTxtBox" runat="server"></asp:TextBox> <br/>
-    <asp:Label ID="LoginPassLbl" runat="server">Password</asp:Label>
-    <asp:TextBox ID="LoginPassTxtBox" runat="server" TextMode="Password"></asp:TextBox> <br/>
-    <asp:Button ID="LoginBtn" runat="server" Text="Login" Width="116px" OnClick="LoginUser" />  
-    <a href="Forgot.aspx">Forgot password</a> 
+    <div class="jumbotron">
+        <h3 class="h3">Logga in</h3>
+        <asp:TextBox ID="LoginUserTxtBox" CssClass="form-control" runat="server" placeholder="Användarnamn"></asp:TextBox> <br/>
+        <asp:TextBox ID="LoginPassTxtBox" CssClass="form-control" runat="server" TextMode="Password" placeholder="Lösenord"></asp:TextBox> <br/>
+        <asp:Button ID="LoginBtn" CssClass="btn btn-default" runat="server" Text="Logga in" Width="116px" OnClick="LoginUser" />  
+        <a href="Forgot.aspx">Forgot password</a> 
+    </div>
 </asp:Content>
