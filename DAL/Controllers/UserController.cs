@@ -25,7 +25,7 @@ namespace DAL.Controllers
             }
             catch (Exception e)
             {
-
+                Console.WriteLine(e.Message);
             }
             finally
             {
@@ -36,7 +36,29 @@ namespace DAL.Controllers
 
         public User GetUserById(int id)
         {
-            throw new NotImplementedException();
+            var user = new User();
+            try
+            {
+                Connection.OpenConnection();
+
+                var query = $"select * from Customers where CustomerId = '{id}'";
+                var cmd = new SqlCommand(query, Connection.GetConnection());
+
+                using (var reader = cmd.ExecuteReader())
+                {
+                    reader.Read();
+                    user.FromSqlReader(reader);
+                }
+            }
+            catch (SqlException e)
+            {
+                Console.WriteLine(e.Message);
+            }
+            finally
+            {
+                Connection.CloseConnection();
+            }
+            return user;
         }
 
         public User GetUserByLoginCredentials(string email, string password)
@@ -66,14 +88,59 @@ namespace DAL.Controllers
             return user;
         }
 
-        public int UpdateUser(int id)
+        public int UpdateUser(User user)
         {
-            throw new NotImplementedException();
+            var result = 0;
+            try
+            {
+                Connection.OpenConnection();
+
+                var sql = "update Customers set " +
+                          $"FirstName = '{user.FirstName}', " +
+                          $"LastName = '{user.LastName}', " +
+                          $"Email = '{user.Email}', " +
+                          $"Phone = '{user.Phone}', " +
+                          $"Address = '{user.Address}', " +
+                          $"Zip = '{user.Zip}', " +
+                          $"City = '{user.City}', " +
+                          $"Password = '{user.Password}' " +
+                          $"where CustomerId = '{user.UserId}'";
+
+                var cmd = new SqlCommand(sql, Connection.GetConnection());
+                result = cmd.ExecuteNonQuery();
+            }
+            catch (Exception e)
+            {
+                Console.WriteLine(e.Message);
+            }
+            finally
+            {
+                Connection.CloseConnection();
+            }
+            return result;
         }
 
         public int DeleteUser(int id)
         {
-            throw new NotImplementedException();
+            var result = 0;
+            try
+            {
+                Connection.OpenConnection();
+
+                var sql = $"delete from Customers where CustomerId = '{id}'";
+
+                var cmd = new SqlCommand(sql, Connection.GetConnection());
+                result = cmd.ExecuteNonQuery();
+            }
+            catch (Exception e)
+            {
+                Console.WriteLine(e.Message);
+            }
+            finally
+            {
+                Connection.CloseConnection();
+            }
+            return result;
         }
     }
 }
