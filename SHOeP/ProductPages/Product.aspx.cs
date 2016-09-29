@@ -11,7 +11,7 @@ using System.Collections.Specialized;
 
 namespace SHOeP.ProductPages
 {
-    public partial class Women : System.Web.UI.Page
+    public partial class Product : System.Web.UI.Page
     {
         protected void Page_Load(object sender, EventArgs e)
         {
@@ -55,12 +55,13 @@ namespace SHOeP.ProductPages
             }
         }
 
-        public IQueryable<Model> GetModels([QueryString("ShoeType")] string shoeType, 
-                                                        [QueryString("Size")] string size, 
-                                                        [QueryString("Color")] string color, 
-                                                        [QueryString("PriceSpan")] string priceSpan)
+        public IQueryable<Model> GetModels([QueryString("ShoeType")] string shoeType,
+                                                        [QueryString("Size")] string size,
+                                                        [QueryString("Color")] string color,
+                                                        [QueryString("PriceSpan")] string priceSpan,
+                                                        [QueryString("Category")] string category)
         {
-            IEnumerable<Model> models = new ModelController().GetModels(shoeType, size, color, priceSpan);
+            IEnumerable<Model> models = new ModelController().GetModels(shoeType, size, color, priceSpan, category);
             return models.AsQueryable<Model>();
         }
 
@@ -70,7 +71,11 @@ namespace SHOeP.ProductPages
             string size = DropDownList2.SelectedItem.Text;
             string color = DropDownList3.SelectedItem.Text;
             string priceSpan = DropDownList4.SelectedItem.Text;
-            this.Response.Redirect(this.Request.Url.AbsoluteUri.Split('?')[0] + "?ShoeType=" + 
+
+            NameValueCollection qscoll = HttpUtility.ParseQueryString(Page.ClientQueryString);
+            string category = qscoll.Get("Category");
+
+            this.Response.Redirect(this.Request.Url.AbsoluteUri.Split('?')[0] + "?Category=" + category + "&ShoeType=" + 
                 shoeType + "&Size=" + size + "&Color=" + color + "&PriceSpan=" + priceSpan, false);
         }
     }

@@ -10,7 +10,7 @@
 namespace SHOeP.ProductPages {
     
     
-    public partial class Product {
+    public partial class ProductDetails {
         
         /// <summary>
         /// productDetail control.

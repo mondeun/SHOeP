@@ -10,7 +10,7 @@
 namespace SHOeP.ProductPages {
     
     
-    public partial class Women {
+    public partial class Product {
         
         /// <summary>
         /// Label1 control.

@@ -1,5 +1,5 @@
-﻿<%@ Page Title="Women" Language="C#" MasterPageFile="~/Site.Master" AutoEventWireup="true"
-    CodeBehind="Women.aspx.cs" Inherits="SHOeP.ProductPages.Women" %>
+﻿<%@ Page Title="Product" Language="C#" MasterPageFile="~/Site.Master" AutoEventWireup="true"
+    CodeBehind="Product.aspx.cs" Inherits="SHOeP.ProductPages.Product" %>
 
 <asp:Content ID="Content2" ContentPlaceHolderID="head" runat="server">
     <link href="../Content/productpages.css" rel="stylesheet" type="text/css" />

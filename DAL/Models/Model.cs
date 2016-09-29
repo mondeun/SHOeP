@@ -22,6 +22,8 @@ namespace DAL.Models
 
         public void FromSqlReader(SqlDataReader reader)
         {
+            if (!reader.HasRows) return;
+
             ModelId = int.Parse(reader["ModelId"].ToString());
             Brand = reader["Brand"].ToString();
             ModelName = reader["ModelName"].ToString();

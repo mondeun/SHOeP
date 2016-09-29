@@ -30,7 +30,7 @@ body
     margin-top: 20px;
     padding: 10px;
 }
-.glyphicon-log-in, .glyphicon-log-out , .fa-user-plus
+.glyphicon-user, .fa-user-plus
 {
     color:#fff;
 }
@@ -148,6 +148,7 @@ body
 /*End Scetion Features*/
 
 /*End Section About*/
+
 /*----------Start Contact-----------------*/
 
 /*Start Scetion Contact-Us*/
@@ -162,15 +163,15 @@ body
         min-height: 300px;
         color: #DDD;
         padding-top: 40px;
-        padding-bottom: 40px;
+        padding-bottom: 40px;       
     }
 
     .contact-us p {
         margin-bottom: 40px;
     }
 
-    .contact-us textarea {
-        height: 165px;
+    .contact-us> textarea {
+        height: 108px;
     }
 
     .contact-us input[type="text"],
@@ -178,7 +179,7 @@ body
         background: rgba(82,78,78,0.7);
         color: #FFF;
         border: none;
-        width:500px
+             
     }
 /*End Scetion Contact-Us*/
 /*Start Scetion Testimonials*/
