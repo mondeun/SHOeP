@@ -31,7 +31,17 @@ namespace SHOeP.Account
 
             usercon.AddUser(newUser);
 
-            
+            if (!string.IsNullOrEmpty(newUser?.Email) && !string.IsNullOrEmpty(newUser.Password))
+            {
+                Session[newUser.Email] = newUser.Email;
+                Response.RedirectPermanent("~/Default.aspx");
+            }
+            else
+            {
+                Response.Redirect("~/Account/Register.aspx");
+            }
+
+
         }
     }
 }
