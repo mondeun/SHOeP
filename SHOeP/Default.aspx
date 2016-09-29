@@ -10,15 +10,15 @@
     <div class="container text-center ">
         <div class="row">
             <div class="col-lg-4 col-sm-6 col-xs-12">
-                <a runat="server" href="~/ProductPages/Product.aspx?Category=Male">
-                    <img class="img-thumbnail img-center img-rounded " src="image/men.PNG" /></a>
-            </div>
-            <div class="col-lg-4 col-sm-6 col-xs-12">
-                <a runat="server" href="~/ProductPages/Product.aspx?Category=Female">
+                <a runat="server" href="~/ProductPages/Women.aspx">
                     <img class="img-thumbnail img-center img-rounded" src="image/dam.PNG" /></a>
             </div>
             <div class="col-lg-4 col-sm-6 col-xs-12">
-                <a runat="server" href="~/ProductPages/Product.aspx?Category=Children">
+                <a runat="server" href="~/ProductPages/Men.aspx">
+                    <img class="img-thumbnail img-center img-rounded " src="image/men.PNG" /></a>
+            </div>
+            <div class="col-lg-4 col-sm-6 col-xs-12">
+                <a runat="server" href="~/ProductPages/Childrens.aspx">
                     <img class="img-thumbnail img-center img-rounded " src="image/barn.PNG" /></a>
             </div>
         </div>

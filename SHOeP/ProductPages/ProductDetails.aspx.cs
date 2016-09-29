@@ -10,7 +10,7 @@ using System.Web.ModelBinding;
 
 namespace SHOeP.ProductPages
 {
-    public partial class ProductDetails : System.Web.UI.Page
+    public partial class Product : System.Web.UI.Page
     {
         protected void Page_Load(object sender, EventArgs e)
         {

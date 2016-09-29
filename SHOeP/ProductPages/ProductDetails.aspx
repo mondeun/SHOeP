@@ -1,4 +1,4 @@
-﻿<%@ Page Title="ProductDetails" Language="C#" MasterPageFile="~/Site.Master" AutoEventWireup="true" CodeBehind="ProductDetails.aspx.cs" Inherits="SHOeP.ProductPages.ProductDetails" %>
+﻿<%@ Page Title="" Language="C#" MasterPageFile="~/Site.Master" AutoEventWireup="true" CodeBehind="ProductDetails.aspx.cs" Inherits="SHOeP.ProductPages.Product" %>
 <asp:Content ID="Content1" ContentPlaceHolderID="MainContent" runat="server">
 <asp:FormView ID="productDetail" runat="server" ItemType="DAL.Models.Model" SelectMethod ="GetModel" RenderOuterTable="false">
         <ItemTemplate>

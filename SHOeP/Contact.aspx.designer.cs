@@ -31,13 +31,13 @@ namespace SHOeP {
         protected global::System.Web.UI.WebControls.TextBox txtLastname;
         
         /// <summary>
-        /// txtMail control.
+        /// txtEpost control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox txtMail;
+        protected global::System.Web.UI.WebControls.TextBox txtEpost;
         
         /// <summary>
         /// txtMobiltelefon control.
@@ -47,14 +47,5 @@ namespace SHOeP {
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.TextBox txtMobiltelefon;
-        
-        /// <summary>
-        /// txtDittmeddelande control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.HtmlControls.HtmlTextArea txtDittmeddelande;
     }
 }
