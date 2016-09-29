@@ -40,22 +40,49 @@ namespace SHOeP.Account {
         protected global::System.Web.UI.WebControls.TextBox emailBox;
         
         /// <summary>
-        /// passwordBox control.
+        /// phoneBox control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox passwordBox;
+        protected global::System.Web.UI.WebControls.TextBox phoneBox;
         
         /// <summary>
-        /// repeatpassBox control.
+        /// adressBox control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox repeatpassBox;
+        protected global::System.Web.UI.WebControls.TextBox adressBox;
+        
+        /// <summary>
+        /// cityBox control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.TextBox cityBox;
+        
+        /// <summary>
+        /// zipBox control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.TextBox zipBox;
+        
+        /// <summary>
+        /// passBox control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.TextBox passBox;
         
         /// <summary>
         /// CreateButton control.

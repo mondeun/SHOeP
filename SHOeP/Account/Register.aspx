@@ -6,19 +6,25 @@
 
         
 
-        <asp:TextBox ID="forenameBox" runat="server" placeholder="Förnamn.."></asp:TextBox>
+       <asp:TextBox ID="forenameBox" runat="server" placeholder="Förnamn.."></asp:TextBox>
         <br />
         <asp:TextBox ID="lastnameBox" runat="server" placeholder="Efternnamn.."></asp:TextBox>
         <br />
         <asp:TextBox ID="emailBox" runat="server" placeholder="Email.."></asp:TextBox>
         <br />
-        <asp:TextBox ID="passwordBox" runat="server" placeholder="Lösenord.."></asp:TextBox>
+        <asp:TextBox ID="phoneBox" runat="server" placeholder="Telefonnummer.."></asp:TextBox>
         <br />
-        <asp:TextBox ID="repeatpassBox" runat="server" placeholder="Upprepa lösenord..">           
+        <asp:TextBox ID="adressBox" runat="server" placeholder="Adress..">           
         </asp:TextBox>
        
         <br />
-        <asp:Button ID="CreateButton" runat="server" Text="Skapa" />
+        <asp:TextBox ID="cityBox" runat="server" placeholder="Stad.."></asp:TextBox>
+        <br />
+        <asp:TextBox ID="zipBox" runat="server" placeholder="Postnummer.."></asp:TextBox>
+       
+        <br />
+        <asp:TextBox ID="passBox" runat="server" placeholder="Lösenord"></asp:TextBox><br />
+        <asp:Button ID="CreateButton" runat="server" Text="Skapa" OnClick="CreateButton_Click" />
 
     </div>
 </asp:Content>
