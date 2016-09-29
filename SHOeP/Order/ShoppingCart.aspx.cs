@@ -13,5 +13,11 @@ namespace SHOeP.Order
         {
 
         }
+
+        public List<CartItem> GetShoppingCartItems()
+        {
+            ShoppingCartController actions = new ShoppingCartController();
+            return actions.GetCartItems();
+        }
     }
 }
