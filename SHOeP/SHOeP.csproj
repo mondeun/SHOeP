@@ -179,6 +179,7 @@
     <Content Include="image\men.PNG" />
     <Content Include="image\nike00.png" />
     <Content Include="backgroundImage\pool-water.jpg" />
+    <Content Include="Order\ShoppingCart.aspx" />
     <Content Include="ProductPages\ProductDetails.aspx" />
     <Content Include="ProductPages\Product.aspx" />
     <Content Include="Scripts\bootstrap.js" />
@@ -289,6 +290,13 @@
     </Compile>
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
+    </Compile>
+    <Compile Include="Order\ShoppingCart.aspx.cs">
+      <DependentUpon>ShoppingCart.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Order\ShoppingCart.aspx.designer.cs">
+      <DependentUpon>ShoppingCart.aspx</DependentUpon>
     </Compile>
     <Compile Include="ProductPages\ProductDetails.aspx.cs">
       <DependentUpon>ProductDetails.aspx</DependentUpon>

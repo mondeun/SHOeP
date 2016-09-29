@@ -43,6 +43,7 @@
     <Compile Include="Controllers\Controller.cs" />
     <Compile Include="Controllers\ModelController.cs" />
     <Compile Include="Controllers\OrderController.cs" />
+    <Compile Include="Controllers\ShopingCartController.cs" />
     <Compile Include="Controllers\UserController.cs" />
     <Compile Include="DbConnection.cs" />
     <Compile Include="Models\Model.cs" />
