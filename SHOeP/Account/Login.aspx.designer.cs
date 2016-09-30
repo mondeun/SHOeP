@@ -22,6 +22,15 @@ namespace SHOeP.Account {
         protected global::System.Web.UI.WebControls.TextBox LoginUserTxtBox;
         
         /// <summary>
+        /// LoginUserVal control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.RequiredFieldValidator LoginUserVal;
+        
+        /// <summary>
         /// LoginPassTxtBox control.
         /// </summary>
         /// <remarks>
@@ -29,6 +38,15 @@ namespace SHOeP.Account {
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.TextBox LoginPassTxtBox;
+        
+        /// <summary>
+        /// LoginPassVal control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.RequiredFieldValidator LoginPassVal;
         
         /// <summary>
         /// LoginBtn control.
