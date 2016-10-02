@@ -19,17 +19,29 @@ namespace SHOeP.Account
         protected void CreateButton_Click(object sender, EventArgs e)
         {
             User newUser = new DAL.Models.User();
-            newUser.FirstName = forenameBox.ToString();
-            newUser.LastName = lastnameBox.ToString();
-            newUser.Email = emailBox.ToString();
-            newUser.Address = adressBox.ToString();
-            newUser.City = cityBox.ToString();
-            newUser.Zip = zipBox.ToString();
-            newUser.Password = passBox.ToString();
+            newUser.FirstName = forenameBox.Text;
+            newUser.LastName = lastnameBox.Text;
+            newUser.Email = emailBox.Text;
+            newUser.Address = adressBox.Text;
+            newUser.City = cityBox.Text;
+            newUser.Zip = zipBox.Text;
+            newUser.Password = passBox.Text;
 
             UserController usercon = new UserController();
 
             usercon.AddUser(newUser);
+
+            if (!string.IsNullOrEmpty(newUser?.Email) && !string.IsNullOrEmpty(newUser.Password))
+            {
+                Session[newUser.Email] = newUser.Email;
+                Response.RedirectPermanent("~/Default.aspx");
+            }
+            else
+            {
+                Response.Redirect("~/Account/Register.aspx");
+            }
+
+
         }
     }
 }
