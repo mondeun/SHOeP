@@ -8,7 +8,7 @@ namespace DAL.Models
 {
     public class Stock
     {
-        public int StockId { get; set; }
+        public int ShoeId { get; set; }
         public int Quantity { get; set; }
         public DateTime QuantityChangedDate { get; set; }
     }

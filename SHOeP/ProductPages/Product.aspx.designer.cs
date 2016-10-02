@@ -22,13 +22,13 @@ namespace SHOeP.ProductPages {
         protected global::System.Web.UI.WebControls.Label Label1;
         
         /// <summary>
-        /// DropDownList1 control.
+        /// ListBoxType control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.DropDownList DropDownList1;
+        protected global::System.Web.UI.WebControls.ListBox ListBoxType;
         
         /// <summary>
         /// Label2 control.
@@ -40,13 +40,13 @@ namespace SHOeP.ProductPages {
         protected global::System.Web.UI.WebControls.Label Label2;
         
         /// <summary>
-        /// DropDownList2 control.
+        /// ListBoxSize control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.DropDownList DropDownList2;
+        protected global::System.Web.UI.WebControls.ListBox ListBoxSize;
         
         /// <summary>
         /// Label3 control.
@@ -58,13 +58,13 @@ namespace SHOeP.ProductPages {
         protected global::System.Web.UI.WebControls.Label Label3;
         
         /// <summary>
-        /// DropDownList3 control.
+        /// ListBoxColor control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.DropDownList DropDownList3;
+        protected global::System.Web.UI.WebControls.ListBox ListBoxColor;
         
         /// <summary>
         /// Label4 control.
@@ -76,13 +76,13 @@ namespace SHOeP.ProductPages {
         protected global::System.Web.UI.WebControls.Label Label4;
         
         /// <summary>
-        /// DropDownList4 control.
+        /// ListBoxPrice control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.DropDownList DropDownList4;
+        protected global::System.Web.UI.WebControls.ListBox ListBoxPrice;
         
         /// <summary>
         /// modelList control.

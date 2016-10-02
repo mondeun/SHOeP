@@ -10,46 +10,13 @@ namespace DAL.Controllers
 {
     public class ModelController : Controller
     {
-        private List<T> GetListFromQuery<T>(string query) where T : IModel, new()
-        {
-            List<T> list = new List<T>();
-            SqlDataReader myDataReader = null;
-
-            try
-            {
-                Connection.OpenConnection();
-
-                SqlCommand myCommand = new SqlCommand(query, Connection.GetConnection());
-
-                myDataReader = myCommand.ExecuteReader();
-                while (myDataReader.Read())
-                {
-                    T item = new T();
-                    item.FromSqlReader(myDataReader);
-                    list.Add(item);
-                }
-
-            }
-            catch (SqlException ex)
-            {
-                Console.WriteLine("Class: ModelController" + ex);
-            }
-            finally
-            {
-                myDataReader?.Close();
-                Connection.CloseConnection();
-            }
-            return list;
-        }
-
-
         public IEnumerable<Model> GetModels(string shoeType, string size, string color, string priceSpan, string category)
         {
             StringBuilder sb = new StringBuilder();
             sb.Append("SELECT DISTINCT dbo.Models.ModelId, ModelName, Brand, Picture, Price, ShoeType, Material, Category, Description FROM dbo.Models");
             sb.Append(" JOIN dbo.Shoes ON dbo.Shoes.ModelID = dbo.Models.ModelID");
 
-            bool firstWhere = true;
+            List<String> where = new List<String>();
 
             /*
              *  SELECT * FROM dbo.Models
@@ -58,35 +25,30 @@ namespace DAL.Controllers
              */
             if (!string.IsNullOrEmpty(category))
             {
-                sb.Append(" WHERE Category = \'" + category + "\'");
-                firstWhere = false;
+                where.Add(" Category = \'" + category + "\'");
             }
             if (!string.IsNullOrEmpty(size) && size != "Alla")
             {
-                sb.Append(firstWhere ? " WHERE" : " AND");
-                sb.Append(" Size = " + size);
-                firstWhere = false;
+                where.Add(" Size = " + size);
             }
             if (!string.IsNullOrEmpty(shoeType) && shoeType != "Alla")
             {
-                sb.Append(firstWhere ? " WHERE" : " AND");
-                sb.Append(" ShoeType = \'" + shoeType + "\'");
-                firstWhere = false;
+                where.Add(" ShoeType = \'" + shoeType + "\'");
             }
             if (!string.IsNullOrEmpty(color) && color != "Alla")
             {
-                sb.Append(firstWhere ? " WHERE" : " AND");
-                sb.Append(" Color = \'" + color + "\'");
-                firstWhere = false;
+                where.Add(" Color = \'" + color + "\'");
             }
             if (!string.IsNullOrEmpty(priceSpan) && priceSpan != "Alla")
             {
                 string low = priceSpan.Split('-')[0];
                 string high = priceSpan.Split('-')[1];
-                sb.Append(firstWhere ? " WHERE" : " AND");
-                sb.Append(" Price BETWEEN " + low + " AND " + high);
-                firstWhere = false;
+                where.Add(" Price BETWEEN " + low + " AND " + high);
             }
+
+            if (where.Count > 0)
+                sb.Append(" WHERE");
+            sb.Append(string.Join(" AND", where));
 
             return GetListFromQuery<Model>(sb.ToString());
         }

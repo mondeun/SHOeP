@@ -29,3 +29,61 @@ textarea {
         padding: 0;
     }
 }
+
+/*** Cart stuff ***/
+.cartcount {
+    color: white;
+    border-radius: 2em;
+    background-color: indianred;
+    padding: 4px 8px 4px 8px;
+    font-weight: bold;
+}
+
+.minicart {
+    position: relative;
+    display: inline-block;
+    margin: 0 auto;
+    width: 15%;
+    padding-right: 5%;
+    text-align: center;
+}
+
+.minibtn {
+    color: black;
+    font-size: 140%;
+    text-align: center;
+}
+
+.minicart-content {
+    display: none;
+    position: absolute;
+    background-color: white;
+    padding-top: 10%;
+    padding-bottom: 10%;
+    padding-left: 1%;
+    padding-right: 1%;
+    margin: 0 auto;
+    width: auto;
+    height: auto;
+    text-align: center;
+    list-style: none;
+    overflow: hidden;
+    border: none;
+    z-index: 1000;
+}
+
+.minicart:hover .minicart-content  {
+    display: block;
+    left:auto;
+    right:0;
+    margin-right:-10px;
+
+}
+
+.minibtn:hover {
+    border-bottom: solid;
+    border-bottom-width: 3px;
+}
+
+.minicartbutton {
+}

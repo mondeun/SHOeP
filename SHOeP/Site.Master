@@ -49,15 +49,51 @@
                 <div class="row">
                     <div class="col-sm-3">
                     </div>
+
                     <div class="col-sm-6">
                         <a runat="server" href="~/Default.aspx">
-                        <img class="img-responsive img-center " src="image/logo_white.png" runat="server" /></a>
+                            <img class="img-responsive img-center " src="image/logo_white.png" runat="server" /></a>
                     </div>
-                     <%---------login o Register Icons ska gömma i xs skärm--------%>
                     <div class="col-sm-3 text-right hidden-xs">
                         <div class="iconenav">
+                            <div class="minicart">
+                                <a runat="server" CssClass="minicartbutton" href="~/Order/ShoppingCart.aspx">
+                                    <img src="/image/varukorg.png" alt="Cart" width="30" height="30" /></a>
+
+                                <div class="minicart-content">
+                                    <asp:GridView ID="CartList" runat="server" AutoGenerateColumns="False" ShowFooter="True" GridLines="Vertical" CellPadding="4"
+                                        ItemType="DAL.Models.CartItem" SelectMethod="GetShoppingCartItems"
+                                        CssClass="table table-striped table-bordered">
+                                        <Columns>
+                                            <asp:BoundField DataField="ProductName" HeaderText="Märke, Modeltyp" />
+                                            <asp:BoundField DataField="Color" HeaderText="Färg" />
+                                            <asp:BoundField DataField="Size" HeaderText="Storlek" />
+                                            <asp:TemplateField HeaderText="Antal">
+                                                <ItemTemplate>
+                                                    <asp:Label ID="PurchaseQuantity" Width="40" runat="server" Text="<%#:Item.Quantity%>"></asp:Label>
+                                                </ItemTemplate>
+                                            </asp:TemplateField>
+                                            <asp:TemplateField HeaderText="Pris">
+                                                <ItemTemplate>
+                                                    <%#: String.Format("{0:c}", ((Convert.ToDouble(Item.Quantity)) *  Convert.ToDouble(Item.UnitPrice)))%>
+                                                </ItemTemplate>
+                                            </asp:TemplateField>
+                                        </Columns>
+                                    </asp:GridView>
+                                    <div>
+                                        <p></p>
+                                        <strong>
+                                            <asp:Label ID="LabelTotalText" runat="server" Text="Total pris: "></asp:Label>
+                                            <asp:Label ID="lblTotal" runat="server" EnableViewState="false"></asp:Label>
+                                            <asp:Label runat="server" Text=" kr "></asp:Label>
+                                        </strong>
+                                    </div>
+                                </div>
+                            </div>
+                            <asp:Label ID="cartCount" runat="server" EnableViewState="false" CssClass="cartcount">&nbsp;</asp:Label>
                             <a runat="server" href="~/Account/Register"><i class="fa fa-user-plus fa-2x "></i></a>
                             <a runat="server" href="~/Account/Login"><i class="glyphicon glyphicon-user fa-2x"></i></a>
+
                             <%--<div class="form-search" id="s" runat="server">
                                 <div class="input-append">
                                     <input type="text" class="input-medium search-query" name="s" placeholder="Search" value="">
@@ -66,9 +102,17 @@
                             </div>--%>
                         </div>
                     </div>
+                    <!-- **********************************-->
+                    <!--minicart: begin-->
+
+
+                    <!--minicart: end-->
+                    <!-- **********************************-->
                 </div>
             </div>
         </header>
+
+
         <!--Start our Navbar-->
         <div class="navbar navbar-default navbar-fixed" role="navigation">
             <div class="container-fluid">
@@ -89,13 +133,13 @@
                         <li class="hvr-hang"><a runat="server" href="~/ProductPages/Product.aspx?Category=Female">Dam</a></li>
                         <li class="hvr-hang"><a runat="server" href="~/ProductPages/Product.aspx?Category=Children">Barn</a></li>
                         <li class="hvr-hang"><a runat="server" href="~/About.aspx">Om oss</a></li>
-                       <li class="hvr-hang"><a runat="server" href="~/Contact.aspx">Kontakta oss</a></li>
+                        <li class="hvr-hang"><a runat="server" href="~/Contact.aspx">Kontakta oss</a></li>
                     </ul>
                     <%---------login o Register ska visas i xs skärm--------%>
-                     <ul class="nav navbar-nav navbar-right visible-xs">
-                    <li><a runat="server" href="~/Account/Register">Register</a></li>
-                    <li><a runat="server" href="~/Account/Login">Log in</a></li>
-                </ul>  
+                    <ul class="nav navbar-nav navbar-right visible-xs">
+                        <li><a runat="server" href="~/Account/Register">Register</a></li>
+                        <li><a runat="server" href="~/Account/Login">Log in</a></li>
+                    </ul>
                     <div class="pull-right">
                         <div class="navbar-form" role="search">
                             <div class="input-group">
@@ -106,65 +150,62 @@
                             </div>
                         </div>
                     </div>
-                      
+
                 </div>
             </div>
         </div>
         <!--End our Navbar-->
 
         <%--<div class="container body-content">--%>
-            <asp:ContentPlaceHolder ID="MainContent" runat="server">
-            </asp:ContentPlaceHolder> 
-           
+        <asp:ContentPlaceHolder ID="MainContent" runat="server">
+        </asp:ContentPlaceHolder>
+
         <%--</div>--%>
 
-            <!--Start Section Our Clients-->
-            <section class="footer">
-                <div class="container">
-                    <div class="row">
-                        <div class="col-lg-4 col-md-6">
-                            <h3></h3>
-                            <ul class="list-unstyled three-colu">
-                                <li><a runat="server" href="~/Default.aspx">Home</a></li>
-                                <li><a runat="server" href="~/ProductPages/Product.aspx?Category=Male">Herr</a></li>
-                                <li><a runat="server" href="~/ProductPages/Product.aspx?Category=Female">Dam</a></li>
-                                <li><a runat="server" href="~/ProductPages/Product.aspx?Category=Children">Barn</a></li>
-                                <li><a runat="server" href="~/About.aspx">Om oss</a></li>
-                                 <li><a runat="server" href="~/Contact.aspx">Kontakt</a></li>
-                                <li>Home06</li>                                
-                            </ul>
-                            <ul class="list-unstyled social-list">
-                                <li>
-                                    <img src="../icons/1465102743_facebook.png" alt="facebook" /></li>
-                                <li>
-                                    <img src="../icons/1465102756_google-plus.png" alt="google-plus" /></li>
-                                <li>
-                                    <img src="../icons/1465102880_twitter.png" alt="twitter" /></li>
-                                <li>
-                                    <img src="../icons/1465102781_pinterest.png" alt="pinterest" /></li>
-                                <li>
-                                    <img src="../icons/1465102899_rss-feeds.png" alt="rss-feeds" /></li>
-                                <li>
-                                    <img src="../icons/1465102713_email.png" alt="email" /></li>
-                            </ul>
-                        </div>
-                         <div class="col-lg-4 col-md-6">                 
-                </div>
-                <div class="col-lg-4">
-                   
-                </div>
+        <!--Start Section Our Clients-->
+        <section class="footer">
+            <div class="container">
+                <div class="row">
+                    <div class="col-lg-4 col-md-6">
+                        <h3></h3>
+                        <ul class="list-unstyled three-colu">
+                            <li><a runat="server" href="~/Default.aspx">Home</a></li>
+                            <li><a runat="server" href="~/ProductPages/Product.aspx?Category=Male">Herr</a></li>
+                            <li><a runat="server" href="~/ProductPages/Product.aspx?Category=Female">Dam</a></li>
+                            <li><a runat="server" href="~/ProductPages/Product.aspx?Category=Children">Barn</a></li>
+                            <li><a runat="server" href="~/About.aspx">Om oss</a></li>
+                            <li><a runat="server" href="~/Contact.aspx">Kontakt</a></li>
+                            <li>Home06</li>
+                        </ul>
+                        <ul class="list-unstyled social-list">
+                            <li>
+                                <img src="../icons/1465102743_facebook.png" alt="facebook" /></li>
+                            <li>
+                                <img src="../icons/1465102756_google-plus.png" alt="google-plus" /></li>
+                            <li>
+                                <img src="../icons/1465102880_twitter.png" alt="twitter" /></li>
+                            <li>
+                                <img src="../icons/1465102781_pinterest.png" alt="pinterest" /></li>
+                            <li>
+                                <img src="../icons/1465102899_rss-feeds.png" alt="rss-feeds" /></li>
+                            <li>
+                                <img src="../icons/1465102713_email.png" alt="email" /></li>
+                        </ul>
+                    </div>
+                    <div class="col-lg-4 col-md-6">
+                    </div>
+                    <div class="col-lg-4">
                     </div>
                 </div>
-                <div class="copyright  text-center">
-                    <p>&copy; <%: DateTime.Now.Year %> - SHOeP</p>
-                </div>
-            </section>
-            <!--End Section Our Clients-->
-            <%--<footer>
+            </div>
+            <div class="copyright  text-center">
+                <p>&copy; <%: DateTime.Now.Year %> - SHOeP</p>
+            </div>
+        </section>
+        <!--End Section Our Clients-->
+        <%--<footer>
                 <p>&copy; <%: DateTime.Now.Year %> - My ASP.NET Application</p>
             </footer>--%>
-       
-
     </form>
 </body>
 </html>

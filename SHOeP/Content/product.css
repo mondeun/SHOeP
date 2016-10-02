@@ -1,0 +1,63 @@
+﻿body {
+}
+.filtermenu {
+    padding-left: 28%;
+}
+
+.dropdown {
+    position: relative;
+    display: inline-block;
+    margin: 0 auto;
+    width: 15%;
+    padding-right: 5%;
+    text-align: center;
+}
+
+.dropbtn {
+    color: black;
+    font-size: 140%;
+    text-align: center;
+}
+
+.dropdown-content {
+    display: none;
+    position: absolute;
+    background-color: transparent;
+    min-width: 15%;
+    padding-top: 10%;
+    padding-bottom: 10%;
+    padding-left: 1%;
+    padding-right: 1%;
+    margin: 0 auto;
+    width: 65%;
+    height: auto;
+    text-align: center;
+    list-style: none;
+    overflow: hidden;
+    border: none;
+}
+
+.dropdown:hover .dropdown-content  {
+    display: block;
+}
+
+.dropbtn:hover {
+    border-bottom: solid;
+    border-bottom-width: 3px;
+}
+
+.modelmenu {
+    margin-left: auto;
+    margin-right: auto;
+    width: 80%;
+}
+
+.shoeimg {
+    width: 30%;
+    height: 30%;
+}
+td {
+    align-content: center;
+}
+
+
