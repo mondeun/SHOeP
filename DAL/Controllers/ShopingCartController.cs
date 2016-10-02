@@ -17,7 +17,7 @@ namespace DAL.Controllers
             WHERE ShoeId = 1
          */
 
-        public static CartItem GetCartItem(int shoeId, int quantity)
+        public CartItem GetCartItem(int shoeId, int quantity)
         {
             StringBuilder sb = new StringBuilder();
             sb.Append("SELECT * FROM dbo.Models");
