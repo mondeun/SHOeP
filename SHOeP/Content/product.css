@@ -23,27 +23,28 @@
     display: none;
     position: absolute;
     background-color: transparent;
-    min-width: 15%;
+    min-width: 20%;
     padding-top: 10%;
     padding-bottom: 10%;
     padding-left: 1%;
     padding-right: 1%;
     margin: 0 auto;
-    width: 65%;
+    width: 70%;
     height: auto;
     text-align: center;
     list-style: none;
     overflow: hidden;
     border: none;
-}
-
-.dropdown:hover .dropdown-content  {
-    display: block;
+    z-index:100;
 }
 
 .dropbtn:hover {
     border-bottom: solid;
     border-bottom-width: 3px;
+}
+
+.dropdown:hover .dropdown-content  {
+    display: block;
 }
 
 .modelmenu {

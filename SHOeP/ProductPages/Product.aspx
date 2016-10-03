@@ -13,12 +13,13 @@
                 <li class="dropdown">
                     <asp:Label ID="Label1" runat="server" Text="Skotyp" CssClass="dropbtn"></asp:Label>
                     <asp:ListBox ID="ListBoxType" runat="server" AutoPostBack="True"
-                        OnSelectedIndexChanged="Clicked" AppendDataBoundItems="true" CssClass="dropdown-content" Height="500">
+                        OnSelectedIndexChanged="Clicked" AppendDataBoundItems="true" CssClass="dropdown-content">
                         <asp:ListItem>Alla</asp:ListItem>
-                        <asp:ListItem>Sandaler</asp:ListItem>
-                        <asp:ListItem>Stövletter</asp:ListItem>
+                        <asp:ListItem>Running</asp:ListItem>
+                        <asp:ListItem>Sport</asp:ListItem>
                         <asp:ListItem>Boots</asp:ListItem>
                         <asp:ListItem>Sneakers</asp:ListItem>
+                        <asp:ListItem>Sandaler</asp:ListItem>
                     </asp:ListBox>
                 </li>
                 <li class="dropdown">
@@ -26,8 +27,13 @@
                     <asp:ListBox ID="ListBoxSize" runat="server" AutoPostBack="True"
                         OnSelectedIndexChanged="Clicked" AppendDataBoundItems="true" CssClass="dropdown-content">
                         <asp:ListItem>Alla</asp:ListItem>
+                        <asp:ListItem>38</asp:ListItem>
+                        <asp:ListItem>39</asp:ListItem>
                         <asp:ListItem>40</asp:ListItem>
+                        <asp:ListItem>41</asp:ListItem>
                         <asp:ListItem>42</asp:ListItem>
+                        <asp:ListItem>43</asp:ListItem>
+                        <asp:ListItem>44</asp:ListItem>
                         <asp:ListItem>45</asp:ListItem>
                     </asp:ListBox>
                 </li>
@@ -36,9 +42,12 @@
                     <asp:ListBox ID="ListBoxColor" runat="server" AutoPostBack="True"
                         OnSelectedIndexChanged="Clicked" AppendDataBoundItems="true" CssClass="dropdown-content">
                         <asp:ListItem>Alla</asp:ListItem>
-                        <asp:ListItem>Green</asp:ListItem>
-                        <asp:ListItem>Black</asp:ListItem>
-                        <asp:ListItem>Red</asp:ListItem>
+                        <asp:ListItem>Brun</asp:ListItem>
+                        <asp:ListItem>Grön</asp:ListItem>
+                        <asp:ListItem>Svart</asp:ListItem>
+                        <asp:ListItem>Vit</asp:ListItem>
+                        <asp:ListItem>Rosa</asp:ListItem>
+                        <asp:ListItem>Gul</asp:ListItem>
                     </asp:ListBox>
                 </li>
                 <li class="dropdown">

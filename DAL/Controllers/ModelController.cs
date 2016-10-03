@@ -14,7 +14,9 @@ namespace DAL.Controllers
         {
             StringBuilder sb = new StringBuilder();
             sb.Append("SELECT DISTINCT dbo.Models.ModelId, ModelName, Brand, Picture, Price, ShoeType, Material, Category, Description FROM dbo.Models");
-            sb.Append(" JOIN dbo.Shoes ON dbo.Shoes.ModelID = dbo.Models.ModelID");
+            sb.Append(" INNER JOIN dbo.Shoes ON dbo.Shoes.ModelID = dbo.Models.ModelID");
+            sb.Append(" INNER JOIN dbo.Stock ON dbo.Stock.ShoeId = dbo.Shoes.ShoeId");
+            sb.Append(" WHERE Quantity > 0");
 
             List<String> where = new List<String>();
 
@@ -46,8 +48,7 @@ namespace DAL.Controllers
                 where.Add(" Price BETWEEN " + low + " AND " + high);
             }
 
-            if (where.Count > 0)
-                sb.Append(" WHERE");
+            sb.Append(" AND");
             sb.Append(string.Join(" AND", where));
 
             return GetListFromQuery<Model>(sb.ToString());

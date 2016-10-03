@@ -56,6 +56,8 @@
                     </div>
                     <div class="col-sm-3 text-right hidden-xs">
                         <div class="iconenav">
+
+                            <!-- Minicart start -->
                             <div class="minicart">
                                 <a runat="server" CssClass="minicartbutton" href="~/Order/ShoppingCart.aspx">
                                     <img src="/image/varukorg.png" alt="Cart" width="30" height="30" /></a>
@@ -90,6 +92,8 @@
                                     </div>
                                 </div>
                             </div>
+                            <!-- minicart finish -->
+
                             <asp:Label ID="cartCount" runat="server" EnableViewState="false" CssClass="cartcount">&nbsp;</asp:Label>
                             <a runat="server" href="~/Account/Register"><i class="fa fa-user-plus fa-2x "></i></a>
                             <a runat="server" href="~/Account/Login"><i class="glyphicon glyphicon-user fa-2x"></i></a>
