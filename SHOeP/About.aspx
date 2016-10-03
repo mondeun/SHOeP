@@ -66,34 +66,34 @@
     <!--Start Scetion Features-->
     <section class="features text-center">
         <div class="container">
-            <h1>Our Features</h1>
+            <h1>våra funktioner</h1>
             <div class="row">
                 <div class="col-lg-3 col-md-6">
                     <div class="featu">
                         <span class="glyphicon glyphicon-ok" aria-hidden="true"></span>
                         <h4>100% OKOKOK</h4>
-                        <p>We promote quality and sustainable growth in the tourism industry of the Maldives to foster a well utilized and financially healthy private sector industry - in this way enabling the industry to deliver long term economic.</p>
+                        <p>Lorem Ipsum är en utfyllnadstext från tryck- och förlagsindustrin. Lorem ipsum har varit standard ända sedan 1500-talet, när en okänd boksättare tog att antal bokstäver och blandade dem för att göra ett provexemplar av en bok. </p>
                     </div>
                 </div>
                 <div class="col-lg-3 col-md-6">
                     <div class="featu">
                         <span class="glyphicon glyphicon-thumbs-up" aria-hidden="true"></span>
                         <h4>100% OKOKOK</h4>
-                        <p>We promote quality and sustainable growth in the tourism industry of the Maldives to foster a well utilized and financially healthy private sector industry - in this way enabling the industry to deliver long term economic.</p>
+                        <p>Lorem Ipsum är en utfyllnadstext från tryck- och förlagsindustrin. Lorem ipsum har varit standard ända sedan 1500-talet, när en okänd boksättare tog att antal bokstäver och blandade dem för att göra ett provexemplar av en bok.</p>
                     </div>
                 </div>
                 <div class="col-lg-3 col-md-6">
                     <div class="featu">
                         <span class="glyphicon glyphicon-eye-open" aria-hidden="true"></span>
                         <h4>100% OKOKOK</h4>
-                        <p>We promote quality and sustainable growth in the tourism industry of the Maldives to foster a well utilized and financially healthy private sector industry - in this way enabling the industry to deliver long term economic.</p>
+                        <p>Lorem Ipsum är en utfyllnadstext från tryck- och förlagsindustrin. Lorem ipsum har varit standard ända sedan 1500-talet, när en okänd boksättare tog att antal bokstäver och blandade dem för att göra ett provexemplar av en bok. </p>
                     </div>
                 </div>
                 <div class="col-lg-3 col-md-6">
                     <div class="featu">
                         <span class="glyphicon glyphicon-pencil" aria-hidden="true"></span>
                         <h4>100% OKOKOK</h4>
-                        <p>We promote quality and sustainable growth in the tourism industry of the Maldives to foster a well utilized and financially healthy private sector industry - in this way enabling the industry to deliver long term economic.</p>
+                        <p>Lorem Ipsum är en utfyllnadstext från tryck- och förlagsindustrin. Lorem ipsum har varit standard ända sedan 1500-talet, när en okänd boksättare tog att antal bokstäver och blandade dem för att göra ett provexemplar av en bok. </p>
                     </div>
                 </div>
             </div>

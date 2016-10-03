@@ -39,7 +39,7 @@ namespace DAL.Models
         private void CreateSalt()
         {
             var rng = RandomNumberGenerator.Create();
-            var bytes = new byte[16];
+            var bytes = new byte[10];
             rng.GetBytes(bytes);
             Salt = Convert.ToBase64String(bytes);
         }

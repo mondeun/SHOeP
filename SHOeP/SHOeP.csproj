@@ -108,6 +108,7 @@
     <Content Include="About.aspx" />
     <Content Include="Account\Forgot.aspx" />
     <Content Include="Account\Login.aspx" />
+    <Content Include="Account\MittKonto.aspx" />
     <Content Include="Account\Register.aspx" />
     <Content Include="App_Data\SHOeP.mdf" />
     <Content Include="App_Data\SHOeP_log.ldf">
@@ -247,6 +248,13 @@
     </Compile>
     <Compile Include="Account\Login.aspx.designer.cs">
       <DependentUpon>Login.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Account\MittKonto.aspx.cs">
+      <DependentUpon>MittKonto.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Account\MittKonto.aspx.designer.cs">
+      <DependentUpon>MittKonto.aspx</DependentUpon>
     </Compile>
     <Compile Include="Account\Register.aspx.cs">
       <DependentUpon>Register.aspx</DependentUpon>
