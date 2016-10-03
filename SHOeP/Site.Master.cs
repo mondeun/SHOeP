@@ -13,7 +13,19 @@ namespace SHOeP
     {
         protected void Page_Load(object sender, EventArgs e)
         {
-           
+            
+            if (Session["user.Email"]!=null)
+            {
+                lblUserLogin.Text = "Welcome Back: " + Session["user.Email"].ToString();
+                Panel1.Visible = false;
+                Panel2.Visible = true;
+            }
+            else
+            {
+                lblUserLogin.Text = "";
+                Panel2.Visible = false;
+                Panel1.Visible = true;
+            }
         }
     }
 }

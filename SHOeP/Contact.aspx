@@ -8,8 +8,8 @@
                 <div class="row">
                     <i class="fa fa-headphones fa-5x" aria-hidden="true"></i>
                     <!--ALI---ALI-->
-                    <h1>Tell Us What You Fell</h1>
-                    <p class="lead">Feel Free To Contact Us Anytime</p>
+                   <h1>Berätta vad du tycker om oss</h1>
+                    <p class="lead">Kontakta oss gärna</p>
                     <!--Start Contact Form-->
                     <div role="form">
                         <div class="col-md-6">
@@ -48,20 +48,20 @@
     <section class="Testimonials text-center">
         <!--Start Container-->
         <div class="container">
-            <h1>What Our Clients Say</h1>
+            <h1>Vad våra kunder säger</h1>
             <!--Start Testimonials Carousel-->
             <div id="carousel_testimonials" class="carousel slide" data-ride="carousel">
                 <div class="carousel-inner">
                     <div class="item active">
-                        <p class="lead">Tell Us What You Fell.</p>
+                        <p class="lead">Vad våra kunder säger.</p>
                         <span>SHOeP</span>
                     </div>
                     <div class="item">
-                        <p class="lead">Tell Us What You Fell.</p>
+                        <p class="lead">Vad våra kunder säger.</p>
                         <span>SHOeP</span>
                     </div>
                     <div class="item">
-                        <p class="lead">Tell Us What You Fell.</p>
+                        <p class="lead">Vad våra kunder säger.</p>
                         <span>SHOeP</span>
                     </div>
                     <div class="item">
