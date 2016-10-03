@@ -18,16 +18,15 @@ namespace DAL.Controllers
         }
 
 
-        protected static List<T> GetListFromQuery<T>(string query) where T : IModel, new()
+        protected List<T> GetListFromQuery<T>(string query) where T : IModel, new()
         {
             List<T> list = new List<T>();
             SqlDataReader myDataReader = null;
-            DbConnection conn = new DbConnection();
 
             try
             {
-                conn.OpenConnection();
-                SqlCommand myCommand = new SqlCommand(query, conn.GetConnection());
+                Connection.OpenConnection();
+                SqlCommand myCommand = new SqlCommand(query, Connection.GetConnection());
                 myDataReader = myCommand.ExecuteReader();
                 while (myDataReader.Read())
                 {
@@ -44,21 +43,20 @@ namespace DAL.Controllers
             finally
             {
                 myDataReader?.Close();
-                conn.CloseConnection();
+                Connection.CloseConnection();
             }
             return list;
         }
 
-        static protected List<string> GetColumnFromQuery(string query, string column)
+        protected List<string> GetColumnFromQuery(string query, string column)
         {
             List<string> list = new List<string>();
             SqlDataReader myDataReader = null;
-            DbConnection conn = new DbConnection();
 
             try
             {
-                conn.OpenConnection();
-                SqlCommand myCommand = new SqlCommand(query, conn.GetConnection());
+                Connection.OpenConnection();
+                SqlCommand myCommand = new SqlCommand(query, Connection.GetConnection());
                 myDataReader = myCommand.ExecuteReader();
                 while (myDataReader.Read())
                 {
@@ -74,7 +72,7 @@ namespace DAL.Controllers
             finally
             {
                 myDataReader?.Close();
-                conn.CloseConnection();
+                Connection.CloseConnection();
             }
             return list;
         }

@@ -48,7 +48,7 @@ namespace SHOeP
 
                 foreach (KeyValuePair<int, int> cs in cartSession)
                 {
-                    cartItems.Add(ShopingCartController.GetCartItem(cs.Key, cs.Value));
+                    cartItems.Add(new ShopingCartController().GetCartItem(cs.Key, cs.Value));
                 }
             }
             return cartItems.AsQueryable<CartItem>();

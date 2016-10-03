@@ -13,21 +13,30 @@ namespace SHOeP.Account {
     public partial class Forgot {
         
         /// <summary>
-        /// TextBox1 control.
+        /// ForgotEmailTxtBox control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox TextBox1;
+        protected global::System.Web.UI.WebControls.TextBox ForgotEmailTxtBox;
         
         /// <summary>
-        /// Button1 control.
+        /// EmailVal control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Button Button1;
+        protected global::System.Web.UI.WebControls.RequiredFieldValidator EmailVal;
+        
+        /// <summary>
+        /// SendBtn control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Button SendBtn;
     }
 }

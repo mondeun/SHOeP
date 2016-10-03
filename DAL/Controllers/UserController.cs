@@ -17,8 +17,8 @@ namespace DAL.Controllers
             {
                 Connection.OpenConnection();
 
-                var sql = $"INSERT INTO Customers (FirstName, LastName, Email, Phone, Address, Zip, City, Password) " +
-                          $"VALUES ('{user.FirstName}', '{user.LastName}', '{user.Email}', '{user.Phone}', '{user.Address}', '{user.Zip}', '{user.City}', '{user.Password}')";
+                var sql = $"INSERT INTO Customers (FirstName, LastName, Email, Phone, Address, Zip, City, Password, Salt) " +
+                          $"VALUES ('{user.FirstName}', '{user.LastName}', '{user.Email}', '{user.Phone}', '{user.Address}', '{user.Zip}', '{user.City}', '{user.Password}', '{user.Salt}')";
 
                 var cmd = new SqlCommand(sql, Connection.GetConnection());
                 result = cmd.ExecuteNonQuery();
@@ -42,6 +42,33 @@ namespace DAL.Controllers
                 Connection.OpenConnection();
 
                 var query = $"select * from Customers where CustomerId = '{id}'";
+                var cmd = new SqlCommand(query, Connection.GetConnection());
+
+                using (var reader = cmd.ExecuteReader())
+                {
+                    reader.Read();
+                    user.FromSqlReader(reader);
+                }
+            }
+            catch (SqlException e)
+            {
+                Console.WriteLine(e.Message);
+            }
+            finally
+            {
+                Connection.CloseConnection();
+            }
+            return user;
+        }
+
+        public User GetUserByEmail(string email)
+        {
+            var user = new User();
+            try
+            {
+                Connection.OpenConnection();
+
+                var query = $"select * from Customers where CustomerId = '{email}'";
                 var cmd = new SqlCommand(query, Connection.GetConnection());
 
                 using (var reader = cmd.ExecuteReader())
@@ -88,6 +115,33 @@ namespace DAL.Controllers
             return user;
         }
 
+        public string GetSalt(string email)
+        {
+            var user = new User();
+            try
+            {
+                Connection.OpenConnection();
+
+                var query = $"select * from Customers where Email = '{email}'";
+                var cmd = new SqlCommand(query, Connection.GetConnection());
+
+                using (var reader = cmd.ExecuteReader())
+                {
+                    reader.Read();
+                    user.FromSqlReader(reader);
+                }
+            }
+            catch (SqlException e)
+            {
+                Console.WriteLine(e.Message);
+            }
+            finally
+            {
+                Connection.CloseConnection();
+            }
+            return user.Salt;
+        }
+
         public int UpdateUser(User user)
         {
             var result = 0;
@@ -104,6 +158,7 @@ namespace DAL.Controllers
                           $"Zip = '{user.Zip}', " +
                           $"City = '{user.City}', " +
                           $"Password = '{user.Password}' " +
+                          $"Salt = '{user.Salt}' " +
                           $"where CustomerId = '{user.UserId}'";
 
                 var cmd = new SqlCommand(sql, Connection.GetConnection());
