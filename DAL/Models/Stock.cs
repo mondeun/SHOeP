@@ -17,7 +17,7 @@ namespace DAL.Models
         {
             if (!reader.HasRows) return;
 
-            StockId = int.Parse(reader["StockId"].ToString());
+            ShoeId = int.Parse(reader["ShoeId"].ToString());
             Quantity = int.Parse(reader["Quantity"].ToString());
             QuantityChangedDate = DateTime.Parse(reader["QuantityChangedDate"].ToString());
         }
