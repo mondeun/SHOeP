@@ -51,5 +51,20 @@ namespace DAL.Models
             var hashstring = new SHA256Managed();
             Password = Convert.ToBase64String(hashstring.ComputeHash(bytes));
         }
+
+        public void GenerateNewPassword()
+        {
+            var rng = RandomNumberGenerator.Create();
+            var bytes = new byte[10];
+            rng.GetBytes(bytes);
+            Password = Convert.ToBase64String(bytes);
+        }
+
+        public static string Hash(string salt, string password)
+        {
+            var bytes = Encoding.UTF8.GetBytes(salt + password);
+            var hashstring = new SHA256Managed();
+            return Convert.ToBase64String(hashstring.ComputeHash(bytes));
+        }
     }
 }

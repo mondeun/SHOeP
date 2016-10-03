@@ -18,11 +18,17 @@ namespace SHOeP.Account
         protected void LoginUser(object sender, EventArgs e)
         {
             var userController = new UserController();
-            var user = userController.GetUserByLoginCredentials(LoginUserTxtBox.Text, LoginPassTxtBox.Text);
+
+            var user = userController.GetUserByLoginCredentials(
+                LoginUserTxtBox.Text, 
+                DAL.Models.User.Hash(
+                    userController.GetSalt(
+                        LoginUserTxtBox.Text), 
+                    LoginUserTxtBox.Text));
 
             if (!string.IsNullOrEmpty(user?.Email) && !string.IsNullOrEmpty(user.Password))
             {
-                Session[user.Email] = user.Email;
+                Session["user"] = user.UserId;
                 Response.RedirectPermanent("~/Default.aspx");
             }
             else
