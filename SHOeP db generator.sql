@@ -11,13 +11,13 @@ create table Customers
 	Zip nvarchar(5),
 	City nvarchar(64),
 	Password nvarchar(64) not null,
-	salt nvarchar(15) not null
+	salt nvarchar(16) not null
 )
 
 insert into Customers
 values
-('Adam', 'White', 'heisenberg@toughguy.com', 077797485631, 'Tr�nggatan 3', '26135', 'Landskrona', 'DElu65PBkvZIi56Tb+rwoT6JhK/hUseFUEUywlXrJ7U=', 'o3tM/AbZTwYX4Q=='),
-('Larry', 'Dent', 'goldmemer@tumblrina.com', 069641334154, 'Bakregatan 9', '78451', 'Sundsvall', 'XFOgV0Hs8Q1UYyatdyvaTgOFXT7EPyzo73VFfNWhoR0=', 'd3hog7+ujEYtWw==')
+('Adam', 'White', 'heisenberg@toughguy.com', '077797485631', 'Tranggatan 3', '26135', 'Landskrona', 'DElu65PBkvZIi56Tb+rwoT6JhK/hUseFUEUywlXrJ7U=', 'o3tM/AbZTwYX4Q=='),
+('Larry', 'Dent', 'goldmemer@tumblrina.com', '069641334154', 'Bakregatan 9', '78451', 'Sundsvall', 'XFOgV0Hs8Q1UYyatdyvaTgOFXT7EPyzo73VFfNWhoR0=', 'd3hog7+ujEYtWw==')
 
 create table Shipping
 (
@@ -31,20 +31,6 @@ Values
 ('PostNord', 0.0),
 ('UPS', 35),
 ('DHL', 50)
-
-create table Stock
-(
-	StockId int identity primary key,
-	Quantity int not null,
-	QuantityChangedDate datetime not null
-)
-
-insert into Stock
-values
-(10, '2016-09-03 12:13:00'),
-(1, '2016-08-29 15:00:00'),
-(3, '2016-09-03 14:12:53'),
-(0, '2016-05-18 16:38:12')
 
 create table Models
 (
@@ -69,7 +55,6 @@ values
 create table Shoes
 (
 	ShoeId int identity primary key,
-	StockId int not null foreign key references Stock(StockId),
 	ModelId int not null foreign key references Models(ModelId),
 	Color nvarchar(16) not null,
 	Size int not null
@@ -77,10 +62,25 @@ create table Shoes
 
 insert into Shoes
 values
-(1, 1, 'Green', 42),
-(2, 2, 'Black', 40),
-(3, 3, 'Black', 45),
-(4, 4, 'Red', 42)
+(1, 'Green', 42),
+(2, 'Black', 40),
+(3, 'Black', 45),
+(4, 'Red', 42)
+
+create table Stock
+(
+	ShoeId int not null foreign key references Shoes(ShoeId),
+	Quantity int not null,
+	QuantityChangedDate datetime not null
+	primary key(ShoeId)
+)
+
+insert into Stock
+values
+(1, 10, '2016-09-03 12:13:00'),
+(2, 1, '2016-08-29 15:00:00'),
+(3, 3, '2016-09-03 14:12:53'),
+(4, 0, '2016-05-18 16:38:12')
 
 create table Orders
 (
