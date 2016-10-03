@@ -1,0 +1,24 @@
+﻿body {
+}
+
+td {
+  vertical-align: top;
+  text-align: left;
+}
+
+img {
+    height: 100%;
+    margin-left: 20%;
+}
+
+.addtocartbutton {
+    background-color: indianred;
+    color: white;
+    border-radius: 2em;
+}
+
+.outofstocklabel {
+    color: darkseagreen;
+    padding-left: 30%;
+}
+

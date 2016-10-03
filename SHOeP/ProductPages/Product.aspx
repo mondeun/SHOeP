@@ -2,65 +2,65 @@
     CodeBehind="Product.aspx.cs" Inherits="SHOeP.ProductPages.Product" %>
 
 <asp:Content ID="Content2" ContentPlaceHolderID="head" runat="server">
-    <link href="../Content/productpages.css" rel="stylesheet" type="text/css" />
+    <link href="../Content/product.css" rel="stylesheet" type="text/css" />
 </asp:Content>
 
 <asp:Content ID="Content1" ContentPlaceHolderID="MainContent" runat="server">
 
-    <div>
-        <ul>
-            <li class="dropdown">
-                <asp:Label ID="Label1" runat="server" Text="Skotyp" CssClass="dropbtn"></asp:Label>
-                <asp:DropDownList ID="DropDownList1" runat="server" AutoPostBack="True" OnSelectedIndexChanged="Clicked" AppendDataBoundItems="true" CssClass="dropdown-content">
-                    <asp:ListItem>Alla</asp:ListItem>
-                    <asp:ListItem>Sandaler</asp:ListItem>
-                    <asp:ListItem>Stövletter</asp:ListItem>
-                    <asp:ListItem>Boots</asp:ListItem>
-                    <asp:ListItem>Sneakers</asp:ListItem>
-                </asp:DropDownList>
-            </li>
-            <li class="dropdown">
-                <asp:Label ID="Label2" runat="server" Text="Storlek" CssClass="dropbtn"></asp:Label>
-                <asp:DropDownList ID="DropDownList2" runat="server" AutoPostBack="True" OnSelectedIndexChanged="Clicked" AppendDataBoundItems="true" CssClass="dropdown-content">
-                    <asp:ListItem>Alla</asp:ListItem>
-                    <asp:ListItem>40</asp:ListItem>
-                    <asp:ListItem>42</asp:ListItem>
-                    <asp:ListItem>45</asp:ListItem>
-                </asp:DropDownList>
-            </li>
-            <li class="dropdown">
-                <asp:Label ID="Label3" runat="server" Text="Färg" CssClass="dropbtn"></asp:Label>
-                <asp:DropDownList ID="DropDownList3" runat="server" AutoPostBack="True" OnSelectedIndexChanged="Clicked" AppendDataBoundItems="true" CssClass="dropdown-content">
-                    <asp:ListItem>Alla</asp:ListItem>
-                    <asp:ListItem>Green</asp:ListItem>
-                    <asp:ListItem>Black</asp:ListItem>
-                    <asp:ListItem>Red</asp:ListItem>
-                </asp:DropDownList>
-            </li>
-            <li class="dropdown">
-                <asp:Label ID="Label4" runat="server" Text="Pris" CssClass="dropbtn"></asp:Label>
-                <asp:DropDownList ID="DropDownList4" runat="server" AutoPostBack="True" OnSelectedIndexChanged="Clicked" AppendDataBoundItems="true" CssClass="dropdown-content">
-                    <asp:ListItem>Alla</asp:ListItem>
-                    <asp:ListItem>0-500</asp:ListItem>
-                    <asp:ListItem>500-1000</asp:ListItem>
-                    <asp:ListItem>1000-10000</asp:ListItem>
-                </asp:DropDownList>
-            </li>
-        </ul>
+    <div class="main">
+        <div class="filtermenu">
+            <ul>
+                <li class="dropdown">
+                    <asp:Label ID="Label1" runat="server" Text="Skotyp" CssClass="dropbtn"></asp:Label>
+                    <asp:ListBox ID="ListBoxType" runat="server" AutoPostBack="True"
+                        OnSelectedIndexChanged="Clicked" AppendDataBoundItems="true" CssClass="dropdown-content" Height="500">
+                        <asp:ListItem>Alla</asp:ListItem>
+                        <asp:ListItem>Sandaler</asp:ListItem>
+                        <asp:ListItem>Stövletter</asp:ListItem>
+                        <asp:ListItem>Boots</asp:ListItem>
+                        <asp:ListItem>Sneakers</asp:ListItem>
+                    </asp:ListBox>
+                </li>
+                <li class="dropdown">
+                    <asp:Label ID="Label2" runat="server" Text="Storlek" CssClass="dropbtn"></asp:Label>
+                    <asp:ListBox ID="ListBoxSize" runat="server" AutoPostBack="True"
+                        OnSelectedIndexChanged="Clicked" AppendDataBoundItems="true" CssClass="dropdown-content">
+                        <asp:ListItem>Alla</asp:ListItem>
+                        <asp:ListItem>40</asp:ListItem>
+                        <asp:ListItem>42</asp:ListItem>
+                        <asp:ListItem>45</asp:ListItem>
+                    </asp:ListBox>
+                </li>
+                <li class="dropdown">
+                    <asp:Label ID="Label3" runat="server" Text="Färg" CssClass="dropbtn"></asp:Label>
+                    <asp:ListBox ID="ListBoxColor" runat="server" AutoPostBack="True"
+                        OnSelectedIndexChanged="Clicked" AppendDataBoundItems="true" CssClass="dropdown-content">
+                        <asp:ListItem>Alla</asp:ListItem>
+                        <asp:ListItem>Green</asp:ListItem>
+                        <asp:ListItem>Black</asp:ListItem>
+                        <asp:ListItem>Red</asp:ListItem>
+                    </asp:ListBox>
+                </li>
+                <li class="dropdown">
+                    <asp:Label ID="Label4" runat="server" Text="Pris" CssClass="dropbtn"></asp:Label>
+                    <asp:ListBox ID="ListBoxPrice" runat="server" AutoPostBack="True"
+                        OnSelectedIndexChanged="Clicked" AppendDataBoundItems="true" CssClass="dropdown-content">
+                        <asp:ListItem>Alla</asp:ListItem>
+                        <asp:ListItem>0-500</asp:ListItem>
+                        <asp:ListItem>500-1000</asp:ListItem>
+                        <asp:ListItem>1000-10000</asp:ListItem>
+                    </asp:ListBox>
+                </li>
+            </ul>
+        </div>
 
-        <!-- new Products -->
-
         <br />
         <br />
         <br />
-        <div id="ModelMenu" style="text-align: center">
-            <asp:ListView ID="modelList"
-                ItemType="DAL.Models.Model"
-                runat="server"
-                SelectMethod="GetModels"
-                GroupItemCount="4">
+        <div id="modelmenu">
+            <asp:ListView ID="modelList" ItemType="DAL.Models.Model" runat="server" SelectMethod="GetModels" GroupItemCount="4" >
                 <EmptyDataTemplate>
-                    <table>
+                    <table runat="server" align="center">
                         <tr>
                             <td>Ingen vara kunde hämtas.</td>
                         </tr>
@@ -75,17 +75,16 @@
                     </tr>
                 </GroupTemplate>
                 <ItemTemplate>
-                    <td runat="server" align="center">
-                        <table>
+                    <td>
+                        <table runat="server" align="center">
                             <tr>
-                                <td>
+                                <td runat="server" align="center">
                                     <a href="ProductDetails.aspx?modelID=<%#:Item.ModelId%>">
-                                        <img src="/image/<%# Item.Picture%>"
-                                            width="100" height="100" style="border: solid" /></a>                                  </a>
+                                        <img class="shoeimg" src="/image/<%# Item.Picture%>" /></a>
                                 </td>
                             </tr>
                             <tr>
-                                <td>
+                                <td runat="server" align="center">
                                     <a href="ProductDetails.aspx?modelID=<%#:Item.ModelId%>">
                                         <span>
                                             <%#:Item.Brand%>, <%#:Item.ModelName%>
@@ -125,10 +124,4 @@
             </asp:ListView>
         </div>
     </div>
-
-    <script type="text/javascript">
-        function reloadPage(id) {
-            document.location.href = location.href + '?id=' + id.value;
-        }
-    </script>
 </asp:Content>

@@ -22,7 +22,7 @@ namespace SHOeP.ProductPages
             NameValueCollection qscoll = HttpUtility.ParseQueryString(Page.ClientQueryString);
 
             string shoeType = qscoll.Get("ShoeType");
-            foreach (ListItem item in DropDownList1.Items)
+            foreach (ListItem item in ListBoxType.Items)
             {
                 if (item.Text == shoeType)
                 {
@@ -30,7 +30,7 @@ namespace SHOeP.ProductPages
                 }
             }
             string size = qscoll.Get("Size");
-            foreach (ListItem item in DropDownList2.Items)
+            foreach (ListItem item in ListBoxSize.Items)
             {
                 if (item.Text == size)
                 {
@@ -38,7 +38,7 @@ namespace SHOeP.ProductPages
                 }
             }
             string color = qscoll.Get("Color");
-            foreach (ListItem item in DropDownList3.Items)
+            foreach (ListItem item in ListBoxColor.Items)
             {
                 if (item.Text == color)
                 {
@@ -46,7 +46,7 @@ namespace SHOeP.ProductPages
                 }
             }
             string priceSpan = qscoll.Get("PriceSpan");
-            foreach (ListItem item in DropDownList4.Items)
+            foreach (ListItem item in ListBoxPrice.Items)
             {
                 if (item.Text == priceSpan)
                 {
@@ -67,10 +67,10 @@ namespace SHOeP.ProductPages
 
         public void Clicked(object sender, EventArgs e)
         {
-            string shoeType = DropDownList1.SelectedItem.Text;
-            string size = DropDownList2.SelectedItem.Text;
-            string color = DropDownList3.SelectedItem.Text;
-            string priceSpan = DropDownList4.SelectedItem.Text;
+            string shoeType = ListBoxType.SelectedItem == null ? "Alla" : ListBoxType.SelectedItem.Text;
+            string size = ListBoxSize.SelectedItem == null ? "Alla" : ListBoxSize.SelectedItem.Text;
+            string color = ListBoxColor.SelectedItem == null ? "Alla" : ListBoxColor.SelectedItem.Text;
+            string priceSpan = ListBoxPrice.SelectedItem == null ? "Alla" : ListBoxPrice.SelectedItem.Text;
 
             NameValueCollection qscoll = HttpUtility.ParseQueryString(Page.ClientQueryString);
             string category = qscoll.Get("Category");
