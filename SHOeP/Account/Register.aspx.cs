@@ -33,7 +33,7 @@ namespace SHOeP.Account
 
             if (!string.IsNullOrEmpty(newUser?.Email) && !string.IsNullOrEmpty(newUser.Password))
             {
-                Session["User"] = newUser.UserId;
+                Session["User"] = newUser;
                 Response.RedirectPermanent("~/Default.aspx");
             }
             else
