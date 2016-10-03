@@ -17,8 +17,8 @@ namespace DAL.Controllers
             {
                 Connection.OpenConnection();
 
-                var sql = $"INSERT INTO Customers (FirstName, LastName, Email, Phone, Address, Zip, City, Password) " +
-                          $"VALUES ('{user.FirstName}', '{user.LastName}', '{user.Email}', '{user.Phone}', '{user.Address}', '{user.Zip}', '{user.City}', '{user.Password}')";
+                var sql = $"INSERT INTO Customers (FirstName, LastName, Email, Phone, Address, Zip, City, Password, Salt) " +
+                          $"VALUES ('{user.FirstName}', '{user.LastName}', '{user.Email}', '{user.Phone}', '{user.Address}', '{user.Zip}', '{user.City}', '{user.Password}', '{user.Salt}')";
 
                 var cmd = new SqlCommand(sql, Connection.GetConnection());
                 result = cmd.ExecuteNonQuery();
