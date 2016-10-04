@@ -18,11 +18,13 @@ namespace SHOeP.Account
 
         protected void CreateButton_Click(object sender, EventArgs e)
         {
+            if (passBox.Text != confirmPassBox.Text) return;
+
             User newUser = new DAL.Models.User();
             newUser.FirstName = forenameBox.Text;
             newUser.LastName = lastnameBox.Text;
             newUser.Email = emailBox.Text;
-            newUser.Address = adressBox.Text;
+            newUser.Address = addressBox.Text;
             newUser.City = cityBox.Text;
             newUser.Zip = zipBox.Text;
             newUser.Password = passBox.Text;
