@@ -26,6 +26,7 @@ namespace SHOeP.Account
             newUser.City = cityBox.Text;
             newUser.Zip = zipBox.Text;
             newUser.Password = passBox.Text;
+            newUser.HashAndSaltPassword();
 
             UserController usercon = new UserController();
 
