@@ -1,8 +1,9 @@
 ﻿<%@ Page Title="" Language="C#" MasterPageFile="~/Site.Master" AutoEventWireup="true" CodeBehind="Register.aspx.cs" Inherits="SHOeP.Account.Register" %>
 <asp:Content ID="Content1" ContentPlaceHolderID="MainContent" runat="server">
-    <h3 class="h3">Skapa ditt nya SHOeP konto här</h3>
-    <h4 class="h4">Vänlighen fyll i följande information</h4>
     <div class="jumbotron">
+        <h3 class="h3">Skapa ditt nya SHOeP konto här</h3>
+        <h4 class="h4">Vänlighen fyll i följande information</h4>
+        
         <asp:TextBox ID="forenameBox" runat="server" CssClass="form-control" placeholder="Förnamn.."></asp:TextBox>
         <asp:RequiredFieldValidator runat="server" ID="forenameVal" ControlToValidate="forenameBox" ErrorMessage=" *"></asp:RequiredFieldValidator> <br />
         
