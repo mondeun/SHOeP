@@ -22,6 +22,15 @@ namespace SHOeP.Account {
         protected global::System.Web.UI.WebControls.TextBox forenameBox;
         
         /// <summary>
+        /// forenameVal control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.RequiredFieldValidator forenameVal;
+        
+        /// <summary>
         /// lastnameBox control.
         /// </summary>
         /// <remarks>
@@ -29,6 +38,15 @@ namespace SHOeP.Account {
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.TextBox lastnameBox;
+        
+        /// <summary>
+        /// lastnameVal control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.RequiredFieldValidator lastnameVal;
         
         /// <summary>
         /// emailBox control.
@@ -40,6 +58,15 @@ namespace SHOeP.Account {
         protected global::System.Web.UI.WebControls.TextBox emailBox;
         
         /// <summary>
+        /// emailVal control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.RequiredFieldValidator emailVal;
+        
+        /// <summary>
         /// phoneBox control.
         /// </summary>
         /// <remarks>
@@ -49,13 +76,31 @@ namespace SHOeP.Account {
         protected global::System.Web.UI.WebControls.TextBox phoneBox;
         
         /// <summary>
-        /// adressBox control.
+        /// phoneVal control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox adressBox;
+        protected global::System.Web.UI.WebControls.RequiredFieldValidator phoneVal;
+        
+        /// <summary>
+        /// addressBox control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.TextBox addressBox;
+        
+        /// <summary>
+        /// addressVal control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.RequiredFieldValidator addressVal;
         
         /// <summary>
         /// cityBox control.
@@ -67,6 +112,15 @@ namespace SHOeP.Account {
         protected global::System.Web.UI.WebControls.TextBox cityBox;
         
         /// <summary>
+        /// cityVal control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.RequiredFieldValidator cityVal;
+        
+        /// <summary>
         /// zipBox control.
         /// </summary>
         /// <remarks>
@@ -76,6 +130,15 @@ namespace SHOeP.Account {
         protected global::System.Web.UI.WebControls.TextBox zipBox;
         
         /// <summary>
+        /// zipVal control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.RequiredFieldValidator zipVal;
+        
+        /// <summary>
         /// passBox control.
         /// </summary>
         /// <remarks>
@@ -83,6 +146,33 @@ namespace SHOeP.Account {
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.TextBox passBox;
+        
+        /// <summary>
+        /// passVal control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.RequiredFieldValidator passVal;
+        
+        /// <summary>
+        /// confirmPassBox control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.TextBox confirmPassBox;
+        
+        /// <summary>
+        /// confirmPassVal control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.RequiredFieldValidator confirmPassVal;
         
         /// <summary>
         /// CreateButton control.
