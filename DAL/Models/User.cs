@@ -34,6 +34,7 @@ namespace DAL.Models
             Zip = reader["Zip"].ToString();
             City = reader["City"].ToString();
             Password = reader["Password"].ToString();
+            Salt = reader["salt"].ToString();
         }
 
         private void CreateSalt()
