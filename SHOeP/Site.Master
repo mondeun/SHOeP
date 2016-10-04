@@ -18,8 +18,9 @@
     <webopt:BundleReference runat="server" Path="~/Content/css" />
     <link href="~/favicon.ico" rel="shortcut icon" type="image/x-icon" />
     <link href="Content/font-awesome.css" rel="stylesheet" />
+     <link href="Content/hover.css" rel="stylesheet" />
     <link href="Content/StyleBoot.css" rel="stylesheet" />
-    <link href="Content/hover.css" rel="stylesheet" />
+   
 </head>
 <body>
     <form runat="server">
@@ -48,6 +49,18 @@
             <div class="container-fluid  text-align:center">
                 <div class="row">
                     <div class="col-sm-3">
+                        <div class="row">
+                            <asp:Panel ID="PlogReg" runat="server">
+                        <a runat="server" href="~/Account/Register"><i class="fa fa-user-plus fa-2x fa-inverse"></i></a>
+                            <a runat="server" href="~/Account/Login"><i class="glyphicon glyphicon-log-in fa-2x inverse"></i></a>
+                                </asp:Panel>
+                            <asp:Panel ID="Pout" runat="server">
+                            <a runat="server" href="~/Account/Logout"><i class="glyphicon glyphicon-log-out fa-2x inverse"></i></a>
+                            </asp:Panel>
+                            </div>
+                        <div class="row">
+                            <asp:Label ID="Label1" runat="server" Text="Label"></asp:Label>
+                            </div>
                     </div>
 
                     <div class="col-sm-6">
@@ -93,15 +106,11 @@
                             </div>
                             <!-- minicart finish -->
                             <asp:Label ID="cartCount" runat="server" EnableViewState="false" CssClass="cartcount">&nbsp;</asp:Label>
-                            <a runat="server" href="~/Account/Register"><i class="fa fa-user-plus fa-2x "></i></a>
-                            <a runat="server" href="~/Account/Login"><i class="glyphicon glyphicon-user fa-2x"></i></a>
 
-                            <%--<div class="form-search" id="s" runat="server">
-                                <div class="input-append">
-                                    <input type="text" class="input-medium search-query" name="s" placeholder="Search" value="">
-                                    <button type="submit" class="add-on"><i class="fa fa-search"></i></button>
-                                </div>
-                            </div>--%>
+<%--                            <a runat="server" href="~/Account/Register"><i class="fa fa-user-plus fa-2x fa-inverse"></i></a>
+                            <a runat="server" href="~/Account/Login"><i class="glyphicon glyphicon-log-in fa-2x inverse"></i></a>
+                            <a runat="server" href="~/Account/Logout"><i class="glyphicon glyphicon-log-out fa-2x inverse"></i></a>--%>
+                           
                         </div>
                     </div>
                     <!-- **********************************-->
@@ -134,8 +143,6 @@
                         <li class="hvr-hang"><a runat="server" href="~/ProductPages/Product.aspx?Category=Male">Herr</a></li>
                         <li class="hvr-hang"><a runat="server" href="~/ProductPages/Product.aspx?Category=Female">Dam</a></li>
                         <li class="hvr-hang"><a runat="server" href="~/ProductPages/Product.aspx?Category=Children">Barn</a></li>
-                      <%--  <li class="hvr-hang"><a runat="server" href="~/About.aspx">Om oss</a></li>--%>
-                       <%-- <li class="hvr-hang"><a runat="server" href="~/Contact.aspx">Kontakta oss</a></li>--%>
                     </ul>
                     <%---------login o Register ska visas i xs skärm--------%>
                     <ul class="nav navbar-nav navbar-right visible-xs">
@@ -145,9 +152,9 @@
                     <div class="pull-right">
                         <div class="navbar-form" role="search">
                             <div class="input-group">
-                                <input type="text" class="form-control" placeholder="Search" name="q">
+                                <asp:TextBox class="form-control" ID="txtSok" runat="server" placeholder="Sök"></asp:TextBox>
                                 <div class="input-group-btn">
-                                    <button class="btn btn-default" type="submit"><i class="glyphicon glyphicon-search"></i></button>
+                                    <asp:Button ID="btnSok" class="btn btn-default" runat="server" Text="Sök" /> 
                                 </div>
                             </div>
                         </div>
@@ -192,8 +199,8 @@
                                 <img src="../icons/1465102899_rss-feeds.png" alt="rss-feeds" /></li>
                             <li>
                                 <img src="../icons/1465102713_email.png" alt="email" /></li>
-                        </ul>
-                    </div>--%>
+                        </ul>--%>
+                    </div>
                     <div class="col-lg-4 col-md-6">
                     </div>
                     <div class="col-lg-4">
