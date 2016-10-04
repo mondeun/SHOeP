@@ -97,8 +97,8 @@ body {
         }
         /*-------------------------------*/
         
-    /*.navbar .navbar-nav  li  a:active,*/
-    /*.navbar .navbar-nav > li a:hover {
+    /*.navbar .navbar-nav  li  a:visited,
+    .navbar .navbar-nav > li a:hover {
      color:#d112f3;
       background-color: #AAA;
     }*/
