@@ -17,7 +17,7 @@ namespace SHOeP.Account
             var userController = new UserController();
             /* Har ska vänta på Session--------------*/
 
-            var user = userController.GetUserById(3);
+            var user = (User)Session["user"];
 
             lblFN.Text += user.FirstName;
             lblEfterN.Text += user.LastName;

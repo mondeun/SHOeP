@@ -15,6 +15,16 @@ namespace SHOeP
     {
         protected void Page_Load(object sender, EventArgs e)
         {
+            if (Session["user"] != null)
+            {
+                Pout.Visible = true;
+                PlogReg.Visible = false;
+            }
+            else
+            {
+                PlogReg.Visible = true;
+                Pout.Visible = false;
+            }
 
         }
 
@@ -24,6 +34,7 @@ namespace SHOeP
             if (HttpContext.Current.Session[CartKey] == null)
             {
                 HttpContext.Current.Session[CartKey] = new Dictionary<int, int>();
+
             }
             Dictionary<int, int> cartSession = (Dictionary<int, int>)HttpContext.Current.Session[CartKey];
 
