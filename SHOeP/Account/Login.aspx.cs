@@ -21,10 +21,7 @@ namespace SHOeP.Account
 
             var user = userController.GetUserByLoginCredentials(
                 LoginUserTxtBox.Text, 
-                DAL.Models.User.Hash(
-                    userController.GetSalt(
-                        LoginUserTxtBox.Text), 
-                    LoginUserTxtBox.Text));
+                DAL.Models.User.Hash(userController.GetSalt(LoginUserTxtBox.Text), LoginPassTxtBox.Text));
 
             if (!string.IsNullOrEmpty(user?.Email) && !string.IsNullOrEmpty(user.Password))
             {
