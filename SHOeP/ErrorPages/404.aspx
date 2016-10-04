@@ -3,6 +3,6 @@
     <div class="jumbotron">
         <h3>Sidan fanns ej</h3>
         <p>Tyvärr fann vi inte sidan du letade efter.</p>
-        <a href="~/Default.aspx">Tillbaka Hem</a>
+        <a href="../Default.aspx">Tillbaka Hem</a>
     </div>
 </asp:Content>
