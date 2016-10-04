@@ -129,6 +129,7 @@ namespace DAL.Controllers
                 {
                     reader.Read();
                     user.FromSqlReader(reader);
+                    user.Salt = reader["salt"].ToString();
                 }
             }
             catch (SqlException e)
