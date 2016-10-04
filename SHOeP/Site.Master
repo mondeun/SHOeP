@@ -150,11 +150,11 @@
         </div>
         <!--End our Navbar-->
 
-        <%--<div class="container body-content">--%>
+        <div class="container body-content">
         <asp:ContentPlaceHolder ID="MainContent" runat="server">
         </asp:ContentPlaceHolder>
 
-        <%--</div>--%>
+        </div>
 
         <!--Start Section Our Clients-->
         <section class="footer">
