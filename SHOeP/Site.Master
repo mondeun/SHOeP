@@ -140,9 +140,9 @@
                     <ul class="nav navbar-nav">
                         <%--navbar-right--%>
                       <%--  <li class="active hvr-buzz-out"><a runat="server" href="~/Default.aspx">Hem</a></li>--%>
-                        <li class="hvr-hang"><a runat="server" href="~/ProductPages/Product.aspx?Category=Male">Herr</a></li>
-                        <li class="hvr-hang"><a runat="server" href="~/ProductPages/Product.aspx?Category=Female">Dam</a></li>
-                        <li class="hvr-hang"><a runat="server" href="~/ProductPages/Product.aspx?Category=Children">Barn</a></li>
+                        <li class="hvr-hang"><a runat="server" href="~/ProductPages/Product.aspx?Category=Herr">Herr</a></li>
+                        <li class="hvr-hang"><a runat="server" href="~/ProductPages/Product.aspx?Category=Dam">Dam</a></li>
+                        <li class="hvr-hang"><a runat="server" href="~/ProductPages/Product.aspx?Category=Barn">Barn</a></li>
                     </ul>
                     <%---------login o Register ska visas i xs skärm--------%>
                     <ul class="nav navbar-nav navbar-right visible-xs">
