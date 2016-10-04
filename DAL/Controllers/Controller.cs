@@ -76,5 +76,25 @@ namespace DAL.Controllers
             }
             return list;
         }
+
+        protected int InsertToDatabase(string insert)
+        {
+            var result = 0;
+            try
+            {
+                Connection.OpenConnection();
+                var cmd = new SqlCommand(insert, Connection.GetConnection());
+                result = cmd.ExecuteNonQuery();
+            }
+            catch (Exception e)
+            {
+                Console.WriteLine(e.Message);
+            }
+            finally
+            {
+                Connection.CloseConnection();
+            }
+            return result;
+        }
     }
 }

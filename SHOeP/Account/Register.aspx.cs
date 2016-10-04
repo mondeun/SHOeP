@@ -18,14 +18,18 @@ namespace SHOeP.Account
 
         protected void CreateButton_Click(object sender, EventArgs e)
         {
-            User newUser = new DAL.Models.User();
-            newUser.FirstName = forenameBox.Text;
-            newUser.LastName = lastnameBox.Text;
-            newUser.Email = emailBox.Text;
-            newUser.Address = adressBox.Text;
-            newUser.City = cityBox.Text;
-            newUser.Zip = zipBox.Text;
-            newUser.Password = passBox.Text;
+            if (passBox.Text != confirmPassBox.Text) return;
+
+            var newUser = new DAL.Models.User
+            {
+                FirstName = forenameBox.Text,
+                LastName = lastnameBox.Text,
+                Email = emailBox.Text,
+                Address = addressBox.Text,
+                City = cityBox.Text,
+                Zip = zipBox.Text,
+                Password = passBox.Text
+            };
             newUser.HashAndSaltPassword();
 
             UserController usercon = new UserController();

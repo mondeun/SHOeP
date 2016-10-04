@@ -33,8 +33,6 @@
                         <asp:ListItem>41</asp:ListItem>
                         <asp:ListItem>42</asp:ListItem>
                         <asp:ListItem>43</asp:ListItem>
-                        <asp:ListItem>44</asp:ListItem>
-                        <asp:ListItem>45</asp:ListItem>
                     </asp:ListBox>
                 </li>
                 <li class="dropdown">
@@ -84,8 +82,8 @@
                     </tr>
                 </GroupTemplate>
                 <ItemTemplate>
-                    <td>
-                        <table runat="server" align="center">
+                    <td  runat="server" align="center">
+                        <table>
                             <tr>
                                 <td runat="server" align="center">
                                     <a href="ProductDetails.aspx?modelID=<%#:Item.ModelId%>">
@@ -93,7 +91,7 @@
                                 </td>
                             </tr>
                             <tr>
-                                <td runat="server" align="center">
+                                <td align="center">
                                     <a href="ProductDetails.aspx?modelID=<%#:Item.ModelId%>">
                                         <span>
                                             <%#:Item.Brand%>, <%#:Item.ModelName%>
