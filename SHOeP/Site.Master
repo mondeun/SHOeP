@@ -70,8 +70,8 @@
                     <div class="col-sm-3 text-right hidden-xs">
                         <div class="iconenav">
                             <!-- Minicart start -->
-                            <div class="minicart">
-                                <a runat="server" CssClass="minicartbutton" href="~/Order/ShoppingCart.aspx">
+                            <div class="minicart">                             
+                                <a runat="server" CssClass="minicartbutton" href="~/Orders/ShoppingCart.aspx">
                                     <img src="/image/varukorg.png" alt="Cart" width="30" height="30" /></a>
 
                                 <div class="minicart-content">
