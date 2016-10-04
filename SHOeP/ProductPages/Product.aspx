@@ -33,8 +33,6 @@
                         <asp:ListItem>41</asp:ListItem>
                         <asp:ListItem>42</asp:ListItem>
                         <asp:ListItem>43</asp:ListItem>
-                        <asp:ListItem>44</asp:ListItem>
-                        <asp:ListItem>45</asp:ListItem>
                     </asp:ListBox>
                 </li>
                 <li class="dropdown">
