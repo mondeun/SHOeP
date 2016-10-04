@@ -82,8 +82,8 @@
                     </tr>
                 </GroupTemplate>
                 <ItemTemplate>
-                    <td>
-                        <table runat="server" align="center">
+                    <td  runat="server" align="center">
+                        <table>
                             <tr>
                                 <td runat="server" align="center">
                                     <a href="ProductDetails.aspx?modelID=<%#:Item.ModelId%>">
@@ -91,7 +91,7 @@
                                 </td>
                             </tr>
                             <tr>
-                                <td runat="server" align="center">
+                                <td align="center">
                                     <a href="ProductDetails.aspx?modelID=<%#:Item.ModelId%>">
                                         <span>
                                             <%#:Item.Brand%>, <%#:Item.ModelName%>
