@@ -114,6 +114,8 @@
     <Content Include="App_Data\SHOeP_log.ldf">
       <DependentUpon>SHOeP.mdf</DependentUpon>
     </Content>
+    <Content Include="backgroundImage\finsko.jpg" />
+    <Content Include="backgroundImage\Kristofer5142015.jpg" />
     <Content Include="backgroundImage\resize-img.jpg" />
     <Content Include="backgroundImage\rutig-bakgrund.PNG" />
     <Content Include="backgroundImage\shoes-wallpaper1.jpg" />
