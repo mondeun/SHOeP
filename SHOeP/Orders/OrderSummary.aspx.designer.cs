@@ -7,10 +7,10 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
-namespace SHOeP.Order {
+namespace SHOeP.Orders {
     
     
-    public partial class Order {
+    public partial class OrderSummary {
         
         /// <summary>
         /// CartList control.

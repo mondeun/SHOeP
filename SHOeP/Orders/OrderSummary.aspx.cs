@@ -7,13 +7,23 @@ using System.Web;
 using System.Web.UI;
 using System.Web.UI.WebControls;
 
-namespace SHOeP.Order
+namespace SHOeP.Orders
 {
-    public partial class Order : System.Web.UI.Page
+    public partial class OrderSummary : System.Web.UI.Page
     {
         protected void Page_Load(object sender, EventArgs e)
         {
             lblTotal.Text = "" + GetTotal();
+
+            User logUser = (User)HttpContext.Current.Session["user"];
+            if (logUser != null)
+            {
+                //TODO - test when login works properly
+                Name.Text = logUser.FirstName + " " + logUser.LastName;
+                Adress.Text = logUser.Address;
+                CityZip.Text = logUser.City + " " + logUser.Zip;
+            }
+
         }
 
         public IQueryable<CartItem> GetShoppingCartItems()
@@ -65,7 +75,34 @@ namespace SHOeP.Order
 
         public void ConfirmationClick(object sender, EventArgs e)
         {
-            this.Response.Redirect("~/Order/OrderConfirmation.aspx", false);
+            string CartKey = "Cart";
+            if (HttpContext.Current.Session[CartKey] == null)
+            {
+                HttpContext.Current.Session[CartKey] = new Dictionary<int, int>();
+            }
+            Dictionary<int, int> cartSession = (Dictionary<int, int>)HttpContext.Current.Session[CartKey];
+            User logUser = (User)HttpContext.Current.Session["user"];
+
+            Order order = new Order();
+            order.CustomerId = logUser.UserId;
+            order.TotalPrice = GetTotal();
+            order.DeliveryDate = DateTime.Today.AddDays(1.0); 
+            order.OrderDate = DateTime.Today; ;
+            order.OrderNumber = "123456789012"; //TODO
+            order.ShippingId = 1; //TODO slumpa?
+            order.Status = null; //TTOD ?
+
+            string cartKey = "Cart";
+
+            bool ok  = new OrderController().Transaction(order, cartSession);
+
+            if (ok)
+            {
+                HttpContext.Current.Session[cartKey] = null;
+                this.Response.Redirect("~/Order/OrderConfirmation.aspx", false);
+            }
+
+            //TODO Order misslyckades
         }
 
     }

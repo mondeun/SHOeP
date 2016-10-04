@@ -8,7 +8,7 @@ using DAL.Controllers;
 using DAL.Models;
 using System.Collections;
 
-namespace SHOeP.Order
+namespace SHOeP.Orders
 {
     public partial class ShoppingCart : System.Web.UI.Page
     {
@@ -143,11 +143,17 @@ namespace SHOeP.Order
 
         public void ToOrderClick(object sender, EventArgs e)
         {
-
-            //TODO: lägg till ett order
-            //TODO: check inloggning
-            //TODO: start transaction
             this.Response.Redirect("~/Order/OrderSummary.aspx", false);
+            //TODO: add this code after login works properly
+            /*User logUser = (User)HttpContext.Current.Session["user"];
+            if (logUser != null)
+            {
+                this.Response.Redirect("~/Order/OrderSummary.aspx", false);
+            }
+            else
+            {
+                this.Response.Redirect("~/Account/Login.aspx", false);
+            }*/
         }
     }
 }

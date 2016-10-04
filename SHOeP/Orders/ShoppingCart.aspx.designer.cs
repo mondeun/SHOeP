@@ -7,7 +7,7 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
-namespace SHOeP.Order {
+namespace SHOeP.Orders {
     
     
     public partial class ShoppingCart {

@@ -135,6 +135,7 @@
     <Content Include="Content\hover.css" />
     <Content Include="Content\product.css" />
     <Content Include="Content\productdetails.css" />
+    <Content Include="Content\shoppingcart.css" />
     <Content Include="Content\Site.css" />
     <Content Include="Content\StyleBoot.css" />
     <Content Include="ErrorPages\404.aspx" />
@@ -182,9 +183,9 @@
     <Content Include="image\nike00.png" />
     <Content Include="backgroundImage\pool-water.jpg" />
     <Content Include="image\varukorg.png" />
-    <Content Include="Order\OrderConfirmation.aspx" />
-    <Content Include="Order\OrderSummary.aspx" />
-    <Content Include="Order\ShoppingCart.aspx" />
+    <Content Include="Orders\OrderConfirmation.aspx" />
+    <Content Include="Orders\OrderSummary.aspx" />
+    <Content Include="Orders\ShoppingCart.aspx" />
     <Content Include="ProductPages\ProductDetails.aspx" />
     <Content Include="ProductPages\Product.aspx" />
     <Content Include="ProductPages\Search.aspx" />
@@ -304,25 +305,25 @@
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
-    <Compile Include="Order\OrderConfirmation.aspx.cs">
+    <Compile Include="Orders\OrderConfirmation.aspx.cs">
       <DependentUpon>OrderConfirmation.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
     </Compile>
-    <Compile Include="Order\OrderConfirmation.aspx.designer.cs">
+    <Compile Include="Orders\OrderConfirmation.aspx.designer.cs">
       <DependentUpon>OrderConfirmation.aspx</DependentUpon>
     </Compile>
-    <Compile Include="Order\OrderSummary.aspx.cs">
+    <Compile Include="Orders\OrderSummary.aspx.cs">
       <DependentUpon>OrderSummary.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
     </Compile>
-    <Compile Include="Order\OrderSummary.aspx.designer.cs">
+    <Compile Include="Orders\OrderSummary.aspx.designer.cs">
       <DependentUpon>OrderSummary.aspx</DependentUpon>
     </Compile>
-    <Compile Include="Order\ShoppingCart.aspx.cs">
+    <Compile Include="Orders\ShoppingCart.aspx.cs">
       <DependentUpon>ShoppingCart.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
     </Compile>
-    <Compile Include="Order\ShoppingCart.aspx.designer.cs">
+    <Compile Include="Orders\ShoppingCart.aspx.designer.cs">
       <DependentUpon>ShoppingCart.aspx</DependentUpon>
     </Compile>
     <Compile Include="ProductPages\ProductDetails.aspx.cs">
