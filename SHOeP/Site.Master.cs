@@ -17,6 +17,8 @@ namespace SHOeP
         {
             if (Session["user"] != null)
             {
+                var user = (User)Session["user"];
+                lblUser.Text = user.FirstName;
                 Pout.Visible = true;
                 PlogReg.Visible = false;
             }
