@@ -2,6 +2,6 @@
 <asp:Content ID="Content1" ContentPlaceHolderID="MainContent" runat="server">
     <div class="jumbotron">
         <h3>Gågot gick fel</h3>
-        <a href="~/Default.aspx">Tillbaka Hem</a>
+        <a href="../Default.aspx">Tillbaka Hem</a>
     </div>
 </asp:Content>
