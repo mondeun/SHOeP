@@ -1,6 +1,6 @@
 ﻿<%@ Page Title="Contact" Language="C#" MasterPageFile="~/Site.Master" AutoEventWireup="true" CodeBehind="Contact.aspx.cs" Inherits="SHOeP.Contact" %>
 
-<asp:Content ID="BodyContent" ContentPlaceHolderID="MainContent" runat="server">
+<asp:Content ID="BodyContent" ContentPlaceHolderID="ContentPlaceHolder1" runat="server">
     <!--Start Section Contact-->
     <section class="contact-us text-center">
         <div class="fields">
@@ -15,19 +15,19 @@
                         <div class="col-md-6">
                             <div class="form-group">
                                 <%-- <input type="text" class="form-control input-lg" placeholder="Firstname" required />--%>
-                                <asp:TextBox ID="txtFirstname" class="form-control input-lg" runat="server" placeholder="Firstname"></asp:TextBox>
+                                <asp:TextBox ID="txtFirstname" class="form-control input-lg" runat="server" placeholder="Förnamn.."></asp:TextBox>
                             </div>
                             <div class="form-group">
                                 <%-- <input type="text" class="form-control input-lg" placeholder="Lastname" required/>--%>
-                                <asp:TextBox ID="txtLastname" class="form-control input-lg" runat="server" placeholder="Lastname"></asp:TextBox>
+                                <asp:TextBox ID="txtLastname" class="form-control input-lg" runat="server" placeholder="Efternamn.."></asp:TextBox>
                             </div>
                             <div class="form-group">
                                 <%--<input type="text" class="form-control input-lg" placeholder="Email" required/>--%>
-                                <asp:TextBox ID="txtMail" class="form-control input-lg" runat="server" placeholder="E-post"></asp:TextBox>
+                                <asp:TextBox ID="txtMail" class="form-control input-lg" runat="server" placeholder="Email.."></asp:TextBox>
                             </div>
                             <div class="form-group">
                                 <%--<input type="text" class="form-control input-lg" placeholder="Mobiltelefon" required/>--%>
-                                <asp:TextBox ID="txtMobiltelefon" class="form-control input-lg" runat="server" placeholder="Mobiltelefon"></asp:TextBox>
+                                <asp:TextBox ID="txtMobiltelefon" class="form-control input-lg" runat="server" placeholder="Telefonnummer.."></asp:TextBox>
                             </div>
                         </div>
                         <div class="col-md-6">
