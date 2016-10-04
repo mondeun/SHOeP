@@ -59,9 +59,7 @@
 
                             <!-- Minicart start -->
                             <div class="minicart">
-                                <a runat="server" CssClass="minicartbutton" href="~/Order/ShoppingCart.aspx">
-                                    <img src="/image/varukorg.png" alt="Cart" width="30" height="30" /></a>
-
+                                <a runat="server" class="glyphicon glyphicon-shopping-cart invert fa-2x" href="~/Order/ShoppingCart.aspx"></a>
                                 <div class="minicart-content">
                                     <asp:GridView ID="CartList" runat="server" AutoGenerateColumns="False" ShowFooter="True" GridLines="Vertical" CellPadding="4"
                                         ItemType="DAL.Models.CartItem" SelectMethod="GetShoppingCartItems"
