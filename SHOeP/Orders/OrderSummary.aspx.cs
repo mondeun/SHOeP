@@ -81,7 +81,7 @@ namespace SHOeP.Orders
                 HttpContext.Current.Session[CartKey] = new Dictionary<int, int>();
             }
             Dictionary<int, int> cartSession = (Dictionary<int, int>)HttpContext.Current.Session[CartKey];
-            User logUser = (User)HttpContext.Current.Session["user"];
+            User logUser = (User)Session["user"];
 
             Order order = new Order();
             order.CustomerId = logUser.UserId;
@@ -99,7 +99,7 @@ namespace SHOeP.Orders
             if (ok)
             {
                 HttpContext.Current.Session[cartKey] = null;
-                this.Response.Redirect("~/Order/OrderConfirmation.aspx", false);
+                this.Response.Redirect("~/Orders/OrderConfirmation.aspx", false);
             }
 
             //TODO Order misslyckades

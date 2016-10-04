@@ -143,7 +143,7 @@ namespace SHOeP.Orders
 
         public void ToOrderClick(object sender, EventArgs e)
         {
-            this.Response.Redirect("~/Order/OrderSummary.aspx", false);
+            this.Response.Redirect("~/Orders/OrderSummary.aspx", false);
             //TODO: add this code after login works properly
             /*User logUser = (User)HttpContext.Current.Session["user"];
             if (logUser != null)
