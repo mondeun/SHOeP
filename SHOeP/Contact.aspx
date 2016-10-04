@@ -34,7 +34,7 @@
                             <div class="form-group">
                                 <textarea id="txtDittmeddelande" class="form-control input-lg" runat="server" placeholder="Ditt meddelande"></textarea>
                             </div>
-                            <button type="submit" class="btn btn-danger btn-lg btn-block ">Kontakta</button>
+                            <button type="submit" class="btn btn-danger btn-lg  ">Kontakta</button>
                         </div>
 
                     </div>

@@ -113,9 +113,10 @@ input,
 optgroup,
 select,
 textarea {
-  margin: 0;
-  font: inherit;
   color: inherit;
+    margin-left: 0;
+    margin-right: 0;
+    margin-bottom: 0;
 }
 button {
   overflow: visible;
@@ -2250,6 +2251,7 @@ pre code {
 }
 table {
   background-color: transparent;
+    margin-right: 0px;
 }
 caption {
   padding-top: 8px;

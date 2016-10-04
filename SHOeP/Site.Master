@@ -56,7 +56,6 @@
                     </div>
                     <div class="col-sm-3 text-right hidden-xs">
                         <div class="iconenav">
-
                             <!-- Minicart start -->
                             <div class="minicart">
                                 <a runat="server" CssClass="minicartbutton" href="~/Order/ShoppingCart.aspx">
@@ -93,7 +92,6 @@
                                 </div>
                             </div>
                             <!-- minicart finish -->
-
                             <asp:Label ID="cartCount" runat="server" EnableViewState="false" CssClass="cartcount">&nbsp;</asp:Label>
                             <a runat="server" href="~/Account/Register"><i class="fa fa-user-plus fa-2x "></i></a>
                             <a runat="server" href="~/Account/Login"><i class="glyphicon glyphicon-user fa-2x"></i></a>
@@ -132,12 +130,12 @@
                 <div class="navbar-collapse collapse" id="navbar">
                     <ul class="nav navbar-nav">
                         <%--navbar-right--%>
-                        <li class="active hvr-buzz-out"><a runat="server" href="~/Default.aspx">Hem</a></li>
+                      <%--  <li class="active hvr-buzz-out"><a runat="server" href="~/Default.aspx">Hem</a></li>--%>
                         <li class="hvr-hang"><a runat="server" href="~/ProductPages/Product.aspx?Category=Male">Herr</a></li>
                         <li class="hvr-hang"><a runat="server" href="~/ProductPages/Product.aspx?Category=Female">Dam</a></li>
                         <li class="hvr-hang"><a runat="server" href="~/ProductPages/Product.aspx?Category=Children">Barn</a></li>
-                        <li class="hvr-hang"><a runat="server" href="~/About.aspx">Om oss</a></li>
-                        <li class="hvr-hang"><a runat="server" href="~/Contact.aspx">Kontakta oss</a></li>
+                      <%--  <li class="hvr-hang"><a runat="server" href="~/About.aspx">Om oss</a></li>--%>
+                       <%-- <li class="hvr-hang"><a runat="server" href="~/Contact.aspx">Kontakta oss</a></li>--%>
                     </ul>
                     <%---------login o Register ska visas i xs skärm--------%>
                     <ul class="nav navbar-nav navbar-right visible-xs">
@@ -181,7 +179,7 @@
                             <li><a runat="server" href="~/Contact.aspx">Kontakt</a></li>
                             <li>Home06</li>
                         </ul>
-                        <ul class="list-unstyled social-list">
+                       <%-- <ul class="list-unstyled social-list">
                             <li>
                                 <img src="../icons/1465102743_facebook.png" alt="facebook" /></li>
                             <li>
@@ -195,7 +193,7 @@
                             <li>
                                 <img src="../icons/1465102713_email.png" alt="email" /></li>
                         </ul>
-                    </div>
+                    </div>--%>
                     <div class="col-lg-4 col-md-6">
                     </div>
                     <div class="col-lg-4">
