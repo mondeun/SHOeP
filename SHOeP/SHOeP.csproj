@@ -108,12 +108,15 @@
     <Content Include="About.aspx" />
     <Content Include="Account\Forgot.aspx" />
     <Content Include="Account\Login.aspx" />
+    <Content Include="Account\Logout.aspx" />
     <Content Include="Account\MittKonto.aspx" />
     <Content Include="Account\Register.aspx" />
     <Content Include="App_Data\SHOeP.mdf" />
     <Content Include="App_Data\SHOeP_log.ldf">
       <DependentUpon>SHOeP.mdf</DependentUpon>
     </Content>
+    <Content Include="backgroundImage\finsko.jpg" />
+    <Content Include="backgroundImage\Kristofer5142015.jpg" />
     <Content Include="backgroundImage\resize-img.jpg" />
     <Content Include="backgroundImage\rutig-bakgrund.PNG" />
     <Content Include="backgroundImage\shoes-wallpaper1.jpg" />
@@ -250,6 +253,13 @@
     </Compile>
     <Compile Include="Account\Login.aspx.designer.cs">
       <DependentUpon>Login.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Account\Logout.aspx.cs">
+      <DependentUpon>Logout.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Account\Logout.aspx.designer.cs">
+      <DependentUpon>Logout.aspx</DependentUpon>
     </Compile>
     <Compile Include="Account\MittKonto.aspx.cs">
       <DependentUpon>MittKonto.aspx</DependentUpon>
