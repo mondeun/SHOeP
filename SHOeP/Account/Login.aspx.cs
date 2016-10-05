@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Drawing;
 using System.Linq;
 using System.Web;
 using System.Web.UI;
@@ -12,7 +13,7 @@ namespace SHOeP.Account
     {
         protected void Page_Load(object sender, EventArgs e)
         {
-
+            LoginUserVal.ForeColor = Color.Red;
         }
 
         protected void LoginUser(object sender, EventArgs e)

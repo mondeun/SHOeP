@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Drawing;
 using System.Linq;
 using System.Web;
 using System.Web.UI;
@@ -13,7 +14,15 @@ namespace SHOeP.Account
     {
         protected void Page_Load(object sender, EventArgs e)
         {
-
+            forenameVal.ForeColor = Color.Red;
+            lastnameVal.ForeColor = Color.Red;
+            emailVal.ForeColor = Color.Red;
+            phoneVal.ForeColor = Color.Red;
+            addressVal.ForeColor = Color.Red;
+            zipVal.ForeColor = Color.Red;
+            cityVal.ForeColor = Color.Red;
+            passVal.ForeColor = Color.Red;
+            confirmPassVal.ForeColor = Color.Red;
         }
 
         protected void CreateButton_Click(object sender, EventArgs e)
@@ -25,9 +34,10 @@ namespace SHOeP.Account
                 FirstName = forenameBox.Text,
                 LastName = lastnameBox.Text,
                 Email = emailBox.Text,
+                Phone = phoneBox.Text,
                 Address = addressBox.Text,
-                City = cityBox.Text,
                 Zip = zipBox.Text,
+                City = cityBox.Text,
                 Password = passBox.Text
             };
             newUser.HashAndSaltPassword();

@@ -15,7 +15,7 @@ namespace SHOeP.Account
     {
         protected void Page_Load(object sender, EventArgs e)
         {
-
+            EmailVal.ForeColor = System.Drawing.Color.Red;
         }
 
         protected void SendNewPassword(object sender, EventArgs e)
