@@ -216,7 +216,7 @@ namespace DAL.Controllers
                 Connection.OpenConnection();
 
                 var query = "select salt from Customers where Email = @email";
-                var cmd = new SqlCommand(query, Connection.GetConnection());
+                var cmd = new SqlCommand(query, Connection.GetConnection()); 
 
                 cmd.Parameters.Add(emailParam);
 
