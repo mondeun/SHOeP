@@ -1,26 +1,9 @@
 ﻿<%@ Page Title="" Language="C#" MasterPageFile="~/Site.Master" AutoEventWireup="true" CodeBehind="MittKonto.aspx.cs" Inherits="SHOeP.Account.MittKonto" %>
 
 <asp:Content ID="Content1" ContentPlaceHolderID="head" runat="server">
-    <style type="text/css">
-        .auto-style6 {
-            width: 257px;
-        }
-
-        .auto-style7 {
-            width: 344px;
-        }
-
-        .auto-style8 {
-            width: 259px;
-        }
-
-        .auto-style9 {
-            width: 259px;
-            height: 19px;
-        }
-    </style>
+ 
 </asp:Content>
-<asp:Content ID="Content2" ContentPlaceHolderID="MainContent" runat="server">
+<asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolder1" runat="server">
 
     <asp:MultiView ID="MultiView1" runat="server" ActiveViewIndex="0">
         <asp:View ID="View1" runat="server">
@@ -107,10 +90,9 @@
                                         <tr>
                                             <td class="auto-style6">&nbsp;</td>
                                             <td class="auto-style7">
-                                                <asp:Label ID="lblName6" runat="server" Font-Bold="True" Font-Size="Medium" Text="Lösenord"></asp:Label>
-                                            </td>
+                                                &nbsp;</td>
                                             <td class="auto-style8">
-                                                <asp:Label ID="lblPassword" runat="server"></asp:Label>
+                                               
                                             </td>
                                         </tr>
                                         <tr>
@@ -144,7 +126,7 @@
                 <div class="fields">
                     <div class="container">
                         <div class="row">
-                            <i class="fa fa-headphones fa-5x" aria-hidden="true"></i>
+                            <i class="glyphicon glyphicon-edit fa-5x" aria-hidden="true"></i>
                             <!--ALI---ALI-->
                             <h1>min Konto</h1>
                             <p class="lead"></p>
@@ -174,9 +156,7 @@
                                     <div class="form-group">
                                         <asp:TextBox ID="txtCity" class="form-control input-lg" runat="server" placeholder="Stade"></asp:TextBox>
                                     </div>
-                                    <div class="form-group">
-                                        <asp:TextBox ID="txtPassword" class="form-control input-lg" runat="server" placeholder="Password"></asp:TextBox>
-                                    </div>
+                                   
                                     <asp:Button ID="btnShicka" class="btn btn-danger btn-lg" runat="server" Text="Skicka" OnClick="btnShicka_Click" />
 
                                 </div>
