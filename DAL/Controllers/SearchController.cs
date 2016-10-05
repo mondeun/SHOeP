@@ -24,7 +24,7 @@ namespace DAL.Controllers
             var searchParam = new SqlParameter
             {
                 ParameterName = "@search",
-                Value = search
+                Value = "%" + search + "%"
             };
             cmd.Parameters.Add(searchParam);
 
