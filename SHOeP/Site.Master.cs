@@ -27,8 +27,10 @@ namespace SHOeP
                 PlogReg.Visible = true;
                 Pout.Visible = false;
             }
+                     
 
-        }
+
+}
 
         protected void Page_PreRender(object sender, EventArgs e)
         {
@@ -66,5 +68,6 @@ namespace SHOeP
             }
             return cartItems.AsQueryable<CartItem>();
         }
+               
     }
 }

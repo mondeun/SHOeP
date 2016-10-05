@@ -10,7 +10,7 @@
         <asp:TextBox ID="lastnameBox" runat="server" CssClass="form-control" placeholder="Efternnamn.."></asp:TextBox>
         <asp:RequiredFieldValidator runat="server" ID="lastnameVal" ControlToValidate="lastnameBox" ErrorMessage=" *"></asp:RequiredFieldValidator> <br />
         
-        <asp:TextBox ID="emailBox" runat="server" CssClass="form-control" TextMode="Email" placeholder="Email.."></asp:TextBox> 
+        <asp:TextBox ID="emailBox" runat="server" CssClass="form-control" placeholder="Email.."></asp:TextBox> 
         <asp:RequiredFieldValidator runat="server" ID="emailVal" ControlToValidate="emailBox" ErrorMessage=" *"></asp:RequiredFieldValidator> <br />
         
         <asp:TextBox ID="phoneBox" runat="server" CssClass="form-control" placeholder="Telefonnummer.."></asp:TextBox>
@@ -25,10 +25,10 @@
         <asp:TextBox ID="zipBox" runat="server" CssClass="form-control" placeholder="Postnummer.."></asp:TextBox>
         <asp:RequiredFieldValidator runat="server" ID="zipVal" ControlToValidate="zipBox" ErrorMessage=" *"></asp:RequiredFieldValidator> <br />
         
-        <asp:TextBox ID="passBox" runat="server" CssClass="form-control" TextMode="Password" placeholder="Lösenord"></asp:TextBox>
+        <asp:TextBox ID="passBox" runat="server" CssClass="form-control" placeholder="Lösenord"></asp:TextBox>
         <asp:RequiredFieldValidator runat="server" ID="passVal" ControlToValidate="passBox" ErrorMessage=" *"></asp:RequiredFieldValidator> <br />
         
-        <asp:TextBox ID="confirmPassBox" runat="server" CssClass="form-control" TextMode="Password" placeholder="Bekräfta lösenord.."></asp:TextBox>
+        <asp:TextBox ID="confirmPassBox" runat="server" CssClass="form-control" placeholder="Bekräfta lösenord.."></asp:TextBox>
         <asp:RequiredFieldValidator runat="server" ID="confirmPassVal" ControlToValidate="confirmPassBox" ErrorMessage=" *"></asp:RequiredFieldValidator>
         
         <asp:Button ID="CreateButton" CssClass="btn btn-default" runat="server" Text="Skapa" OnClick="CreateButton_Click" />

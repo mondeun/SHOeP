@@ -55,7 +55,7 @@ namespace DAL.Models
         public void GenerateNewPassword()
         {
             var rng = RandomNumberGenerator.Create();
-            var bytes = new byte[6];
+            var bytes = new byte[10];
             rng.GetBytes(bytes);
             Password = Convert.ToBase64String(bytes);
         }

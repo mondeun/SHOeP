@@ -11,7 +11,7 @@
     <asp:PlaceHolder runat="server">
         <%: Scripts.Render("~/bundles/modernizr") %>
     </asp:PlaceHolder>
-
+     
     <!-- Necessary for Content side's own css-->
     <asp:ContentPlaceHolder ID="head" runat="server"></asp:ContentPlaceHolder>
 
@@ -52,10 +52,11 @@
                         <div class="row fa-align-center">
                             <asp:Panel ID="PlogReg" runat="server">
                         <a runat="server" href="~/Account/Register"><i class="fa fa-user-plus fa-2x fa-inverse"></i></a>
-                            <a runat="server" href="~/Account/Login"><i class="glyphicon glyphicon-log-in fa-2x inverse"></i></a>
+                            <a runat="server" href="~/Account/Login"><i class="glyphicon glyphicon-log-in fa-2x"></i></a>
                                 </asp:Panel>
                             <asp:Panel ID="Pout" runat="server">
-                            <a runat="server" href="~/Account/Logout"><i class="glyphicon glyphicon-log-out fa-2x inverse"></i></a>
+                            <a runat="server" href="~/Account/Logout"><i class="glyphicon glyphicon-log-out fa-2x "></i></a>
+                                <a runat="server" href="~/Account/MittKonto.aspx"><i class="glyphicon glyphicon-edit fa-2x "></i></a>
                             </asp:Panel>
                             </div>
                         <div class="row">
@@ -152,9 +153,9 @@
                     <div class="pull-right">
                         <div class="navbar-form" role="search">
                             <div class="input-group">
-                                <asp:TextBox class="form-control" ID="txtSok" runat="server" placeholder="Sök"></asp:TextBox>
+                                <asp:TextBox class="form-control" ID="txtSearchMaster" runat="server" placeholder="Sök"></asp:TextBox>
                                 <div class="input-group-btn">
-                                    <asp:Button ID="btnSok" class="btn btn-default" runat="server" Text="Sök" /> 
+                                    <asp:Button ID="btnSearch" class="btn btn-default" runat="server" Text="Sök" OnClick="btnSearch_Click" /> 
                                 </div>
                             </div>
                         </div>

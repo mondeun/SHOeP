@@ -11,34 +11,19 @@ namespace SHOeP.Orders
 {
     public partial class OrderSummary : System.Web.UI.Page
     {
-        public enum AddressKeeper { address, city , zip }
-
         protected void Page_Load(object sender, EventArgs e)
         {
-            if (Page.IsPostBack)
-            {
-                return;
-            }
-
             lblTotal.Text = "" + GetTotal();
 
             User logUser = (User)HttpContext.Current.Session["user"];
             if (logUser != null)
             {
+                //TODO - test when login works properly
                 Name.Text = logUser.FirstName + " " + logUser.LastName;
                 Adress.Text = logUser.Address;
                 CityZip.Text = logUser.City + " " + logUser.Zip;
-
-
-                ShippingController sc = new ShippingController();
-                List<Shipping> delivery = sc.GetAllShipping();
-                foreach (Shipping s in delivery)
-                {
-                    DeliveryMode.Items.Add(s.CompanyName + "\t" + s.Charge + " kr frakt");
-                }
-
-                DeliveryMode.SelectedIndex = 0;
             }
+
         }
 
         public IQueryable<CartItem> GetShoppingCartItems()
@@ -85,7 +70,7 @@ namespace SHOeP.Orders
 
         public void CancelClick(object sender, EventArgs e)
         {
-            this.Response.Redirect("~/Orders/ShoppingCart.aspx", false);
+            this.Response.Redirect("~/Order/ShoppingCart.aspx", false);
         }
 
         public void ConfirmationClick(object sender, EventArgs e)
@@ -96,61 +81,28 @@ namespace SHOeP.Orders
                 HttpContext.Current.Session[CartKey] = new Dictionary<int, int>();
             }
             Dictionary<int, int> cartSession = (Dictionary<int, int>)HttpContext.Current.Session[CartKey];
-            User logUser = (User)Session["user"];
+            User logUser = (User)HttpContext.Current.Session["user"];
 
             Order order = new Order();
             order.CustomerId = logUser.UserId;
             order.TotalPrice = GetTotal();
-            order.DeliveryDate = DateTime.Today.AddDays(4.0); 
-            order.OrderDate = DateTime.Today;
-            order.OrderNumber = generateOrderNumber();
-            ShippingController sc = new ShippingController();
-            string companyName = DeliveryMode.SelectedItem.Text.Split('\t')[0];
-            order.ShippingId = sc.GetShippingId(companyName);
-            order.Status = null;
+            order.DeliveryDate = DateTime.Today.AddDays(1.0); 
+            order.OrderDate = DateTime.Today; ;
+            order.OrderNumber = "123456789012"; //TODO
+            order.ShippingId = 1; //TODO slumpa?
+            order.Status = null; //TTOD ?
+
+            string cartKey = "Cart";
 
             bool ok  = new OrderController().Transaction(order, cartSession);
 
             if (ok)
             {
-                string deliver = companyName;
-                //Save "DeliveryMode" to session
-                HttpContext.Current.Session["DeliveryMode"] = deliver;
-
-                Dictionary<AddressKeeper, string> deliveryAddress = new Dictionary<AddressKeeper, string>();
-                if (levaddressBox.Text.Count() > 0 && levcityBox.Text.Count() > 0 && levzipBox.Text.Count() > 0)
-                {
-                    deliveryAddress[AddressKeeper.address] = levaddressBox.Text;
-                    deliveryAddress[AddressKeeper.city] = levcityBox.Text;
-                    deliveryAddress[AddressKeeper.zip] = levzipBox.Text;
-                } else
-                {
-                    deliveryAddress[AddressKeeper.address] = logUser.Address;
-                    deliveryAddress[AddressKeeper.city] = logUser.City;
-                    deliveryAddress[AddressKeeper.zip] = logUser.Zip;
-                }
-
-                //Save "DeliveryInfo" to session
-                HttpContext.Current.Session["DeliveryInfo"] = deliveryAddress;
-
-                this.Response.Redirect("~/Orders/OrderConfirmation.aspx", false);
+                HttpContext.Current.Session[cartKey] = null;
+                this.Response.Redirect("~/Order/OrderConfirmation.aspx", false);
             }
-            else
-            {
-                this.Response.Redirect("Default.aspx", false);
-            }
-        }
 
-        private string generateOrderNumber()
-        {
-            System.Random rnd = new Random((int)DateTime.Now.Ticks);
-            string randomStr = String.Empty;
-            for (int i = 0; i < 3; i++)
-            {
-                int tmp = rnd.Next(1000, 9999);
-                randomStr += tmp.ToString();
-            }
-            return randomStr;
+            //TODO Order misslyckades
         }
 
     }

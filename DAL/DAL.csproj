@@ -44,7 +44,6 @@
     <Compile Include="Controllers\ModelController.cs" />
     <Compile Include="Controllers\OrderController.cs" />
     <Compile Include="Controllers\SearchController.cs" />
-    <Compile Include="Controllers\ShippingController.cs" />
     <Compile Include="Controllers\ShoeController.cs" />
     <Compile Include="Controllers\ShopingCartController.cs" />
     <Compile Include="Controllers\UserController.cs" />

@@ -32,7 +32,7 @@
                              OnSelectedIndexChanged="Clicked" AppendDataBoundItems="true" RepeatDirection="Horizontal"></asp:RadioButtonList>
                         <br />
                         <br />
-                        <asp:Button ID="AddToCart" runat="server" OnClick="AddToCartClick" Text="Lägg i varukorg" CssClass="addtocartbutton"></asp:Button>
+                        <asp:Button ID="AddToCart" runat="server" OnClick="AddToCartClick" Text="Add to cart" CssClass="addtocartbutton"></asp:Button>
                     </td>
                 </tr>
             </table>

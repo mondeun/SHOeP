@@ -20,7 +20,7 @@ namespace SHOeP.Account
         {
             if (passBox.Text != confirmPassBox.Text) return;
 
-            var newUser = new User
+            var newUser = new DAL.Models.User
             {
                 FirstName = forenameBox.Text,
                 LastName = lastnameBox.Text,
@@ -32,18 +32,18 @@ namespace SHOeP.Account
             };
             newUser.HashAndSaltPassword();
 
-            var usercon = new UserController();
+            UserController usercon = new UserController();
 
             usercon.AddUser(newUser);
 
             if (!string.IsNullOrEmpty(newUser?.Email) && !string.IsNullOrEmpty(newUser.Password))
             {
                 Session["User"] = newUser;
-                Response.RedirectPermanent("../Default.aspx");
+                Response.RedirectPermanent("~/Default.aspx");
             }
             else
             {
-                Response.Redirect("Register.aspx");
+                Response.Redirect("~/Account/Register.aspx");
             }
 
 
