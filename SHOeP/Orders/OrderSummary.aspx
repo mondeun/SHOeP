@@ -54,7 +54,7 @@
     <div class="jumbotron">
         <h4>Leverans</h4>
         <asp:RadioButtonList ID="DeliveryMode" runat="server" AutoPostBack="True" CssClass="radiobuttoncolor"
-                             OnSelectedIndexChanged="Clicked" AppendDataBoundItems="true" RepeatDirection="Vertical"></asp:RadioButtonList>
+                             AppendDataBoundItems="true" RepeatDirection="Vertical"></asp:RadioButtonList>
     </div>
     <div class="jumbotron">
         <h4>Betalningssätt:</h4>

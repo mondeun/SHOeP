@@ -11,7 +11,7 @@ namespace SHOeP.Orders
 {
     public partial class OrderSummary : System.Web.UI.Page
     {
-        private enum AddressKeeper { address, city , zip }
+        public enum AddressKeeper { address, city , zip }
 
         protected void Page_Load(object sender, EventArgs e)
         {
@@ -19,6 +19,7 @@ namespace SHOeP.Orders
             {
                 return;
             }
+
             lblTotal.Text = "" + GetTotal();
 
             User logUser = (User)HttpContext.Current.Session["user"];
@@ -28,13 +29,6 @@ namespace SHOeP.Orders
                 Adress.Text = logUser.Address;
                 CityZip.Text = logUser.City + " " + logUser.Zip;
 
-                Dictionary<AddressKeeper, string> deliveryAddress = new Dictionary<AddressKeeper, string>();
-                deliveryAddress[AddressKeeper.address] = levaddressBox.Text;
-                deliveryAddress[AddressKeeper.city] = levcityBox.Text;
-                deliveryAddress[AddressKeeper.address] = levzipBox.Text;
-
-                //Save "DeliveryInfo" to session
-                HttpContext.Current.Session["DeliveryInfo"] = deliveryAddress;  
 
                 ShippingController sc = new ShippingController();
                 List<Shipping> delivery = sc.GetAllShipping();
@@ -45,13 +39,6 @@ namespace SHOeP.Orders
 
                 DeliveryMode.SelectedIndex = 0;
             }
-        }
-
-        public void Clicked(object sender, EventArgs e)
-        {
-            string deliver = DeliveryMode.SelectedItem.Text;
-            //Save "DeliveryMode" to session
-            HttpContext.Current.Session["DeliveryMode"] = deliver;
         }
 
         public IQueryable<CartItem> GetShoppingCartItems()
@@ -122,14 +109,30 @@ namespace SHOeP.Orders
             order.ShippingId = sc.GetShippingId(companyName);
             order.Status = null;
 
-            string cartKey = "Cart";
-
             bool ok  = new OrderController().Transaction(order, cartSession);
 
             if (ok)
             {
-                HttpContext.Current.Session[cartKey] = null;
-                HttpContext.Current.Session["DeliveryMode"] = null;
+                string deliver = companyName;
+                //Save "DeliveryMode" to session
+                HttpContext.Current.Session["DeliveryMode"] = deliver;
+
+                Dictionary<AddressKeeper, string> deliveryAddress = new Dictionary<AddressKeeper, string>();
+                if (levaddressBox.Text.Count() > 0 && levcityBox.Text.Count() > 0 && levzipBox.Text.Count() > 0)
+                {
+                    deliveryAddress[AddressKeeper.address] = levaddressBox.Text;
+                    deliveryAddress[AddressKeeper.city] = levcityBox.Text;
+                    deliveryAddress[AddressKeeper.zip] = levzipBox.Text;
+                } else
+                {
+                    deliveryAddress[AddressKeeper.address] = logUser.Address;
+                    deliveryAddress[AddressKeeper.city] = logUser.City;
+                    deliveryAddress[AddressKeeper.zip] = logUser.Zip;
+                }
+
+                //Save "DeliveryInfo" to session
+                HttpContext.Current.Session["DeliveryInfo"] = deliveryAddress;
+
                 this.Response.Redirect("~/Orders/OrderConfirmation.aspx", false);
             }
             else
