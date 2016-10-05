@@ -47,6 +47,35 @@ namespace DAL.Controllers
             return list;
         }
 
+        protected List<T> GetListFromQuery<T>(SqlCommand cmd) where T : IModel, new()
+        {
+            List<T> list = new List<T>();
+            SqlDataReader reader = null;
+
+            try
+            {
+                Connection.OpenConnection();
+                cmd.Connection = Connection.GetConnection();
+                reader = cmd.ExecuteReader();
+                while (reader.Read())
+                {
+                    T item = new T();
+                    item.FromSqlReader(reader);
+                    list.Add(item);
+                }
+            }
+            catch (SqlException ex)
+            {
+                Console.WriteLine("Class: ModelController" + ex);
+            }
+            finally
+            {
+                reader?.Close();
+                Connection.CloseConnection();
+            }
+            return list;
+        }
+
         protected List<string> GetColumnFromQuery(string query, string column)
         {
             List<string> list = new List<string>();
