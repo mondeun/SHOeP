@@ -1,0 +1,9 @@
+﻿body {
+}
+
+.confirmbutton {
+    background-color: indianred;
+    color: white;
+    border-radius: 2em;
+    padding: 4px 7px 4px 7px;
+}

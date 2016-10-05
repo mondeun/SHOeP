@@ -13,5 +13,10 @@ namespace SHOeP.Orders
         {
 
         }
+
+        public void HomeClick(object sender, EventArgs e)
+        {
+            this.Response.Redirect("~/Default.aspx", false);
+        }
     }
 }

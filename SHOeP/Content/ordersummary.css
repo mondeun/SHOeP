@@ -1,0 +1,16 @@
+﻿body {
+}
+
+.confirmbutton {
+    background-color: indianred;
+    color: white;
+    border-radius: 2em;
+    padding: 6px 9px 6px 9px;
+}
+
+.cancelbutton {
+    color: white;
+    border-radius: 2em;
+    padding: 4px 7px 4px 7px;
+}
+

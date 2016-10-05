@@ -133,9 +133,11 @@
     <Content Include="Content\bootstrap-theme.min.css" />
     <Content Include="Content\bootstrap.css" />
     <Content Include="Content\bootstrap.min.css" />
+    <Content Include="Content\confirmation.css" />
     <Content Include="Content\font-awesome.css" />
     <Content Include="Content\font-awesome.min.css" />
     <Content Include="Content\hover.css" />
+    <Content Include="Content\ordersummary.css" />
     <Content Include="Content\product.css" />
     <Content Include="Content\productdetails.css" />
     <Content Include="Content\shoppingcart.css" />
@@ -186,7 +188,9 @@
     <Content Include="image\nike00.png" />
     <Content Include="backgroundImage\pool-water.jpg" />
     <Content Include="image\varukorg.png" />
+    <Content Include="Orders\FailedOrder.aspx" />
     <Content Include="Orders\OrderConfirmation.aspx" />
+    <Content Include="Orders\OrderDescription.aspx" />
     <Content Include="Orders\OrderSummary.aspx" />
     <Content Include="Orders\ShoppingCart.aspx" />
     <Content Include="ProductPages\ProductDetails.aspx" />
@@ -315,12 +319,26 @@
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
+    <Compile Include="Orders\FailedOrder.aspx.cs">
+      <DependentUpon>FailedOrder.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Orders\FailedOrder.aspx.designer.cs">
+      <DependentUpon>FailedOrder.aspx</DependentUpon>
+    </Compile>
     <Compile Include="Orders\OrderConfirmation.aspx.cs">
       <DependentUpon>OrderConfirmation.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
     </Compile>
     <Compile Include="Orders\OrderConfirmation.aspx.designer.cs">
       <DependentUpon>OrderConfirmation.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Orders\OrderDescription.aspx.cs">
+      <DependentUpon>OrderDescription.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Orders\OrderDescription.aspx.designer.cs">
+      <DependentUpon>OrderDescription.aspx</DependentUpon>
     </Compile>
     <Compile Include="Orders\OrderSummary.aspx.cs">
       <DependentUpon>OrderSummary.aspx</DependentUpon>

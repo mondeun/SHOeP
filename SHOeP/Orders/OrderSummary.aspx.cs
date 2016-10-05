@@ -11,19 +11,47 @@ namespace SHOeP.Orders
 {
     public partial class OrderSummary : System.Web.UI.Page
     {
+        private enum AddressKeeper { address, city , zip }
+
         protected void Page_Load(object sender, EventArgs e)
         {
+            if (Page.IsPostBack)
+            {
+                return;
+            }
             lblTotal.Text = "" + GetTotal();
 
             User logUser = (User)HttpContext.Current.Session["user"];
             if (logUser != null)
             {
-                //TODO - test when login works properly
                 Name.Text = logUser.FirstName + " " + logUser.LastName;
                 Adress.Text = logUser.Address;
                 CityZip.Text = logUser.City + " " + logUser.Zip;
-            }
 
+                Dictionary<AddressKeeper, string> deliveryAddress = new Dictionary<AddressKeeper, string>();
+                deliveryAddress[AddressKeeper.address] = levaddressBox.Text;
+                deliveryAddress[AddressKeeper.city] = levcityBox.Text;
+                deliveryAddress[AddressKeeper.address] = levzipBox.Text;
+
+                //Save "DeliveryInfo" to session
+                HttpContext.Current.Session["DeliveryInfo"] = deliveryAddress;  
+
+                ShippingController sc = new ShippingController();
+                List<Shipping> delivery = sc.GetAllShipping();
+                foreach (Shipping s in delivery)
+                {
+                    DeliveryMode.Items.Add(s.CompanyName + "\t" + s.Charge + " kr frakt");
+                }
+
+                DeliveryMode.SelectedIndex = 0;
+            }
+        }
+
+        public void Clicked(object sender, EventArgs e)
+        {
+            string deliver = DeliveryMode.SelectedItem.Text;
+            //Save "DeliveryMode" to session
+            HttpContext.Current.Session["DeliveryMode"] = deliver;
         }
 
         public IQueryable<CartItem> GetShoppingCartItems()
@@ -70,7 +98,7 @@ namespace SHOeP.Orders
 
         public void CancelClick(object sender, EventArgs e)
         {
-            this.Response.Redirect("~/Order/ShoppingCart.aspx", false);
+            this.Response.Redirect("~/Orders/ShoppingCart.aspx", false);
         }
 
         public void ConfirmationClick(object sender, EventArgs e)
@@ -86,11 +114,13 @@ namespace SHOeP.Orders
             Order order = new Order();
             order.CustomerId = logUser.UserId;
             order.TotalPrice = GetTotal();
-            order.DeliveryDate = DateTime.Today.AddDays(1.0); 
-            order.OrderDate = DateTime.Today; ;
-            order.OrderNumber = "123456789012"; //TODO
-            order.ShippingId = 1; //TODO slumpa?
-            order.Status = null; //TTOD ?
+            order.DeliveryDate = DateTime.Today.AddDays(4.0); 
+            order.OrderDate = DateTime.Today;
+            order.OrderNumber = generateOrderNumber();
+            ShippingController sc = new ShippingController();
+            string companyName = DeliveryMode.SelectedItem.Text.Split('\t')[0];
+            order.ShippingId = sc.GetShippingId(companyName);
+            order.Status = null;
 
             string cartKey = "Cart";
 
@@ -99,10 +129,25 @@ namespace SHOeP.Orders
             if (ok)
             {
                 HttpContext.Current.Session[cartKey] = null;
+                HttpContext.Current.Session["DeliveryMode"] = null;
                 this.Response.Redirect("~/Orders/OrderConfirmation.aspx", false);
             }
+            else
+            {
+                this.Response.Redirect("Default.aspx", false);
+            }
+        }
 
-            //TODO Order misslyckades
+        private string generateOrderNumber()
+        {
+            System.Random rnd = new Random((int)DateTime.Now.Ticks);
+            string randomStr = String.Empty;
+            for (int i = 0; i < 3; i++)
+            {
+                int tmp = rnd.Next(1000, 9999);
+                randomStr += tmp.ToString();
+            }
+            return randomStr;
         }
 
     }

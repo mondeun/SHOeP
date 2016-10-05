@@ -67,6 +67,42 @@ namespace SHOeP.Orders {
         protected global::System.Web.UI.WebControls.Label CityZip;
         
         /// <summary>
+        /// levaddressBox control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.TextBox levaddressBox;
+        
+        /// <summary>
+        /// levcityBox control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.TextBox levcityBox;
+        
+        /// <summary>
+        /// levzipBox control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.TextBox levzipBox;
+        
+        /// <summary>
+        /// DeliveryMode control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.RadioButtonList DeliveryMode;
+        
+        /// <summary>
         /// Label1 control.
         /// </summary>
         /// <remarks>

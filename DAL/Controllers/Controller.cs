@@ -34,7 +34,6 @@ namespace DAL.Controllers
                     item.FromSqlReader(myDataReader);
                     list.Add(item);
                 }
-
             }
             catch (SqlException ex)
             {

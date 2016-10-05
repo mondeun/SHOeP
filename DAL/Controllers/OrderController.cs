@@ -10,45 +10,38 @@ namespace DAL.Controllers
 {
     public class OrderController : Controller
     {
+
         public bool Transaction(Order order, Dictionary<int, int> cartSession)
         {
-            SqlTransaction level = null;
+            Connection.OpenConnection();
 
-            try
+            BeginTransaction();
+
+            AddNewOrder(order);
+            int orderId = GetOrderId();
+
+            foreach (KeyValuePair<int, int> item in cartSession)
             {
-                Connection.OpenConnection();
-
-                level = Connection.GetConnection().BeginTransaction();
-                AddNewOrder(order);
-
-                foreach (KeyValuePair<int, int> item in cartSession)
+                int stockQuantity = new ShoeController().GetShoeQuantity(item.Key);
+                if (stockQuantity < item.Value)
                 {
-                    int stockQuantity = new ShoeController().GetShoeQuantity(item.Key);
-                    if (stockQuantity < item.Value)
-                    {
-                        level.Rollback();
-                        return false;
-                    }
-                    ReduceQuantityFromStock(item.Key, item.Value);
-                    OrderLine o = new OrderLine();
-                    o.Amount = new ShoeController().GetShoePrice(item.Key);
-                    o.Discount = 0; //TODO
-                    o.OrderId = order.OrderId;
-                    o.Quantity = item.Value;
-                    o.ShoeId = item.Key;
-
-                    AddProductToOrder(o);
+                    Rollback();
+                    return false;
                 }
+                ReduceQuantityFromStock(item.Key, item.Value);
+                OrderLine o = new OrderLine();
+                o.Amount = new ShoeController().GetShoePrice(item.Key);
+                o.Discount = 0; 
+                o.OrderId = orderId;
+                o.Quantity = item.Value;
+                o.ShoeId = item.Key;
 
-                level.Commit();
+                AddProductToOrder(o);
+            }
 
-            }
-            catch {
-                if (level != null)
-                    level.Rollback();
-                return false;
-            }
-            finally { }
+            Commit();
+
+            Connection.CloseConnection();
 
             return true;
         }
@@ -56,23 +49,59 @@ namespace DAL.Controllers
         public int ReduceQuantityFromStock(int shoeId, int n)
         {
             var sql = $"UPDATE Stock SET Quantity = Quantity - " + n + " WHERE ShoeId = " + shoeId;
-            return InsertToDatabase(sql);
+            var cmd = new SqlCommand(sql, Connection.GetConnection());
+            return cmd.ExecuteNonQuery();
         }
 
         public int AddNewOrder(Order order)
         {
-            var sql = $"INSERT INTO Order (OrderId, OrderNumber, CustomerId, ShippingId, OrderDate, DeliveryDate, TotalPrice, Status)" +
-                      $"VALUES ('{order.OrderId}', '{order.OrderNumber}', '{order.CustomerId}', '{order.ShippingId}', '{order.OrderDate}', '{order.DeliveryDate}', '{order.TotalPrice}', '{order.Status}')";
+            var sql = $"INSERT INTO Orders (OrderNumber, CustomerId, ShippingId, OrderDate, DeliveryDate, TotalPrice, Status)" +
+                      $"VALUES ('{order.OrderNumber}', '{order.CustomerId}', '{order.ShippingId}', '{order.OrderDate}', '{order.DeliveryDate}', '{order.TotalPrice}', '{order.Status}')";
+            var cmd = new SqlCommand(sql, Connection.GetConnection());
+            return cmd.ExecuteNonQuery();
+        }
 
-            return InsertToDatabase(sql);
+        public int GetOrderId()
+        {
+
+            var sql = $"SELECT CAST(SCOPE_IDENTITY() as int)";
+            SqlCommand myCommand = new SqlCommand(sql, Connection.GetConnection());
+            SqlDataReader dataReader = myCommand.ExecuteReader();
+            if (dataReader.Read())
+            {
+                int id = dataReader.GetInt32(0);
+                dataReader.Close();
+                return id;
+            }
+            return -1;
         }
 
         public int AddProductToOrder(OrderLine line)
         {
             var sql = $"INSERT INTO OrderLines (OrderId, ShoeId, Quantity, Amount, Discount)" +
                       $"VALUES ('{line.OrderId}', '{line.ShoeId}', '{line.Quantity}', '{line.Amount}', '{line.Discount}')";
+            var cmd = new SqlCommand(sql, Connection.GetConnection());
+            return cmd.ExecuteNonQuery();
+        }
 
-            return InsertToDatabase(sql);
+        public int BeginTransaction()
+        {
+            var sql = $"BEGIN TRANSACTION;";
+            var cmd = new SqlCommand(sql, Connection.GetConnection());
+            return cmd.ExecuteNonQuery();
+        }
+
+        public int Rollback()
+        {
+            var sql = $"IF @@TRANCOUNT > 0\nROLLBACK TRANSACTION;";
+            var cmd = new SqlCommand(sql, Connection.GetConnection());
+            return cmd.ExecuteNonQuery();
+        }
+        public int Commit()
+        {
+            var sql = $"IF @@TRANCOUNT > 0\nCOMMIT TRANSACTION;";
+            var cmd = new SqlCommand(sql, Connection.GetConnection());
+            return cmd.ExecuteNonQuery();
         }
 
         public decimal CalculateAmount(decimal price, int quantity) => price * quantity;
