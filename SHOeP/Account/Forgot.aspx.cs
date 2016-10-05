@@ -20,33 +20,37 @@ namespace SHOeP.Account
 
         protected void SendNewPassword(object sender, EventArgs e)
         {
-            if (ForgotEmailTxtBox.Text != null) return;
+            if (ForgotEmailTxtBox.Text == null) return;
 
             var userController = new UserController();
             var user = userController.GetUserByEmail(ForgotEmailTxtBox.Text);
             if (user == null) return;
 
-            using (var SmtpClient = new SmtpClient())
+            using (var smtpClient = new SmtpClient())
             {
                 var body = new StringBuilder();
-
-                body.Append($"Hello {user.FirstName}, Here's your new password: ");
                 user.GenerateNewPassword();
-                body.Append($"{user.Password}\nPlease change this as soon as possible.");
+
+                body.Append($"Hello {user.FirstName}, Here's your new password: {user.Password}");
+                body.Append("Please change this as soon as possible.");
 
                 user.HashAndSaltPassword();
                 userController.UpdateUser(user);
 
-                SmtpClient.Host = "smtp.shoep.com";
-                SmtpClient.Port = 587;
-                SmtpClient.DeliveryMethod = SmtpDeliveryMethod.SpecifiedPickupDirectory;
-                SmtpClient.PickupDirectoryLocation = @"C:\";
+                smtpClient.Host = "smtp.shoep.com";
+                smtpClient.Port = 587;
+                smtpClient.EnableSsl = false;
+                smtpClient.DeliveryMethod = SmtpDeliveryMethod.SpecifiedPickupDirectory;
+                smtpClient.PickupDirectoryLocation = @"C:\Emails";
 
-                var message = new MailMessage("dontreply@shoep.com", user.Email, "Your new Password", body.ToString());
-                message.BodyEncoding = Encoding.UTF8;
+                var message = new MailMessage("dontreply@shoep.com", user.Email, "Your new Password", body.ToString())
+                {
+                    BodyEncoding = Encoding.Default
+                };
 
-                SmtpClient.Send(message);
+                smtpClient.Send(message);
             }
+            Response.Redirect("../Default.aspx");
         }
     }
 }

@@ -68,7 +68,7 @@ namespace DAL.Controllers
             {
                 Connection.OpenConnection();
 
-                var query = $"select * from Customers where CustomerId = '{email}'";
+                var query = $"select * from Customers where Email = '{email}'";
                 var cmd = new SqlCommand(query, Connection.GetConnection());
 
                 using (var reader = cmd.ExecuteReader())
