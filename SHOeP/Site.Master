@@ -152,9 +152,9 @@
                     <div class="pull-right">
                         <div class="navbar-form" role="search">
                             <div class="input-group">
-                                <asp:TextBox class="form-control" ID="txtSok" runat="server" placeholder="Sök"></asp:TextBox>
+                                <asp:TextBox class="form-control" ID="txtSearchMaster" runat="server" placeholder="Sök"></asp:TextBox>
                                 <div class="input-group-btn">
-                                    <asp:Button ID="btnSok" class="btn btn-default" runat="server" Text="Sök" /> 
+                                    <asp:Button ID="btnSearch" class="btn btn-default" runat="server" OnClick="btnSearch_Click" Text="Sök" /> 
                                 </div>
                             </div>
                         </div>

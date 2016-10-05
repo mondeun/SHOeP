@@ -26,7 +26,6 @@ namespace SHOeP.Account
             lblAdress.Text += user.Address;
             lblCode.Text += user.Zip;
             lblCity.Text += user.City;
-            lblPassword.Text += user.Password;
 
 
 
@@ -42,7 +41,6 @@ namespace SHOeP.Account
             newUser.Address = txtAddress.Text;
             newUser.City = txtCity.Text;
             newUser.Zip = txtZip.Text;
-            newUser.Password = txtPassword.Text;
 
             UserController usercon = new UserController();
 

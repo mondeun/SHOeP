@@ -139,7 +139,7 @@
             <!--End Section Profil-->
         </asp:View>
         <asp:View ID="View2" runat="server">
-            <!--Start Section Contact-->
+            <!--Start Section Profil-->
             <section class="profil-us text-center">
                 <div class="fields">
                     <div class="container">
@@ -189,7 +189,7 @@
                     </div>
                 </div>
             </section>
-            <!--End Section Contact-->
+            <!--End Section Profil-->
         </asp:View>
     </asp:MultiView>
 
