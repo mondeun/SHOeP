@@ -11,7 +11,7 @@ namespace DAL.Controllers
     public class OrderController : Controller
     {
 
-        public bool Transaction(Order order, Dictionary<int, int> cartSession)
+        public bool Transaction(ref Order order, Dictionary<int, int> cartSession)
         {
             Connection.OpenConnection();
 
@@ -19,6 +19,7 @@ namespace DAL.Controllers
 
             AddNewOrder(order);
             int orderId = GetOrderId();
+            order.OrderId = orderId;
 
             foreach (KeyValuePair<int, int> item in cartSession)
             {

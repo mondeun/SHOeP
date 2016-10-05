@@ -107,15 +107,17 @@ namespace SHOeP.Orders
             ShippingController sc = new ShippingController();
             string companyName = DeliveryMode.SelectedItem.Text.Split('\t')[0];
             order.ShippingId = sc.GetShippingId(companyName);
+            order.TotalPrice = GetTotal() + sc.GetShippingById(order.ShippingId);
             order.Status = null;
 
-            bool ok  = new OrderController().Transaction(order, cartSession);
+            bool ok  = new OrderController().Transaction(ref order, cartSession);
 
             if (ok)
             {
                 string deliver = companyName;
                 //Save "DeliveryMode" to session
-                HttpContext.Current.Session["DeliveryMode"] = deliver;
+                HttpContext.Current.Session["DeliveryMode"] = order.ShippingId;
+                HttpContext.Current.Session["LastOrder"] = order;
 
                 Dictionary<AddressKeeper, string> deliveryAddress = new Dictionary<AddressKeeper, string>();
                 if (levaddressBox.Text.Count() > 0 && levcityBox.Text.Count() > 0 && levzipBox.Text.Count() > 0)
@@ -132,6 +134,7 @@ namespace SHOeP.Orders
 
                 //Save "DeliveryInfo" to session
                 HttpContext.Current.Session["DeliveryInfo"] = deliveryAddress;
+
 
                 this.Response.Redirect("~/Orders/OrderConfirmation.aspx", false);
             }

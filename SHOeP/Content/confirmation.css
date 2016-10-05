@@ -1,9 +1,32 @@
-﻿body {
-}
-
-.confirmbutton {
+﻿.confirmbutton {
     background-color: indianred;
     color: white;
     border-radius: 2em;
     padding: 4px 7px 4px 7px;
+}
+
+.totalprice {
+    font-size: large;
+}
+
+.deliveryprice {
+    font-size: large;
+}
+
+h4 {
+    margin-bottom: 1%;
+    border-bottom-color: lightgray;
+}
+
+h2, h5 {
+    text-align: center;
+}
+
+.divtotal {
+    border-bottom: solid;
+    border-bottom-color: lightgray;
+}
+
+.data {
+    font-weight: normal;
 }

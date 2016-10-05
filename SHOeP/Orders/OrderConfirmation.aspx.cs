@@ -22,7 +22,8 @@ namespace SHOeP.Orders
 
             User logUser = (User)HttpContext.Current.Session["user"];
             Dictionary<OrderSummary.AddressKeeper, string> deliveryAddress = (Dictionary<OrderSummary.AddressKeeper, string>) HttpContext.Current.Session["DeliveryInfo"];
-            string delivery = (string) HttpContext.Current.Session["DeliveryMode"];
+            int delivery = (int) HttpContext.Current.Session["DeliveryMode"];
+            Order lastOrder = (Order) HttpContext.Current.Session["LastOrder"];
 
             if (logUser != null && deliveryAddress != null)
             {
@@ -30,10 +31,16 @@ namespace SHOeP.Orders
                 Adress.Text = deliveryAddress[OrderSummary.AddressKeeper.address];
                 CityZip.Text = deliveryAddress[OrderSummary.AddressKeeper.city] + " " + deliveryAddress[OrderSummary.AddressKeeper.zip];
             }
-            if (delivery != null)
-            {
-                DeliveryMode.Text = delivery;
-            }
+            OrderNumber.Text = lastOrder.OrderNumber;
+
+            lblTotal.Text = GetTotal().ToString();
+
+            ShippingController sc = new ShippingController();
+            DeliveryMode.Text = sc.GetShippingCo(delivery).ToString();
+            DeliveryCharge.Text = sc.GetShippingById(delivery).ToString();
+
+            TotalPayment.Text = lastOrder.TotalPrice.ToString();
+
             HttpContext.Current.Session["DeliveryInfo"] = null;
             HttpContext.Current.Session["DeliveryMode"] = null;
         }

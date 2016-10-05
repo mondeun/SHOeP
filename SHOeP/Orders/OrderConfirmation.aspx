@@ -10,14 +10,18 @@
     <b />
     <b />
     <!-- Order confirmation -->
-    <div class="jumbotron">
         <!-- OrderHeader -->
         <h3>Bekräftelse</h3>
         <b />
         <asp:Label ID="OrderHeader" runat="server" CssClass=""></asp:Label>
+<p></p>
+    <asp:Label runat="server" Text="Beställningsnummer: "></asp:Label>
+    <asp:Label ID="OrderNumber" runat="server" EnableViewState="false"></asp:Label>
+    
+    <div class="jumbotron">
         <!-- Varukorg -->
         <br />
-        <h4>Beställda varor:</h4>
+        <h4>Beställda varor</h4>
         <asp:GridView ID="CartList" runat="server" AutoGenerateColumns="False" ShowFooter="True" GridLines="Vertical" CellPadding="4"
             ItemType="DAL.Models.CartItem" SelectMethod="GetShoppingCartItems"
             CssClass="table table-striped table-bordered">
@@ -39,30 +43,38 @@
             </Columns>
         </asp:GridView>
         <!-- Total -->
-        <div>
+        <div class="divtotal">
+            <p></p>
+                <asp:Label ID="LabelTotalText" runat="server" Text="Pris: "></asp:Label>
+                <asp:Label ID="lblTotal" runat="server" EnableViewState="false"></asp:Label>
+                <p></p>
+                <asp:Label ID="DeliveryChargeLabel" runat="server" CssClass="deliveryprice" Text="Frakt: "></asp:Label>
+                <asp:Label ID="DeliveryCharge" runat="server" CssClass="deliveryprice" EnableViewState="false"></asp:Label>
             <p></p>
             <strong>
-                <asp:Label ID="LabelTotalText" runat="server" Text="Total pris: "></asp:Label>
-                <asp:Label ID="lblTotal" runat="server" EnableViewState="false"></asp:Label>
-                <asp:Label runat="server" Text=" kr "></asp:Label>
+                <asp:Label ID="TotalLabel" runat="server" CssClass="totalprice" Text="Totalpris: "></asp:Label>
+                <asp:Label ID="TotalPayment" runat="server" CssClass="totalprice" EnableViewState="false"></asp:Label>
+                <asp:Label runat="server" CssClass="totalprice" Text=" kr "></asp:Label>
             </strong>
         </div>
+        <br />
+        <br />
         <!-- Leveransadress -->
-        <div>
+        <div class="divtotal">
             <h4>Leveransadress:</h4>
-            <asp:Label ID="Name" runat="server"></asp:Label><br />
-            <asp:Label ID="Adress" runat="server"></asp:Label><br />
-            <asp:Label ID="CityZip" runat="server"></asp:Label><br />
+            <asp:Label ID="Name" runat="server" CssClass="data"></asp:Label><br />
+            <asp:Label ID="Adress" runat="server" CssClass="data"></asp:Label><br />
+            <asp:Label ID="CityZip" runat="server" CssClass="data"></asp:Label><br />
         </div>
         <!-- Leveranssätt -->
-        <div class="jumbotron">
+        <div class="divtotal">
             <h4>Leveranssätt</h4>
-            <asp:Label ID="DeliveryMode" runat="server"></asp:Label><br />
+            <asp:Label ID="DeliveryMode" runat="server" CssClass="data"></asp:Label><br />
         </div>
         <!-- Betalningsätt -->
-        <div>
+        <div class="divtotal">
             <h4>Betalningssätt</h4>
-            <asp:Label ID="Payment" runat="server" Text="Faktura"></asp:Label><br />
+            <asp:Label ID="Payment" runat="server" Text="Faktura" CssClass="data"></asp:Label><br />
         </div>
     </div>
     <b />
