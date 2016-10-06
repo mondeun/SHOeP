@@ -33,7 +33,8 @@ namespace SHOeP.ProductPages
                 OutOfStock.Text = "Tyvärr, det finns inte fler i lagret.";
             }
 
-            IQueryable<String> shoesColor = GetShoeColors(int.Parse(modelID)); // TODO: try-catch
+            IQueryable<String> shoesColor = GetShoeColors(int.Parse(modelID)); //TODO: try-catch
+            
             foreach (String c in shoesColor)
             {
                 RadioButtonColor.Items.Add(c);

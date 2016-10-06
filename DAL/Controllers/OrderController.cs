@@ -64,7 +64,6 @@ namespace DAL.Controllers
 
         public int GetOrderId()
         {
-
             var sql = $"SELECT CAST(SCOPE_IDENTITY() as int)";
             SqlCommand myCommand = new SqlCommand(sql, Connection.GetConnection());
             SqlDataReader dataReader = myCommand.ExecuteReader();

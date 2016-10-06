@@ -79,6 +79,9 @@ namespace DAL.Controllers
                 cmd.Parameters.Add(saltParam);
 
                 result = cmd.ExecuteNonQuery();
+
+
+
             }
             catch (Exception e)
             {
@@ -364,4 +367,5 @@ namespace DAL.Controllers
             return result;
         }
     }
+
 }

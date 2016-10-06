@@ -140,7 +140,7 @@ namespace SHOeP.Orders
             }
             else
             {
-                this.Response.Redirect("Default.aspx", false);
+                this.Response.Redirect("~/Default.aspx", false);
             }
         }
 

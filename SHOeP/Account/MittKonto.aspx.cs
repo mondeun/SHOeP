@@ -33,8 +33,8 @@ namespace SHOeP.Account
 
         protected void btnShicka_Click(object sender, EventArgs e)
         {
-        
-            User newUser = new DAL.Models.User();
+
+            User newUser = (User)Session["user"];
             newUser.FirstName = txtFirstname.Text;
             newUser.LastName = txtLastname.Text;
             newUser.Email = txtMail.Text;
@@ -55,9 +55,6 @@ namespace SHOeP.Account
             {
                 Response.Redirect("~/Account/MittKonto.aspx");
             }
-
-
         }
-    
     }
 }

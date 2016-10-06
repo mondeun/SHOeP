@@ -6,6 +6,8 @@ using System.Web.UI;
 using System.Web.UI.WebControls;
 using DAL.Controllers;
 using DAL.Models;
+using System.Net.Mail;
+using System.Text;
 
 namespace SHOeP.Orders
 {
@@ -40,6 +42,9 @@ namespace SHOeP.Orders
             DeliveryCharge.Text = sc.GetShippingById(delivery).ToString();
 
             TotalPayment.Text = lastOrder.TotalPrice.ToString();
+
+            /*Send email about invoice*/
+            SendInvoice(lastOrder, logUser);
 
             HttpContext.Current.Session["DeliveryInfo"] = null;
             HttpContext.Current.Session["DeliveryMode"] = null;
@@ -95,6 +100,35 @@ namespace SHOeP.Orders
         public void HomeClick(object sender, EventArgs e)
         {
             this.Response.Redirect("~/Default.aspx", false);
+        }
+
+        /*** Send email before destroying session data ***/
+        private void SendInvoice(Order lastOrder, User logUser)
+        {
+            using (var smtpClient = new SmtpClient())
+            {
+
+                StringBuilder body = new StringBuilder();
+                
+                body.Append($"Hej {logUser.FirstName}, Tack för din beställning hos ShOeP!");
+                body.Append("Ditt ordernummer är " + lastOrder.OrderNumber);
+                body.Append("Total belopp " + lastOrder.TotalPrice);
+                body.Append("Beräknad leverans " + lastOrder.DeliveryDate);
+
+
+                smtpClient.Host = "smtp.shoep.com";
+                smtpClient.Port = 587;
+                smtpClient.EnableSsl = false;
+                smtpClient.DeliveryMethod = SmtpDeliveryMethod.SpecifiedPickupDirectory;
+                smtpClient.PickupDirectoryLocation = @"C:\Emails";
+
+                var message = new MailMessage("dontreply@shoep.com", logUser.Email, "Faktura ", body.ToString())
+                {
+                    BodyEncoding = Encoding.Default
+                };
+
+                smtpClient.Send(message);
+            }
         }
     }
 }

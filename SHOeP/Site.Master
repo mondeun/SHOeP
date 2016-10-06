@@ -96,14 +96,14 @@
                                             </asp:TemplateField>
                                         </Columns>
                                     </asp:GridView>
-                                    <div>
+                                    <!--<div>
                                         <p></p>
                                         <strong>
                                             <asp:Label ID="LabelTotalText" runat="server" Text="Total pris: "></asp:Label>
                                             <asp:Label ID="lblTotal" runat="server" EnableViewState="false"></asp:Label>
                                             <asp:Label runat="server" Text=" kr "></asp:Label>
                                         </strong>
-                                    </div>
+                                    </div>-->
                                 </div>
                             </div>
                             <!-- minicart finish -->

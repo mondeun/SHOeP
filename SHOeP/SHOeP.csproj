@@ -176,6 +176,7 @@
     <Content Include="images_avatar\large_3194.png" />
     <Content Include="images_avatar\large_3206.png" />
     <Content Include="images_avatar\Opi51.png" />
+    <Content Include="image\adidas.png" />
     <Content Include="image\adidas00.png" />
     <Content Include="image\barn.PNG" />
     <Content Include="image\dam.PNG" />
@@ -187,6 +188,9 @@
     <Content Include="image\men.PNG" />
     <Content Include="image\nike00.png" />
     <Content Include="backgroundImage\pool-water.jpg" />
+    <Content Include="image\underarmor.bmp" />
+    <Content Include="image\underarmor.PNG" />
+    <Content Include="image\underarmour.PNG" />
     <Content Include="image\varukorg.png" />
     <Content Include="Orders\FailedOrder.aspx" />
     <Content Include="Orders\OrderConfirmation.aspx" />
